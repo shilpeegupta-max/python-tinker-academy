@@ -1,0 +1,16 @@
+# Screenshots & Test Logs
+*.png
+*.log
+
+# Temporary Debug & Verification Scripts
+debug_*.py
+test_*.py
+verify_*.py
+find_*.py
+fix_*.py
+take_demo_*.py
+
+# System & OS Files
+.DS_Store
+Thumbs.db
+node_modules/

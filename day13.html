@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 13: Capstone Polish: Colors, Easter Eggs &amp; Defensive Inputs - Python Tinker Academy</title>
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Application Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=3">
+
+  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <script src="js/skulpt.min.js?v=3"></script>
+  <script src="js/skulpt-stdlib.js?v=3"></script>
+
+  <style>
+    body {
+      background: var(--bg-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .standalone-page-header {
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .workspace-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - 70px);
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Workspace Top Header -->
+  <header class="standalone-page-header">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a href="index.html" class="btn-secondary" style="text-decoration: none;">
+        <i class="fa-solid fa-arrow-left"></i> Back to Roadmap
+      </a>
+      <div>
+        <h2 id="view-day-title" style="font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary);">
+          Day 13: Capstone Polish: Colors, Easter Eggs &amp; Defensive Inputs
+        </h2>
+        <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
+          Focus Topic: Defensive Coding (Input Validation), ANSI Colors, Cheat Codes
+        </p>
+      </div>
+    </div>
+
+    <!-- Phase Switcher Tabs -->
+    <div class="day-phase-tabs">
+      <button class="phase-tab active" data-phase="concept" id="tab-phase-concept">
+        1. Concept (10m)
+      </button>
+      <button class="phase-tab" data-phase="liveCode" id="tab-phase-liveCode">
+        2. Live Code (15m)
+      </button>
+      <button class="phase-tab" data-phase="tinker" id="tab-phase-tinker">
+        3. Tinker Lab (20m)
+      </button>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <!-- Session Timer Widget -->
+      <div class="session-timer-widget" id="session-timer">
+        <span class="timer-phase-badge phase-concept" id="timer-phase-badge">10m Concept</span>
+        <span class="timer-clock" id="timer-clock">10:00</span>
+        <div class="timer-controls">
+          <button class="btn-icon" id="btn-timer-toggle" title="Play/Pause Session Timer">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button class="btn-icon" id="btn-timer-reset" title="Reset Timer">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Parent / Mentor Guide Toggle -->
+      <button class="btn-secondary" id="btn-mentor-toggle">
+        <i class="fa-solid fa-user-ninja"></i> Mentor Guide
+      </button>
+
+      <!-- Complete Day Button -->
+      <button class="btn-primary" id="btn-mark-completed">
+        <i class="fa-solid fa-circle-check"></i> Mark Completed
+      </button>
+    </div>
+  </header>
+
+  <!-- Split Screen Workspace -->
+  <div class="workspace-container">
+    <div class="day-workspace" style="height: 100%;">
+      
+      <!-- Left Panel: Lesson Explanation / Walkthrough / Challenges -->
+      <div class="left-panel" id="workspace-left-panel">
+        <div class="concept-card">
+          <h3>🧠 Concept Breakdown</h3>
+          <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
+            Polishing Games &amp; Defensive Coding
+          </p>
+          <div class="analogy-box">
+            <strong>💡 Everyday Analogy:</strong><br>A polished game never crashes when a user types nonsense. It validates inputs, uses bright colors, and hides fun easter eggs!
+          </div>
+
+          <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
+          <pre class="code-snippet-pre"># ANSI Terminal Colors
+RED = &quot;\\033[91m&quot;
+GREEN = &quot;\\033[92m&quot;
+CYAN = &quot;\\033[96m&quot;
+RESET = &quot;\\033[0m&quot;
+
+print(RED + &quot;⚠️ WARNING: Low Health!&quot; + RESET)
+print(GREEN + &quot;💚 Health Restored!&quot; + RESET)
+
+# Defensive Input Loop
+while True:
+    choice = input(&quot;Pick 1 or 2: &quot;)
+    if choice in [&quot;1&quot;, &quot;2&quot;]:
+        break
+    print(&quot;❌ Invalid entry! Please type 1 or 2.&quot;)</pre>
+
+          <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
+          <ul class="takeaways-list">
+            <li>ANSI escape codes like</li><li>add terminal color flair.</li><li>Defensive coding checks inputs before doing math to prevent crashes.</li><li>Easter eggs reward curious players who try secret commands!</li>
+          </ul>
+
+          <!-- Quick Quiz -->
+          <div class="quiz-box">
+            <div class="quiz-question">❓ Quick Check: Why should you use an input validation while loop?</div>
+            <div class="quiz-options">
+              <button class="quiz-option-btn" data-idx="0">To force the computer to run faster.</button>
+              <button class="quiz-option-btn" data-idx="1">To stop the program from crashing when a user types an invalid command.</button>
+              <button class="quiz-option-btn" data-idx="2">To automatically convert strings into images.</button>
+            </div>
+            <div class="quiz-feedback" id="quiz-feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel: Python IDE Editor & Output Canvas -->
+      <div class="right-panel">
+        
+        <!-- Editor Toolbar -->
+        <div class="editor-toolbar">
+          <div class="editor-title">
+            <i class="fa-brands fa-python" style="color: var(--accent-cyan);"></i>
+            <span id="editor-filename">day13_tinker.py</span>
+          </div>
+          <div class="editor-actions">
+            <button class="btn-run" id="btn-run-code">
+              <i class="fa-solid fa-play"></i> Run Code
+            </button>
+            <button class="btn-reset" id="btn-reset-code" title="Reset code to starter">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Code Editor Textarea -->
+        <div class="code-editor-wrapper">
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 13 TINKER LAB: Polish &amp; Easter Eggs
+
+# Colors
+RED = &quot;\\033[91m&quot;
+GREEN = &quot;\\033[92m&quot;
+GOLD = &quot;\\033[93m&quot;
+RESET = &quot;\\033[0m&quot;
+
+print(GOLD + &quot;✨ POLISHING YOUR CAPSTONE GAME ✨&quot; + RESET)
+
+# Add your cheat codes below!
+secret_code = input(&quot;Enter standard command or cheat code: &quot;).lower()
+
+if secret_code == &quot;noclip&quot;:
+    print(GREEN + &quot;👻 You can now walk through walls!&quot; + RESET)
+elif secret_code == &quot;moneybag&quot;:
+    print(GOLD + &quot;💰 +1,000,000 GOLD ADDED TO INVENTORY!&quot; + RESET)
+else:
+    print(&quot;Normal action executed.&quot;)
+</textarea>
+        </div>
+
+        <!-- Output Pane (Terminal & Turtle Canvas) -->
+        <div class="output-pane">
+          <div class="output-tabs">
+            <button class="output-tab-btn active" id="tab-output-term" data-target="terminal">
+              <i class="fa-solid fa-terminal"></i> Terminal Output
+            </button>
+            <button class="output-tab-btn" id="tab-output-turtle" data-target="turtle">
+              <i class="fa-solid fa-palette"></i> Turtle Canvas
+            </button>
+          </div>
+
+          <!-- Terminal Window -->
+          <div class="terminal-window" id="terminal-window">
+            <span class="term-line">Python 3.8.0 (Skulpt Virtual Environment)</span>
+            <span class="term-line">Press 'Run Code' above to execute your script!</span>
+          </div>
+
+          <!-- Turtle Canvas Container -->
+          <div class="turtle-canvas-container" id="turtle-container">
+            <div id="turtle-canvas"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Parent / Mentor Guide Drawer -->
+  <aside class="mentor-drawer" id="mentor-drawer">
+    <button class="drawer-close-btn" id="btn-close-drawer">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="mentor-title">
+      <i class="fa-solid fa-user-ninja"></i>
+      Parent / Mentor Companion
+    </div>
+    <div id="mentor-drawer-content">
+      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+        Welcome! You don't need to be a programmer to mentor your 13-year-old through this course.
+      </p>
+      <div class="concept-card">
+        <h3>💡 The "Tinker, don't lecture" Formula</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+          1. Spend 10 minutes discussing the concept card together.<br>
+          2. Spend 15 minutes typing the live code walkthrough together.<br>
+          3. Give them 20 minutes of quiet creative freedom to break code, customize values, and complete the 3 Tinker Challenges!
+        </p>
+      </div>
+      <div id="mentor-day-tips">
+
+      <div class="concept-card" style="margin-top: 1rem;">
+        <h3>📌 Day 13 Mentor Notes</h3>
+        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+          <li>Forgetting to append RESET code after color string, turning entire terminal green!</li>
+        </ul>
+        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+          <li>"What secret cheat codes did you hide in your game?"</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Application Logic Scripts -->
+  <script>
+    window.CURRENT_DAY_ID = 13;
+  </script>
+  <script src="js/curriculum.js?v=3"></script>
+  <script src="js/skulpt-runner.js?v=3"></script>
+  <script src="js/day-app.js?v=3"></script>
+</body>
+</html>
