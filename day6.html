@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 6: Neon Cyber-Spiral - Python Tinker Academy</title>
+  <title>Day 6: Countdown Timer &amp; Rocket Blast-Off - Python Tinker Academy</title>
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -56,10 +56,10 @@
       </a>
       <div>
         <h2 id="view-day-title" style="font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary);">
-          Day 6: Neon Cyber-Spiral
+          Day 6: Countdown Timer &amp; Rocket Blast-Off
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
-          Focus Topic: Visuals with Python turtle, Pen Movement, Colors &amp; Angles
+          Focus Topic: for Loops, range() &amp; ASCII Art Repeater
         </p>
       </div>
     </div>
@@ -113,37 +113,32 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Drawing Graphics with Python Turtle
+            Counted Repeating with for Loops and range()
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>Imagine a robotic turtle holding a paintbrush on your screen canvas. You give it simple instructions like move forward, turn left, and change color!
+            <strong>💡 Everyday Analogy:</strong><br>While `while` loops repeat until something changes, `for` loops repeat code an exact number of times using `range()`!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre">import turtle
+          <pre class="code-snippet-pre"># Loop 5 times (0, 1, 2, 3, 4)
+for i in range(5):
+    print(&quot;Loop turn:&quot;, i)
 
-# Create screen and turtle pen
-t = turtle.Turtle()
-t.speed(0) # Fast drawing speed
-t.pencolor(&quot;cyan&quot;)
-
-# Move turtle
-t.forward(100) # Move forward 100 pixels
-t.left(90)     # Turn left 90 degrees
-t.forward(100)</pre>
+# Countdown from 10 down to 1
+for i in range(10, 0, -1):
+    print(&quot;Countdown:&quot;, i)
+print(&quot;🚀 BLAST OFF!&quot;)</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>forward(pixels) and backward(pixels) move the pen.</li><li>left(degrees) and right(degrees) rotate the pen head.</li><li>pencolor(</li><li>) and bgcolor(</li><li>) set colors!</li>
+            <li>range(count) runs a loop count times (0 to count-1).</li><li>range(start, stop, step) counts with custom start, stop, and increment.</li><li>use for loops whenever you know in advance how many times to repeat!</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: What angle turn draws a perfect square corner?</div>
+            <div class="quiz-question">❓ Quick Check: What numbers does range(1, 5) generate?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0">45 degrees</button>
-              <button class="quiz-option-btn" data-idx="1">90 degrees</button>
-              <button class="quiz-option-btn" data-idx="2">180 degrees</button>
+              <button class="quiz-option-btn" data-idx="0">1, 2, 3, 4, 5</button><button class="quiz-option-btn" data-idx="1">1, 2, 3, 4</button><button class="quiz-option-btn" data-idx="2">0, 1, 2, 3, 4, 5</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -171,21 +166,17 @@ t.forward(100)</pre>
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 6 TINKER LAB: Turtle Cyber-Spiral
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 6 TINKER LAB: ASCII Pattern Generator
 
-import turtle
+print(&quot;🎨 REPEATED ASCII PATTERN GENERATOR 🎨&quot;)
 
-t = turtle.Turtle()
-t.speed(0)
-turtle.bgcolor(&quot;#0f172a&quot;) # Deep obsidian blue
+symbol = input(&quot;Enter symbol/emoji to repeat: &quot;)
+rows = int(input(&quot;How many rows? &quot;))
 
-colors = [&quot;#38bdf8&quot;, &quot;#f43f5e&quot;, &quot;#a855f7&quot;, &quot;#34d399&quot;]
-
-for x in range(100):
-    t.pencolor(colors[x % 4])
-    t.forward(x * 2)
-    t.left(91) # Try changing 91 to 89, 121, or 144!
-    t.width(x / 25)
+print(&quot;
+--- GENERATING PATTERN ---&quot;)
+for r in range(1, rows + 1):
+    print(symbol * r)
 </textarea>
         </div>
 
@@ -239,18 +230,17 @@ for x in range(100):
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 6 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>Turtle window freezing: ensure speed(0) is used for instant rendering.</li><li>Using unrecognized color names like</li><li>. Use standard hex codes like</li><li>or common color names.</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"What formula calculates regular polygon angles? (360 / number of sides!)."</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 6 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>Forgetting range stop boundary is exclusive: range(1, 10) only goes up to 9, not 10!</li><li>Forgetting third parameter for step down: range(10, 0) does nothing unless you specify step -1 as range(10, 0, -1)!</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"When should you use a for loop vs a while loop? (Use for loops when you know exact repeat counts; use while loops when waiting for user input!)."</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

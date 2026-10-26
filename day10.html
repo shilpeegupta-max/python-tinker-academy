@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 10: Secret Agent Spy Decoder &amp; Cipher - Python Tinker Academy</title>
+  <title>Day 10: Secret Cyber Code Generator - Python Tinker Academy</title>
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -56,10 +56,10 @@
       </a>
       <div>
         <h2 id="view-day-title" style="font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary);">
-          Day 10: Secret Agent Spy Decoder &amp; Cipher
+          Day 10: Secret Cyber Code Generator
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
-          Focus Topic: Dictionaries ({key: value}), Lookups, Cipher Scrambler
+          Focus Topic: String Methods (.upper(), .replace(), slicing, .split())
         </p>
       </div>
     </div>
@@ -113,39 +113,36 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Storing Key-Value Pairs with Dictionaries
+            Manipulating Strings with Built-in Methods
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>A dictionary stores information like a real-world dictionary or game cheat sheet: you look up a KEY (like 
+            <strong>💡 Everyday Analogy:</strong><br>Python strings have powerful built-in tools. You can convert text capitalization, replace characters, and reverse strings using slicing `[::-1]`!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre"># Creating a dictionary
-player_stats = {
-    &quot;name&quot;: &quot;Shadow Ninja&quot;,
-    &quot;level&quot;: 15,
-    &quot;health&quot;: 250,
-    &quot;has_keycard&quot;: True
-}
+          <pre class="code-snippet-pre">text = &quot;Agent 007&quot;
 
-# Looking up a value
-print(&quot;Player Name:&quot;, player_stats[&quot;name&quot;])
+# Uppercase &amp; Lowercase
+print(text.upper()) # &quot;AGENT 007&quot;
+print(text.lower()) # &quot;agent 007&quot;
 
-# Updating a value
-player_stats[&quot;health&quot;] = 300
+# Replacing letters
+scrambled = text.replace(&quot;e&quot;, &quot;3&quot;).replace(&quot;t&quot;, &quot;7&quot;)
 
-# Adding a new key
-player_stats[&quot;weapon&quot;] = &quot;Katana&quot;</pre>
+# Reversing text with slicing [::-1]
+reversed_text = text[::-1]
+print(&quot;Reversed:&quot;, reversed_text)</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>Dictionaries use curly braces {} with key: value pairs.</li>
+            <li>.upper() / .lower() changes string capitalization.</li><li>.replace(old, new) swaps characters throughout text.</li><li>text[::-1] reverses text strings backwards instantly!</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: How do you access the value of </div>
+            <div class="quiz-question">❓ Quick Check: What does &#x27;python&#x27;[::-1] return?</div>
             <div class="quiz-options">
+              <button class="quiz-option-btn" data-idx="0">&#x27;nohtyp&#x27;</button><button class="quiz-option-btn" data-idx="1">&#x27;PYTHON&#x27;</button><button class="quiz-option-btn" data-idx="2">Error</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -173,26 +170,18 @@ player_stats[&quot;weapon&quot;] = &quot;Katana&quot;</pre>
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 10 TINKER LAB: RPG Inventory System Dictionary
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 10 TINKER LAB: Matrix Text Scrambler
 
-inventory = {
-    &quot;gold_coins&quot;: 250,
-    &quot;health_potions&quot;: 3,
-    &quot;magic_scrolls&quot;: 1,
-    &quot;relics&quot;: 0
-}
+text = input(&quot;Enter text to Matrix-scramble: &quot;)
 
-print(&quot;🎒 RPG PLAYER VAULT 🎒&quot;)
-for item, qty in inventory.items():
-    print(&quot;• &quot; + item + &quot;: &quot; + str(qty))
+# Replace spaces with ⚡ and letters with symbols
+matrix_text = text.replace(&quot; &quot;, &quot;⚡&quot;).replace(&quot;a&quot;, &quot;@&quot;).replace(&quot;e&quot;, &quot;€&quot;)
 
-print(&quot;\\n[!] You found a chest containing 50 gold and 2 health potions!&quot;)
-inventory[&quot;gold_coins&quot;] += 50
-inventory[&quot;health_potions&quot;] += 2
-
-print(&quot;\\n✨ UPDATED INVENTORY:&quot;)
-print(&quot;Gold Coins:&quot;, inventory[&quot;gold_coins&quot;])
-print(&quot;Health Potions:&quot;, inventory[&quot;health_potions&quot;])
+print(&quot;
+🟢 MATRIX STREAM:&quot;)
+print(&quot;Original:&quot;, text)
+print(&quot;Matrix Code:&quot;, matrix_text)
+print(&quot;Reversed Code:&quot;, matrix_text[::-1])
 </textarea>
         </div>
 
@@ -246,18 +235,17 @@ print(&quot;Health Potions:&quot;, inventory[&quot;health_potions&quot;])
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 10 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>KeyError when looking up a key that doesn</li><li>if key in dict:</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"Why are dictionaries faster for lookups than searching through a 10,000 item list?"</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 10 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>Strings are immutable: `text.replace(...)` returns a NEW string! You must save result: `text = text.replace(...)`.</li><li>Index error on slicing: slice syntax uses `[start:stop:step]`.</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"How do real encryption ciphers (like HTTPS or AES) protect internet passwords?"</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

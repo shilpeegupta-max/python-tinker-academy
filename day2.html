@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -59,7 +59,7 @@
           Day 2: Superhero Superpower Stat Generator
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
-          Focus Topic: Variables, Type Casting (int, float), Math Operators
+          Focus Topic: Variables, Data Types (int, float, str) &amp; Math Operators (+, -, *, /)
         </p>
       </div>
     </div>
@@ -113,36 +113,33 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Math in Python &amp; Converting Text to Numbers
+            Converting Strings to Numbers with int() and float()
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>
+            <strong>💡 Everyday Analogy:</strong><br>By default, `input()` always returns text (String). To do math calculations, we must wrap it in `int()` for whole numbers or `float()` for decimals!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre"># Turning string input into an integer
-age = int(input(&quot;How old are you? &quot;))
+          <pre class="code-snippet-pre"># Text string (cannot do math)
+age_str = &quot;13&quot;
 
-# Doing math in Python
-age_in_days = age * 365
-dog_years = age * 7
+# Converting to integer number
+age_num = int(age_str)
 
-# Displaying math results (converting back to string or using commas)
-print(&quot;You are approximately&quot;, age_in_days, &quot;days old!&quot;)</pre>
+# Doing math
+age_in_days = age_num * 365
+print(&quot;Age in days:&quot;, age_in_days)</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>Math operators: + (add), - (subtract), * (multiply), / (divide).</li><li>int(</li><li>) turns string</li><li>into number 10.</li><li>In print(), commas separate items and automatically add spaces!</li>
+            <li>str = Text words (&#x27;13&#x27; is text, not a number).</li><li>int() = Whole numbers (13, 100, -5).</li><li>float() = Decimal numbers (13.5, 3.14).</li><li>Use *, /, +, - for math calculations.</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: If user enters </div>
+            <div class="quiz-question">❓ Quick Check: What is the result of &#x27;10&#x27; + &#x27;10&#x27; in Python?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0">10</button>
-              <button class="quiz-option-btn" data-idx="1"></button>
-              <button class="quiz-option-btn" data-idx="2">(the string repeated twice)</button>
-              <button class="quiz-option-btn" data-idx="3">Error</button>
+              <button class="quiz-option-btn" data-idx="0">20</button><button class="quiz-option-btn" data-idx="1">&#x27;1010&#x27;</button><button class="quiz-option-btn" data-idx="2">Error</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -170,21 +167,23 @@ print(&quot;You are approximately&quot;, age_in_days, &quot;days old!&quot;)</pr
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 2 TINKER LAB: Superhero Stat Generator
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 2 TINKER LAB: Age in Seconds &amp; Tip Calculator
 
-hero = input(&quot;Enter Hero Name: &quot;)
-height_cm = float(input(&quot;Enter your height in cm: &quot;))
-fav_snack_count = int(input(&quot;How many snacks can you eat in 1 minute? &quot;))
+print(&quot;💸 RESTAURANT BILL &amp; TIP SPLITTER 💸&quot;)
 
-# CALCULATIONS
-laser_power = fav_snack_count * 50
-flight_altitude = height_cm * 10
-stamina = (fav_snack_count * 15) + 100
+bill_total = float(input(&quot;Enter total bill ($): &quot;))
+tip_percent = float(input(&quot;Enter tip percentage (e.g. 15, 20): &quot;))
+num_people = int(input(&quot;How many people sharing the bill? &quot;))
 
-print(&quot;\\n=== STAT CARD FOR &quot; + hero + &quot; ===&quot;)
-print(&quot;⚡ Laser Eye Power:&quot;, laser_power, &quot;Gigawatts&quot;)
-print(&quot;✈️ Max Flight Altitude:&quot;, flight_altitude, &quot;Feet&quot;)
-print(&quot;🔋 Stamina Level:&quot;, stamina, &quot;%&quot;)
+# Calculate total with tip
+tip_amount = bill_total * (tip_percent / 100)
+final_total = bill_total + tip_amount
+share_per_person = final_total / num_people
+
+print(&quot;
+Total Tip: $&quot; + str(tip_amount))
+print(&quot;Grand Total: $&quot; + str(final_total))
+print(&quot;Each person pays: $&quot; + str(share_per_person))
 </textarea>
         </div>
 
@@ -238,18 +237,17 @@ print(&quot;🔋 Stamina Level:&quot;, stamina, &quot;%&quot;)
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 2 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>TypeError when adding int and str directly:</li><li>+ 100 throws an error. Use print(</li><li>, 100) or str(100).</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"What happens if you enter a decimal like 14.5 into int()? (It throws ValueError! Use float() instead)."</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 2 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>ValueError: invalid literal for int() with base 10: &#x27;hello&#x27;. Happens when typing non-numbers into int().</li><li>TypeError: can only concatenate str (not &#x27;int&#x27;) to str when using &#x27;+&#x27; in print. Convert number with str(num) or pass comma separated in print(text, num).</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"Why do we use float() for dollar amounts instead of int()? (Because dollars have decimal cents!)."</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

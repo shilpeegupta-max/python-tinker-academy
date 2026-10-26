@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 8: Battle Royale Loot Drop Picker - Python Tinker Academy</title>
+  <title>Day 8: Custom Power-Up Calculator &amp; Boss Battle - Python Tinker Academy</title>
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -56,10 +56,10 @@
       </a>
       <div>
         <h2 id="view-day-title" style="font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary);">
-          Day 8: Battle Royale Loot Drop Picker
+          Day 8: Custom Power-Up Calculator &amp; Boss Battle
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
-          Focus Topic: Lists ([]), Indexing, append(), remove(), len()
+          Focus Topic: Custom Functions (def, parameters, return values)
         </p>
       </div>
     </div>
@@ -113,42 +113,33 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Managing Inventory with Python Lists
+            Writing Reusable Functions with def and return
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>A list is like a digital backpack. You can look up items by index position, add new items with .append(), and remove trash items with .remove()!
+            <strong>💡 Everyday Analogy:</strong><br>A function is like a spell macro or shortcut key in a video game. You define the recipe once with `def`, and then invoke it whenever you need it!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre"># Creating a list
-backpack = [&quot;Plasma Pistol&quot;, &quot;Health Potion&quot;, &quot;Shield Bubble&quot;]
+          <pre class="code-snippet-pre"># Defining a function with parameters and return value
+def calculate_damage(attacker_power, target_armor):
+    raw_damage = attacker_power * 2
+    final_damage = raw_damage - target_armor
+    return max(1, final_damage) # At least 1 damage
 
-# Accessing items (Python starts counting at 0!)
-print(&quot;Equipped Weapon:&quot;, backpack[0])
-
-# Adding a new drop
-backpack.append(&quot;Legendary Sniper&quot;)
-
-# Dropping an item
-backpack.remove(&quot;Health Potion&quot;)
-
-print(&quot;Backpack size:&quot;, len(backpack))</pre>
+# Invoking the function
+hit_score = calculate_damage(50, 10)
+print(&quot;Damage dealt:&quot;, hit_score)</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            
+            <li>def function_name(parameters): creates a new custom action.</li><li>Parameters pass input values into the function box.</li><li>return passes calculated result data back to your main code!</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: If items = [</div>
+            <div class="quiz-question">❓ Quick Check: What keyword sends a value back from a function?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0"></button>
-              <button class="quiz-option-btn" data-idx="1"></button>
-              <button class="quiz-option-btn" data-idx="2"></button>
-              <button class="quiz-option-btn" data-idx="3"></button>
-              <button class="quiz-option-btn" data-idx="4"></button>
-              <button class="quiz-option-btn" data-idx="5"></button>
+              <button class="quiz-option-btn" data-idx="0">send</button><button class="quiz-option-btn" data-idx="1">return</button><button class="quiz-option-btn" data-idx="2">output</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -176,39 +167,33 @@ print(&quot;Backpack size:&quot;, len(backpack))</pre>
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 8 TINKER LAB: Battle Royale Loot Drop
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 8 TINKER LAB: Combat Simulator &amp; Critical Hits
 
 import random
 
-inventory = [&quot;Common Pistol&quot;]
-loot = [&quot;Rare Shotgun&quot;, &quot;Epic Sniper&quot;, &quot;Medkit&quot;, &quot;Chug Jug&quot;, &quot;Grappler&quot;]
+def calc_crit_damage(base_dmg):
+    # 20% chance for 2x critical hit
+    if random.randint(1, 5) == 1:
+        print(&quot;💥 CRITICAL HIT! 2X DAMAGE!&quot;)
+        return base_dmg * 2
+    return base_dmg
 
-print(&quot;🎮 BATTLE ROYALE LOOT MANAGER 🎮&quot;)
+player_hp = 80
+monster_hp = 80
 
-while True:
-    print(&quot;\\nCurrent Loadout:&quot;, inventory)
-    cmd = input(&quot;Action: (1) Open Crate  (2) Drop Item  (3) Quit: &quot;)
+print(&quot;⚔️ MINI ARENA FIGHT ⚔️&quot;)
+while player_hp &gt; 0 and monster_hp &gt; 0:
+    input(&quot;Press Enter to swing sword!&quot;)
+    dmg = calc_crit_damage(random.randint(10, 20))
+    monster_hp -= dmg
+    print(&quot;Monster HP remaining:&quot;, monster_hp)
     
-    if cmd == &quot;1&quot;:
-        found = random.choice(loot)
-        print(&quot;🎁 Found:&quot;, found)
-        if len(inventory) &lt; 5:
-            inventory.append(found)
-        else:
-            print(&quot;Backpack FULL!&quot;)
-            
-    elif cmd == &quot;2&quot;:
-        if len(inventory) &gt; 0:
-            drop_name = input(&quot;Enter exact name to drop: &quot;)
-            if drop_name in inventory:
-                inventory.remove(drop_name)
-                print(&quot;🗑️ Dropped&quot;, drop_name)
-            else:
-                print(&quot;Item not in inventory!&quot;)
-                
-    elif cmd == &quot;3&quot;:
-        print(&quot;👋 Exiting match!&quot;)
-        break
+    if monster_hp &gt; 0:
+        m_dmg = random.randint(5, 15)
+        player_hp -= m_dmg
+        print(&quot;Monster hit you back for&quot;, m_dmg, &quot;HP! Player HP:&quot;, player_hp)
+
+print(&quot;Game Over!&quot;)
 </textarea>
         </div>
 
@@ -262,18 +247,17 @@ while True:
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 8 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>ValueError: list.remove(x): x not in list. Always check</li><li>before removing!</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"What is the difference between pop(0) and remove("</li><li>")? (pop uses index position, remove uses item value!)."</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 8 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>Variable scope confusion: variables defined inside a function stay local unless returned!</li><li>Forgetting parentheses when calling a function: typing `my_func` instead of `my_func()`.</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"Why are functions vital when building large software with thousands of lines of code?"</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

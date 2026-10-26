@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 12: Capstone Build: Core Mechanics - Python Tinker Academy</title>
+  <title>Day 12: Rainbow Spirograph &amp; Retro Pixel Stamps - Python Tinker Academy</title>
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -56,10 +56,10 @@
       </a>
       <div>
         <h2 id="view-day-title" style="font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary);">
-          Day 12: Capstone Build: Core Mechanics
+          Day 12: Rainbow Spirograph &amp; Retro Pixel Stamps
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
-          Focus Topic: State Tracking, Game Loop Conditions, Controls &amp; Physics
+          Focus Topic: Turtle Loops, Dynamic Color Lists &amp; Grid Stamps
         </p>
       </div>
     </div>
@@ -113,39 +113,35 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Coding Primary Game Mechanics
+            Creating Hypnotic Visual Art with Turtle Loops
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>Today we build the beating heart of your project: room navigation, dice/race physics, or scoring logic!
+            <strong>💡 Everyday Analogy:</strong><br>By repeatedly drawing shapes and turning slightly on each turn (like 59° instead of 60°), turtle creates expanding optical spirals and pixel grids!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre"># Room Navigation Engine
-rooms = {
-    &quot;hallway&quot;: {&quot;north&quot;: &quot;armory&quot;, &quot;east&quot;: &quot;kitchen&quot;},
-    &quot;armory&quot;: {&quot;south&quot;: &quot;hallway&quot;},
-    &quot;kitchen&quot;: {&quot;west&quot;: &quot;hallway&quot;}
-}
+          <pre class="code-snippet-pre">import turtle
 
-current_room = &quot;hallway&quot;
-move = input(&quot;Go direction (north/east/south/west): &quot;)
+t = turtle.Turtle()
+t.speed(0)
+colors = [&quot;red&quot;, &quot;cyan&quot;, &quot;lime&quot;, &quot;gold&quot;]
 
-if move in rooms[current_room]:
-    current_room = rooms[current_room][move]
-    print(&quot;You entered:&quot;, current_room)</pre>
+# Drawing a 100-step spiral
+for x in range(100):
+    t.pencolor(colors[x % 4]) # Cycle through colors
+    t.forward(x * 2)
+    t.left(59) # Slight twist creates spiral!</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>Connect game state variables directly to player choices.</li><li>Use dictionaries to model rooms/maps or lists to model race tracks.</li><li>Check win/loss conditions on every turn iteration!</li>
+            <li>x % len(colors) cycles numbers repeatedly through color list.</li><li>Slight angle offsets (59° or 91°) twist shapes into optical spirals.</li><li>t.stamp() prints turtle shapes directly onto coordinates!</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: How do you know when a game loop should end?</div>
+            <div class="quiz-question">❓ Quick Check: What does the modulus math operator % do in `x % 4`?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0">When player HP hits 0 or target win score is reached.</button>
-              <button class="quiz-option-btn" data-idx="1">After exactly 5 seconds.</button>
-              <button class="quiz-option-btn" data-idx="2">When Python runs out of memory.</button>
+              <button class="quiz-option-btn" data-idx="0">Calculates percentage</button><button class="quiz-option-btn" data-idx="1">Returns the remainder of division, cycling numbers 0, 1, 2, 3 repeatedly</button><button class="quiz-option-btn" data-idx="2">Multiplies x by 4</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -173,33 +169,35 @@ if move in rooms[current_room]:
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 12 TINKER LAB: Turtle Derby Race Mechanics
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 12 TINKER LAB: Pixel Art Grid Stamp Builder
 
 import turtle
-import random
 
-# Create two racing turtles!
-t1 = turtle.Turtle()
-t1.color(&quot;cyan&quot;)
-t1.shape(&quot;turtle&quot;)
-t1.penup()
-t1.goto(-200, 30)
+win = turtle.Screen()
+win.bgcolor(&quot;#0f172a&quot;)
 
-t2 = turtle.Turtle()
-t2.color(&quot;magenta&quot;)
-t2.shape(&quot;turtle&quot;)
-t2.penup()
-t2.goto(-200, -30)
+t = turtle.Turtle()
+t.shape(&quot;square&quot;)
+t.penup()
+t.speed(0)
+t.color(&quot;#4ade80&quot;)
 
-# Race Loop Mechanics
-while t1.xcor() &lt; 180 and t2.xcor() &lt; 180:
-    t1.forward(random.randint(1, 10))
-    t2.forward(random.randint(1, 10))
+# 2D Grid Map (1 = Green pixel stamp, 0 = empty)
+heart_map = [
+    [0, 1, 1, 0, 1, 1, 0],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 1, 1, 0],
+    [0, 0, 1, 1, 1, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0]
+]
 
-if t1.xcor() &gt;= 180:
-    print(&quot;🏆 Cyan Turtle Wins!&quot;)
-else:
-    print(&quot;🏆 Magenta Turtle Wins!&quot;)
+size = 25
+for r_idx, row in enumerate(heart_map):
+    for c_idx, val in enumerate(row):
+        if val == 1:
+            t.goto(-80 + c_idx * size, 80 - r_idx * size)
+            t.stamp()
 </textarea>
         </div>
 
@@ -253,18 +251,17 @@ else:
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 12 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>State variables not updating: double check variable names inside loops!</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"Is your primary mechanic working smoothly without errors?"</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 12 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>Turtle window freezing: ensure speed(0) is used for instant rendering.</li><li>Using unrecognized color names like &#x27;blurple&#x27;. Use standard hex codes like &#x27;#8b5cf6&#x27; or common color names.</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"How do retro video games (like NES/GameBoy) store sprite graphics? (In small binary 2D arrays just like this!)."</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

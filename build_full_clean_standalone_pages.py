@@ -1,39 +1,18 @@
-import re, html, json
+import subprocess, json, html, re
 
-# Load curriculum.js
-with open('/home/shilpeegupta/PythonTinkerAcademy/js/curriculum.js', 'r') as f:
-    curr_text = f.read()
+node_bin = '/home/shilpeegupta/.cache/uv/archive-v0/2x5Z4WXXAu6UlCen/lib/python3.13/site-packages/playwright/driver/node'
 
-# Extract array content from window.CURRICULUM = [...]
-curr_match = re.search(r'(?:const CURRICULUM =|window\.CURRICULUM =)\s*(\[.*\]);', curr_text, re.DOTALL)
-if not curr_match:
-    print("Could not find CURRICULUM in curriculum.js!")
-    exit(1)
-
-# Clean up JS object to make it valid JSON
-json_str = curr_match.group(1)
-# Replace single line comments
-json_str = re.sub(r'//.*?\n', '\n', json_str)
-# Quote unquoted keys
-json_str = re.sub(r'(\b[a-zA-Z0-9_]+\b)\s*:', r'"\1":', json_str)
-# Fix trailing commas
-json_str = re.sub(r',\s*([\]}])', r'\1', json_str)
-
+# Load curriculum via node.js
 try:
-    curriculum_data = json.loads(json_str)
-    print(f"Successfully parsed {len(curriculum_data)} days from curriculum.js JSON!")
+    node_out = subprocess.check_output(
+        [node_bin, '-e', 'console.log(JSON.stringify(require("./js/curriculum.js")))'],
+        cwd='/home/shilpeegupta/PythonTinkerAcademy'
+    )
+    curriculum_data = json.loads(node_out.decode('utf-8'))
+    print(f"Successfully loaded {len(curriculum_data)} days via Node.js require!")
 except Exception as e:
-    print("JSON parse failed, falling back to python exec parser:", e)
-    # Python fallback exec parser
-    py_dict_str = curr_match.group(1)
-    py_dict_str = re.sub(r'//.*?\n', '\n', py_dict_str)
-    # Replace true/false
-    py_dict_str = py_dict_str.replace('true', 'True').replace('false', 'False')
-    # Use python AST or exec
-    scope = {}
-    exec(f"data = {py_dict_str}", scope)
-    curriculum_data = scope['data']
-    print(f"Successfully loaded {len(curriculum_data)} days via Python exec!")
+    print("Node.js require failed, falling back:", e)
+    exit(1)
 
 template = """<!DOCTYPE html>
 <html lang="en">

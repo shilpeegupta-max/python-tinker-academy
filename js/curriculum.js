@@ -1,191 +1,182 @@
-// Python Tinker Academy - 15 Day Curriculum Data
+/**
+ * Python Tinker Academy - 15-Day Curriculum Matrix
+ * Master Curriculum Data Structure
+ */
 
 const CURRICULUM = [
   {
     day: 1,
     title: "Fake Virus Prank / Rickroll Simulator",
     focus: "print(), input(), Strings & Concatenation",
-    category: "Week 1: Core Logic & Turtle Graphics",
-    icon: "💻",
-    summary: "Build a funny terminal prank that pretends to breach a device before revealing a joke or Rickroll link!",
+    category: "Week 1: Core Logic & Terminal Games",
+    icon: "🎪",
+    summary: "Build a funny automated story generator or system diagnostic prank by asking for inputs and combining text!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Talking to your computer with print() and input()",
-      explanation: "Think of `print()` like your computer talking through a megaphone. `input()` is like holding up a microphone to listen to the user!",
-      syntaxSnippet: `# Printing text to the screen
-print("SYSTEM WARNING: Unidentified user detected!")
+      headline: "Talking to the Computer with print() and input()",
+      explanation: "Think of `print()` as the computer's voice box and `input()` as its ears. Variables are like labeled storage boxes that hold text speech!",
+      syntaxSnippet: `# Printing text to terminal
+print("Initializing Security System...")
 
-# Asking a question and storing the response
-user_name = input("Enter your secret agent code name: ")
+# Gathering user input into a variable box
+target_name = input("Enter victim name: ")
 
-# Joining text together (String Concatenation)
-print("Welcome aboard, Agent " + user_name + "!")`,
+# Joining text together with +
+print("Warning: " + target_name + "'s device has been hacked! 🚨")`,
       keyTakeaways: [
-        "Use print(...) with double quotes to show text on screen.",
-        "input(...) pauses the program and waits for the player to type something.",
-        "Use '+' to stick strings together like LEGO bricks!"
+        "print('text') displays words on the computer screen.",
+        "input('prompt') pauses execution and waits for user typing.",
+        "Save user responses inside a variable (e.g., name = input(...)).",
+        "Use + to join strings together (Concatenation)!"
       ],
       quickQuiz: {
-        question: "What does input('What is your name? ') do?",
+        question: "What does the code `user_pet = input('Pet name: ')` do?",
         options: [
-          "It prints 'What is your name?' and immediately closes the program.",
-          "It prints the question, waits for the user to type an answer, and returns it.",
-          "It forces the user to pick from a list of names."
+          "Prints the pet's name on screen 5 times",
+          "Asks the user for input and saves their response into user_pet",
+          "Deletes the pet's name from memory"
         ],
         correctIndex: 1,
-        explanation: "Correct! input() shows the prompt and waits until the user hits Enter!"
+        explanation: "Correct! `input()` asks the user a question and stores their answer inside the variable name on the left!"
       }
     },
     liveCode: {
       title: "Guided Walkthrough: System Diagnostics Prank",
-      explanation: "Let's build a script that asks for the user's name and device model, pretends to run a security scan, and prints a funny message.",
-      code: `# Step 1: Welcome message
-print("====================================")
-print("  DEFCON 5 SECURITY SCANNER v1.0")
-print("====================================")
+      explanation: "Step-by-step guide to building a funny fake system scanner terminal prank.",
+      code: `print("========================================")
+print(" 🛡️ SYSTEM SECURITY SCANNER v4.2 🛡️")
+print("========================================")
 
-# Step 2: Get user info
-target_name = input("Enter device owner name: ")
-device_type = input("Enter device model (e.g., iPhone / PC / Chromebook): ")
+target_name = input("Enter target user name: ")
+device_type = input("Enter device name (e.g. iPhone, Laptop): ")
 
-# Step 3: Fake system log
-print("\\n[!] Initializing deep scan on " + target_name + "'s " + device_type + "...")
-print("[!] Accessing camera feed... SUCCESS!")
-print("[!] Download secret browser history... 100%")
+print("\n[!] Connecting to " + target_name + "'s " + device_type + "...")
+print("[!] Scanning files... 10%... 50%... 99%...")
+print("⚠️ WARNING: 42 Viruses Found on " + target_name + "'s " + device_type + "!")
 
-# Step 4: The Punchline
-print("\\n>>> RESULT: You have been hacked by... THE COOKIE MONSTER! 🍪")
-print("To unlock your device, hand over 3 chocolate chip cookies immediately!")`,
+secret_code = input("\nEnter override password to clear viruses: ")
+print("Access Denied! Pranked! 🤪 You've been hacked by Python!")`,
       steps: [
         { line: 1, title: "Banner Header", desc: "Use print() to draw visual dividers made of '=' characters." },
-        { line: 6, title: "Gathering User Input", desc: "Save inputs into target_name and device_type variables." },
-        { line: 10, title: "Fake Log Simulation", desc: "Combine static text with user variables using '+'." },
-        { line: 15, title: "The Funny Reveal", desc: "End with ASCII art or funny demands!" }
+        { line: 5, title: "Gathering User Input", desc: "Save inputs into target_name and device_type variables." },
+        { line: 8, title: "Fake Log Simulation", desc: "Combine static text with user variables using '+'." },
+        { line: 12, title: "The Funny Reveal", desc: "End with ASCII art or funny demands!" }
       ]
     },
     tinkerPlayground: {
-      goal: "Customize the Rickroll / Prank Simulator with dramatic ASCII art and custom demands!",
-      starterCode: `# DAY 1 TINKER LAB: Fake Virus / Rickroll Prank
+      goal: "Customize the prank messages, add 2 new input questions (e.g. favorite food, favorite game), or build a hilarious Mad Libs story!",
+      starterCode: `# DAY 1 TINKER LAB: Mad Libs & Terminal Prank
+# Modify the questions and output story below!
 
-print("----------------------------------------")
-print("⚠️ CRITICAL ERROR: VIRUS DETECTED ⚠️")
-print("----------------------------------------")
+player_name = input("Enter your hero name: ")
+favorite_snack = input("Enter your favorite snack: ")
+superpower = input("Enter a ridiculous superpower: ")
 
-victim = input("Who is using this computer? ")
-favorite_food = input("What is your favorite snack? ")
-
-print("\\n[1/3] Encrypting files for user: " + victim)
-print("[2/3] Downloading all " + favorite_food + " recipes...")
-print("[3/3] Sending self-destruct signal in 3... 2... 1...")
-
-print("\\n🎉 JUST KIDDING! " + victim + ", you survived!")
-print("Here is your secret victory song: https://www.youtube.com/watch?dQw4w9WgXcQ")
+print("\n--- THE LEGEND OF " + player_name.upper() + " ---")
+print(player_name + " entered the dungeon armed with a single " + favorite_snack + ".")
+print("Suddenly, a dragon appeared! " + player_name + " activated " + superpower + "!")
+print("The dragon ate the " + favorite_snack + " and ran away happily! 🐉")
 `,
       solutionCode: `# DAY 1 SOLUTION
-print("----------------------------------------")
-print("⚡ ULTIMATE PRANK SYSTEM v2.0 ⚡")
-print("----------------------------------------")
+player_name = input("Hero name: ")
+pet_type = input("Animal type: ")
+pet_name = input("Pet name: ")
 
-victim = input("Enter target suspect name: ")
-pet_name = input("Enter name of your favorite pet/stuffed animal: ")
-snack = input("What food gives you super powers? ")
-
-print("\\n[!] Scanning " + victim + "'s computer...")
-print("[!] Found secret stash of " + snack + "!")
-print("[!] Warning: " + pet_name + " has taken control of the keyboard!")
-
-print("\\n  |\\\\---/| ")
-print("  | o_o  |  MEOW! Pay 500 " + snack + "s to unlock!")
-print("   \\\\_^_/   ")
-print("\\nPranked successfully! 🚀")`,
+print("\n=== " + player_name + "'s PET ADVENTURE ===")
+print(player_name + " rides into battle on a giant " + pet_type + " named " + pet_name + "!")`,
       breakChallenges: [
         {
           id: "b1",
           title: "🔥 Challenge 1: The Dramatic Delay",
-          task: "Add '...' or extra dots between status logs to make it look like a real loading screen!",
-          hint: "Just edit the strings inside print() to include extra dots or spaces!"
+          task: "Add 3 extra print() statements simulating a fake downloading bar!",
+          hint: "print('[||||||||||] 100% Complete!')"
         },
         {
           id: "b2",
           title: "💥 Challenge 2: Custom ASCII Art",
-          task: "Add a robot or alien cat using print() ASCII art at the end of the prank!",
-          hint: "Example: print('  (o_o)  ') or print('  <|>  ')"
+          task: "Print a skull ☠️ or robot 🤖 ASCII art face using multiple print() statements!",
+          hint: "print('  (o_O)  ')\nprint('  <| |>  ')"
         },
         {
           id: "b3",
           title: "⚡ Challenge 3: Extra Variable Demand",
-          task: "Ask for a 3rd question (e.g., favorite video game) and use it in the virus ransom message!",
-          hint: "Create a new variable like game = input(...) and add '+' game to print()."
+          task: "Ask the user for their 'favorite game' and include it in the final prank message!",
+          hint: "game = input('Favorite game: ')"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "Forgot quotes around string literals: print(Hello) causes a NameError.",
-        "Missing spaces when concatenating: 'Hello'+'World' produces 'HelloWorld' instead of 'Hello World'."
+        "Forgetting quotes around strings: print(Hello) causes NameError. Ensure quotes like print('Hello').",
+        "Space missing when joining strings with +: 'Hello'+name prints 'Hellobob'. Use 'Hello ' + name!"
       ],
       tinkerQuestions: [
-        "What happens if you type a number into input()? Is it treated as text or a math number?",
-        "Can you print a multi-line message using triple quotes ''' ... '''?"
+        "What happens if you type a number into input()? Does Python know it's a number or text? (It's still text until converted!)."
       ]
     }
   },
   {
     day: 2,
     title: "Superhero Superpower Stat Generator",
-    focus: "Variables, Type Casting (int, float), Math Operators",
-    category: "Week 1: Core Logic & Turtle Graphics",
-    icon: "🦸‍♂️",
-    summary: "Calculate custom superhero stats like Taco Armor, Running Speed in MPH, and Combat Power!",
+    focus: "Variables, Data Types (int, float, str) & Math Operators (+, -, *, /)",
+    category: "Week 1: Core Logic & Terminal Games",
+    icon: "🧮",
+    summary: "Convert text inputs into numbers to calculate your exact age in seconds, power levels, and bill splits!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Math in Python & Converting Text to Numbers",
-      explanation: "`input()` ALWAYS gives you text (a string). If you want to multiply or add numbers, you must turn it into an integer using `int()`!",
-      syntaxSnippet: `# Turning string input into an integer
-age = int(input("How old are you? "))
+      headline: "Converting Strings to Numbers with int() and float()",
+      explanation: "By default, `input()` always returns text (String). To do math calculations, we must wrap it in `int()` for whole numbers or `float()` for decimals!",
+      syntaxSnippet: `# Text string (cannot do math)
+age_str = "13"
 
-# Doing math in Python
-age_in_days = age * 365
-dog_years = age * 7
+# Converting to integer number
+age_num = int(age_str)
 
-# Displaying math results (converting back to string or using commas)
-print("You are approximately", age_in_days, "days old!")`,
+# Doing math
+age_in_days = age_num * 365
+print("Age in days:", age_in_days)`,
       keyTakeaways: [
-        "Math operators: + (add), - (subtract), * (multiply), / (divide).",
-        "int('10') turns string '10' into number 10.",
-        "In print(), commas separate items and automatically add spaces!"
+        "str = Text words ('13' is text, not a number).",
+        "int() = Whole numbers (13, 100, -5).",
+        "float() = Decimal numbers (13.5, 3.14).",
+        "Use *, /, +, - for math calculations."
       ],
       quickQuiz: {
-        question: "If user enters '5' into x = input(), what is x * 2 in Python?",
+        question: "What is the result of '10' + '10' in Python?",
         options: [
-          "10",
-          "'55' (the string repeated twice)",
+          "20",
+          "'1010'",
           "Error"
         ],
         correctIndex: 1,
-        explanation: "Correct! String '5' multiplied by 2 doubles the text into '55'. Use int(input()) to get 10!"
+        explanation: "Correct! Since both are text strings, '+' glues them together into '1010'! Use int('10') + int('10') to get 20!"
       }
     },
     liveCode: {
       title: "Guided Walkthrough: Hero Power Level Calculator",
-      explanation: "Calculate a superhero's combat stats based on their age, lucky number, and height.",
-      code: `# Superhero Stat Calculator
-print("=== ⚡ SUPERHERO STAT MATRIX ⚡ ===")
-hero_name = input("What is your superhero name? ")
-age = int(input("Enter your age: "))
-lucky_num = int(input("Enter your lucky number (1-100): "))
+      explanation: "Convert user inputs into integers and compute total hero combat power stats.",
+      code: `print("========================================")
+print(" ⚡ SUPERHERO POWER CALCULATOR ⚡")
+print("========================================")
 
-# Math calculations
-speed_mph = age * 4.5
-taco_armor = lucky_num * 12
-combat_power = (age * 10) + (lucky_num * 25)
+hero_name = input("Enter Superhero Name: ")
+raw_strength = input("Base Strength (1-100): ")
+raw_agility = input("Base Agility (1-100): ")
 
-print("\\n------------------------------------")
-print("HERO DOSSIER FOR: " + hero_name)
-print("------------------------------------")
-print("🏃 Speed:", speed_mph, "MPH")
-print("🌮 Taco Shield Durability:", taco_armor, "HP")
-print("💥 Total Combat Rating:", combat_power, "OVERALL")`,
+# Convert text input into integer numbers
+strength = int(raw_strength)
+agility = int(raw_agility)
+
+# Math Calculations
+power_score = (strength * 12) + (agility * 8)
+age_years = int(input("Hero Age in Years: "))
+age_seconds = age_years * 365 * 24 * 60 * 60
+
+print("\n--- STATS FOR " + hero_name.upper() + " ---")
+print("💪 Strength Bonus:", strength * 12)
+print("⚡ Agility Bonus:", agility * 8)
+print("🔥 TOTAL POWER SCORE:", power_score)
+print("⏳ Alive for approx:", age_seconds, "seconds!")`,
       steps: [
         { line: 4, title: "Casting to Integer", desc: "Wrap input() in int(...) so Python treats it as a number." },
         { line: 8, title: "Math Formulae", desc: "Multiply and add values to compute custom RPG stats." },
@@ -193,133 +184,123 @@ print("💥 Total Combat Rating:", combat_power, "OVERALL")`,
       ]
     },
     tinkerPlayground: {
-      goal: "Customize your hero stats! Add stats for Dog Power, Pizza Power, or Jump Height in Meters.",
-      starterCode: `# DAY 2 TINKER LAB: Superhero Stat Generator
+      goal: "Build an Age in Seconds converter or Tip Calculator that splits a restaurant bill between friends!",
+      starterCode: `# DAY 2 TINKER LAB: Age in Seconds & Tip Calculator
 
-hero = input("Enter Hero Name: ")
-height_cm = float(input("Enter your height in cm: "))
-fav_snack_count = int(input("How many snacks can you eat in 1 minute? "))
+print("💸 RESTAURANT BILL & TIP SPLITTER 💸")
 
-# CALCULATIONS
-laser_power = fav_snack_count * 50
-flight_altitude = height_cm * 10
-stamina = (fav_snack_count * 15) + 100
+bill_total = float(input("Enter total bill ($): "))
+tip_percent = float(input("Enter tip percentage (e.g. 15, 20): "))
+num_people = int(input("How many people sharing the bill? "))
 
-print("\\n=== STAT CARD FOR " + hero + " ===")
-print("⚡ Laser Eye Power:", laser_power, "Gigawatts")
-print("✈️ Max Flight Altitude:", flight_altitude, "Feet")
-print("🔋 Stamina Level:", stamina, "%")
+# Calculate total with tip
+tip_amount = bill_total * (tip_percent / 100)
+final_total = bill_total + tip_amount
+share_per_person = final_total / num_people
+
+print("\nTotal Tip: $" + str(tip_amount))
+print("Grand Total: $" + str(final_total))
+print("Each person pays: $" + str(share_per_person))
 `,
       solutionCode: `# DAY 2 SOLUTION
-hero = input("Hero Name: ")
-height_cm = float(input("Height (cm): "))
-snacks = int(input("Snacks per minute: "))
-
-# New Custom Formula
-laser = snacks * 75
-speed = height_cm / 2
-stealth = 100 - (snacks * 5)
-
-print("\\n⚡ " + hero.upper() + " STAT MATRIX ⚡")
-print("🔴 Laser Beam Level:", laser)
-print("⚡ Speed Factor:", speed, "m/s")
-print("🥷 Stealth Rating:", stealth, "/ 100")`,
+bill = float(input("Bill: "))
+people = int(input("People: "))
+print("Per person:", bill / people)`,
       breakChallenges: [
         {
           id: "b1",
           title: "🔥 Challenge 1: The Dog-Year Converter",
-          task: "Ask for their age and print their age in Dog Years (age * 7) and Cat Years (age * 6)!",
-          hint: "dog_years = age * 7"
+          task: "Ask the user for their dog's age in human years and multiply by 7 to print dog years!",
+          hint: "dog_years = human_years * 7"
         },
         {
           id: "b2",
           title: "💥 Challenge 2: Taco Armor Booster",
-          task: "Add a multiplier so if their lucky number is over 50, Taco Armor gets multiplied by 2!",
-          hint: "Try typing: armor = armor * 2"
+          task: "Add a taco_count variable. Multiply tacos by +15 shield points and add to power_score!",
+          hint: "shield = tacos * 15"
         },
         {
           id: "b3",
           title: "⚡ Challenge 3: Age in Seconds",
-          task: "Calculate how many seconds old the hero is! (age * 365 * 24 * 60 * 60)",
-          hint: "seconds = age * 31536000"
+          task: "Ask user's age in years and calculate exact age in hours! (years * 365 * 24)",
+          hint: "hours = years * 365 * 24"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "TypeError when adding int and str directly: 'Power: ' + 100 throws an error. Use print('Power:', 100) or str(100)."
+        "ValueError: invalid literal for int() with base 10: 'hello'. Happens when typing non-numbers into int().",
+        "TypeError: can only concatenate str (not 'int') to str when using '+' in print. Convert number with str(num) or pass comma separated in print(text, num)."
       ],
       tinkerQuestions: [
-        "What happens if you enter a decimal like 14.5 into int()? (It throws ValueError! Use float() instead)."
+        "Why do we use float() for dollar amounts instead of int()? (Because dollars have decimal cents!)."
       ]
     }
   },
   {
     day: 3,
-    title: "Haunted House Escape",
+    title: "Choose-Your-Own-Adventure Game",
     focus: "Conditionals (if, elif, else), Comparison Operators (==, !=, >, <)",
-    category: "Week 1: Core Logic & Turtle Graphics",
-    icon: "🏰",
-    summary: "Build a Choose-Your-Own-Adventure game with branching storylines based on player decisions!",
+    category: "Week 1: Core Logic & Terminal Games",
+    icon: "🗺️",
+    summary: "Create a branching text RPG with multiple storylines and secret endings based on player choices!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
       headline: "Making Decisions with if, elif, and else",
-      explanation: "Conditionals are like fork in the road in a video game. IF you choose left door, path A happens. ELIF you choose right door, path B happens. ELSE, something unexpected happens!",
-      syntaxSnippet: `# Making choices in Python
-choice = input("Do you open the RED door or BLUE door? ").lower()
+      explanation: "Think of `if` statements as crossroads in a game. Depending on the player's choice, Python follows a different branch of code!",
+      syntaxSnippet: `door = input("Choose door (left/right): ")
 
-if choice == "red":
-    print("🔥 A friendly dragon gives you a golden key!")
-elif choice == "blue":
-    print("🌊 Water floods the room! You swim to safety.")
+if door == "left":
+    print(" You entered a room full of treasure! 💰")
+elif door == "right":
+    print(" A sleeping dragon wakes up! 🐉")
 else:
-    print("❓ You stood still for too long and a ghost scared you away!")`,
+    print(" You walked into a wall! 🧱")`,
       keyTakeaways: [
-        "Use '==' to check if two things are EQUAL (not a single '=' which assigns variables!).",
-        "Indent code under if/elif/else with 4 spaces (Tab key).",
-        ".lower() turns input into lowercase so 'RED' and 'red' both work!"
+        "== checks if two values are equal.",
+        "if condition: runs code if condition is True.",
+        "elif condition: checks a second option if first was False.",
+        "else: catches any other remaining inputs!"
       ],
       quickQuiz: {
-        question: "What is the difference between '=' and '==' in Python?",
+        question: "What is the difference between = and == in Python?",
         options: [
-          "'=' compares two values, '==' sets a variable.",
-          "'=' sets a variable value, '==' compares if two values are equal.",
-          "They are identical and can be used interchangeably."
+          "= is for assignment (saving into a variable); == is for comparing equality",
+          "They are exactly identical",
+          "== assigns a variable, = compares equality"
         ],
-        correctIndex: 1,
-        explanation: "Bingo! '=' stores data in a variable box. '==' asks a question: 'Are these equal?'"
+        correctIndex: 0,
+        explanation: "Bingo! Single '=' assigns a value into a variable (`hp = 100`). Double '==' compares two values (`if hp == 0:`)."
       }
     },
     liveCode: {
       title: "Guided Walkthrough: The Spooky Basement Adventure",
-      explanation: "Code a 2-level branching mystery game with traps, treasures, and multiple game endings.",
-      code: `# Spooky Mansion Escape
-print("🏚️ WELCOME TO SPIDERWEB MANION 🏚️")
-print("You stand in a dimly lit hallway. You see a LEFT door and a RIGHT door.")
+      explanation: "Build a branching story game with nested decisions and multiple outcomes.",
+      code: `print("========================================")
+print(" 🏰 ESCAPE FROM CYBER CASTLE 🏰")
+print("========================================")
 
-door = input("Which door do you open? (left/right): ").lower()
+print("You wake up inside a glowing neon dungeon. Two paths lie ahead.")
+choice1 = input("Do you go 'left' into the Server Room or 'right' into the Vault? ").lower()
 
-if door == "left":
-    print("\\nYou enter the library. A glowing book rests on a pedestal.")
-    action = input("Do you READ the book or RUN away? (read/run): ").lower()
-    
-    if action == "read":
-        print("✨ The book teaches you a magic spell! YOU ESCAPED THE MANSION! 🏆")
+if choice1 == "left":
+    print("\n🖥️ You enter the Server Room. An AI Guardian blocks the exit.")
+    action = input("Do you 'fight' the AI or 'hack' the terminal? ").lower()
+    if action == "hack":
+        print("🎉 SUCCESS! You bypassed security and escaped to freedom!")
     else:
-        print("🦇 Bats swarm out of the chimney! Game Over.")
+        print("💥 DEFEAT! The AI zapped your health points!")
 
-elif door == "right":
-    print("\\nYou enter the kitchen. A skeleton is chef cooking pizza!")
-    food = input("Do you EAT pizza or FIGHT skeleton? (eat/fight): ").lower()
-    
-    if food == "eat":
-        print("🍕 Delicious! The skeleton becomes your best friend. YOU WIN! 🎉")
-        print("Your final friendship rank: Skeleton Master!")
+elif choice1 == "right":
+    print("\n💰 You enter the Vault. A golden chest rests in the center.")
+    chest = input("Do you 'open' the chest or 'ignore' it? ").lower()
+    if chest == "open":
+        print("👑 VICTORY! You found the Legendary Python Crown!")
     else:
-        print("💀 The skeleton throws a spatula at you! Game Over.")
+        print("🕸️ You waited so long you turned into a skeleton. Game Over!")
 
 else:
-    print("🤔 You fell through a trapdoor into a pit of slime!")`,
+    print("❌ Invalid command! You fell into a trapdoor!")`,
       steps: [
         { line: 7, title: "First Choice Branch", desc: "Check if door equals 'left' or 'right'." },
         { line: 10, title: "Nested Conditionals", desc: "Inside an if block, put another if/else for the second choice!" },
@@ -327,146 +308,134 @@ else:
       ]
     },
     tinkerPlayground: {
-      goal: "Add 2 new rooms, a hidden secret room, or a key inventory item to win the game!",
-      starterCode: `# DAY 3 TINKER LAB: Choose Your Own Adventure
+      goal: "Add a 3rd path choice (e.g. 'up' ladder), add inventory items, or convert text inputs to .lower() for case-insensitivity!",
+      starterCode: `# DAY 3 TINKER LAB: Haunted Mansion Escape
 
-print("🚀 GALACTIC ALIEN SPACESHIP ESCAPE 🚀")
-choice1 = input("Do you head to the BRIDGE or the ENGINE ROOM? (bridge/engine): ").lower()
+print("🧟 HAUNTED MANSION ESCAPE 🧟")
+player_name = input("Enter adventurer name: ")
 
-if choice1 == "bridge":
-    print(" You see the Alien Captain sitting in the command chair!")
-    choice2 = input("Do you SALUTE or STEAL the spaceship key? (salute/steal): ").lower()
-    if choice2 == "salute":
-        print("👽 The Captain honors your politeness and flies you home safely!")
-    else:
-        print("🚨 Alarm sounds! You got thrown in space jail!")
+print("Welcome " + player_name + ". You stand before 3 doors: (1) Red  (2) Blue  (3) Green")
+door = input("Which door number do you open? ")
 
-elif choice1 == "engine":
-    print("🔥 The engine core is overheating!")
-    print("You press the red emergency button and eject in an escape pod!")
-
+if door == "1" or door == "red":
+    print("🔥 Lava pit! You melted!")
+elif door == "2" or door == "blue":
+    print("💎 Ice room! You grabbed a Diamond Key!")
+elif door == "3" or door == "green":
+    print("🧟 Zombie army! You ran away safely!")
 else:
-    print("❌ Invalid command! The spaceship warp drive engaged without you!")
+    print("You stood still for too long! A ghost caught you!")
 `,
-      solutionCode: `# DAY 3 SOLUTION WITH SECRET CODE
-print("🏰 CASTLE DRAGON ESCAPE 🏰")
-choice1 = input("Go to TOWER, DUNGEON, or SECRET PASSAGE? ").lower()
-
-if choice1 == "tower":
-    print("🏰 You find a magic broomstick!")
-    print("You fly out the window! YOU WIN!")
-
-elif choice1 == "dungeon":
-    print("🐉 A sleeping dragon wakes up...")
-    item = input("Do you offer a SHIELD or A BURGER? ").lower()
-    if item == "burger":
-        print("🍔 Dragon loves burgers! You are now dragon friends!")
-    else:
-        print("🔥 The shield melts! Game Over.")
-
-elif choice1 == "secret passage":
-    print("💎 You found the hidden treasure vault! UNLIMITED GOLD!")
-
+      solutionCode: `# DAY 3 SOLUTION
+choice = input("Door 1 or 2? ")
+if choice == "1":
+    print("You won!")
 else:
-    print("🦇 You got lost in the foggy courtyard.")`,
+    print("Game Over!")`,
       breakChallenges: [
         {
           id: "b1",
           title: "🔥 Challenge 1: Add a 3rd Path",
-          task: "Add an 'elif choice1 == \"dungeon\":' option with its own sub-choice!",
-          hint: "Follow the exact pattern of the bridge and engine blocks."
+          task: "Add an 'elif choice1 == 'up':' path for climbing a secret ladder!",
+          hint: "elif choice1 == 'up':"
         },
         {
           id: "b2",
           title: "💥 Challenge 2: Secret Easter Egg Code",
-          task: "If player types 'godmode' for choice1, print '👑 UNLIMITED POWER! You teleported to safety!'",
-          hint: "Add 'elif choice1 == \"godmode\":' before the else block!"
+          task: "If player enters secret code 'xyzzy', grant infinite health and instant victory!",
+          hint: "if choice1 == 'xyzzy': print('CHEAT UNLOCKED!')"
         },
         {
           id: "b3",
           title: "⚡ Challenge 3: Case-Insensitive Inputs",
-          task: "Make sure typing 'BRIDGE', 'Bridge', or 'bridge' all work smoothly using .lower()!",
-          hint: "Make sure you write choice1 = input(...).lower()"
+          task: "Use .lower() on all input() statements so 'LEFT', 'Left', and 'left' all work!",
+          hint: "choice = input('...').lower()"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "IndentationError: Mixing tabs and spaces, or forgetting to indent lines inside if statements.",
-        "Using '=' instead of '==': 'if door = left:' will throw a SyntaxError!"
+        "IndentationError: expected an indented block. Python relies on tab spacing (4 spaces) under if/elif/else lines!",
+        "Capitalization mismatch: 'Left' != 'left'. Always use .lower() on user inputs!"
       ],
       tinkerQuestions: [
-        "How can you check two conditions at once using 'and' or 'or'? (e.g., if has_key == True and door == 'red':)"
+        "How can you check multiple conditions at once? (Using 'and' / 'or' operators!)."
       ]
     }
   },
   {
     day: 4,
     title: "Sarcastic Magic 8-Ball & Dice Roller",
-    focus: "import random, random.choice(), random.randint()",
-    category: "Week 1: Core Logic & Turtle Graphics",
-    icon: "🔮",
-    summary: "Generate random outcomes and trigger blunt, sarcastic, or hilarious automated responses!",
+    focus: "The random Library (randint, choice) & Module Imports",
+    category: "Week 1: Core Logic & Terminal Games",
+    icon: "🎱",
+    summary: "Harness randomness to predict the future, roll dice for tabletop RPGs, or flip coins!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Adding Unpredictability with Python's random Library",
-      explanation: "In Python, libraries are like extra toolkits. The `random` module gives you dice, coin flips, and shuffled decks!",
+      headline: "Generating Randomness with import random",
+      explanation: "Python comes with built-in toolkits called 'libraries'. The `random` module allows us to roll dice or pick random items from a list!",
       syntaxSnippet: `import random
 
-# Pick a random item from a list
-answers = ["Yes, obviously!", "Not in a million years.", "Ask someone who cares."]
-prediction = random.choice(answers)
-
-# Roll a random number between 1 and 6 (like a 6-sided die)
+# Roll a 6-sided die (number between 1 and 6)
 dice_roll = random.randint(1, 6)
 
-print("Dice roll result:", dice_roll)
-print("Magic 8-Ball says:", prediction)`,
+# Pick a random response from a list
+answers = ["Yes", "No", "Maybe", "Ask again later"]
+fortune = random.choice(answers)
+
+print("Dice:", dice_roll)
+print("Fortune:", fortune)`,
       keyTakeaways: [
-        "Always put 'import random' at the top of your script.",
-        "random.choice(my_list) picks a random element from a list.",
-        "random.randint(min, max) returns a random integer between min and max inclusive."
+        "import random loads Python's built-in random library.",
+        "random.randint(min, max) generates a random whole number.",
+        "random.choice(list_name) picks a random element from a list."
       ],
       quickQuiz: {
-        question: "What values can random.randint(1, 3) return?",
+        question: "What does random.randint(1, 20) generate?",
         options: [
-          "Only 1 or 2",
-          "1, 2, or 3",
-          "Any number between 1.0 and 3.0 with decimals"
+          "A random decimal number between 1 and 20",
+          "A random integer between 1 and 20 inclusive",
+          "Always the number 1"
         ],
         correctIndex: 1,
-        explanation: "Correct! randint(a, b) includes both endpoints 1 and 3!"
+        explanation: "Correct! random.randint(1, 20) generates a random whole number between 1 and 20 (perfect for D&D D20 dice rolls!)."
       }
     },
     liveCode: {
       title: "Guided Walkthrough: Sarcastic Fortune Teller",
-      explanation: "Build a Magic 8-Ball that pauses for dramatic effect, rolls a fortune die, and gives cheeky answers.",
+      explanation: "Build a funny Magic 8-Ball that delivers sarcastic predictions and simulates RPG dice rolls.",
       code: `import random
 import time
 
-print("🎱 WELCOME TO THE SARCASTIC MAGIC 8-BALL 🎱")
-question = input("Ask a yes/no question about your future: ")
+print("========================================")
+print(" 🎱 SARCASTIC MAGIC 8-BALL 🎱")
+print("========================================")
 
-print("\\n🔮 Consulting cosmic forces...")
-time.sleep(1)  # Pause for 1 second for dramatic effect
-print("✨ Shaking the mystic sphere...")
-time.sleep(1)
-
-responses = [
-    "Not even in an alternate universe.",
-    "My sources say... absolutely NOT.",
-    "Ask again after you clean your room.",
-    "Signs point to YES! (Just kidding, no).",
-    "100% Guaranteed YES! 🎉",
-    "Outlook hazy... go eat a snack and try later."
+# List of sarcastic fortunes
+fortunes = [
+    "Outlook good... for someone else, not you! 🤣",
+    "My sources say NO. Absolutely not.",
+    "Concentrate and ask again when I care.",
+    "Yes! ...Just kidding, definitely no.",
+    "100% Yes! Congratulations! 🎉",
+    "Ask your pet cat instead."
 ]
 
-# Pick a random answer
-result = random.choice(responses)
-luck_score = random.randint(1, 100)
+question = input("Ask the Oracle a yes/no question: ")
+print("Shaking 8-Ball... 🔮")
+time.sleep(1) # Pause for 1 second dramatic effect
 
-print("\\n🔮 ANSWER:", result)
-print("📊 Today's Luck Stat:", luck_score, "/ 100")`,
+selected_fortune = random.choice(fortunes)
+print("\n✨ ORACLE SAYS:", selected_fortune)
+
+# Bonus D20 Dice Roll
+print("\n🎲 BONUS D20 DICE ROLL:")
+d20 = random.randint(1, 20)
+print("You rolled a:", d20)
+if d20 == 20:
+    print("🔥 CRITICAL HIT 20!")
+elif d20 == 1:
+    print("💀 CRITICAL FAIL 1!")`,
       steps: [
         { line: 1, title: "Importing Modules", desc: "Load 'random' for chance and 'time' for dramatic delays." },
         { line: 11, title: "Response List", desc: "Store funny answers inside a Python list using square brackets []." },
@@ -474,156 +443,134 @@ print("📊 Today's Luck Stat:", luck_score, "/ 100")`,
       ]
     },
     tinkerPlayground: {
-      goal: "Add your own hilarious responses, a D20 RPG dice roller, or sound effect text!",
-      starterCode: `# DAY 4 TINKER LAB: Sarcastic 8-Ball & RPG Dice Roller
+      goal: "Add 5 new sarcastic fortunes, create a Coin Flipper (Heads / Tails), or build a D&D D100 Loot Roller!",
+      starterCode: `# DAY 4 TINKER LAB: RPG Dice Roller & Coin Flip
 
 import random
 
-print("🎲 EPIC RPG DICE & FORTUNE GENERATOR 🎲")
-mode = input("Choose mode: (1) Sarcastic 8-Ball  or  (2) Roll D20 Dice: ")
+print("🎲 RPG MULTI-DICE ROLLER 🎲")
+print("1. Roll D6 (Standard Die)")
+print("2. Roll D20 (D&D Stat Die)")
+print("3. Flip Coin (Heads/Tails)")
 
-if mode == "1":
-    q = input("Ask your burning question: ")
-    fortunes = [
-        "Signs point to yes!",
-        "Don't count on it, chief.",
-        "Error 404: Fortune not found.",
-        "Yes, but it will cost you 10 gold coins!"
-    ]
-    print("🎱 Result:", random.choice(fortunes))
+choice = input("Choice (1-3): ")
 
-elif mode == "2":
-    d20 = random.randint(1, 20)
-    print("🎲 You rolled a D20:", d20)
-    if d20 == 20:
-        print("💥 CRITICAL HIT! You defeated the dragon!")
-    elif d20 == 1:
-        print("💀 CRITICAL FAIL! You tripped over a pebble!")
-
-else:
-    print("❌ Invalid selection!")
+if choice == "1":
+    print("🎲 D6 Result:", random.randint(1, 6))
+elif choice == "2":
+    print("🎲 D20 Result:", random.randint(1, 20))
+elif choice == "3":
+    coin = random.choice(["🪙 HEADS", "🪙 TAILS"])
+    print("Coin Flip:", coin)
 `,
       solutionCode: `# DAY 4 SOLUTION
 import random
-import time
-
-print("🔮 ULTIMATE FORTUNE & BATTLE ROLLER 🔮")
-pet = input("What is your pet's name? ")
-
-outcomes = [
-    pet + " will steal your socks today!",
-    "You will find $100 in an old jacket!",
-    "Your next pizza will be 200% extra cheesy!",
-    "An alien will challenge you to a dance-off!"
-]
-
-print("\\n⚡ Calculating timeline...")
-time.sleep(1)
-print("✨ PREDICTION:", random.choice(outcomes))
-print("🎲 Bonus Luck Roll:", random.randint(50, 999))`,
+print("Loot tier:", random.choice(["Common", "Rare", "LEGENDARY!"]))`,
       breakChallenges: [
         {
           id: "b1",
           title: "🔥 Challenge 1: Add 3 Sarcastic Answers",
-          task: "Expand the fortunes list with 3 new hilarious or meme answers!",
-          hint: "Remember to separate string items in lists with commas!"
+          task: "Expand the fortunes list with 3 new funny predictions!",
+          hint: "fortunes.append('New answer!')"
         },
         {
           id: "b2",
           title: "💥 Challenge 2: Dramatic Countdown",
-          task: "Use time.sleep(1) to count down 3... 2... 1... before revealing the answer!",
-          hint: "print('3...'); time.sleep(1); print('2...'); time.sleep(1)"
+          task: "Add time.sleep(1) countdown prints: '3... 2... 1...' before revealing the roll!",
+          hint: "import time\nprint('3...'); time.sleep(1)"
         },
         {
           id: "b3",
           title: "⚡ Challenge 3: Coin Flip Feature",
-          task: "Add a '3' mode for flipping a coin (Heads or Tails) using random.choice(['HEADS', 'TAILS'])!",
-          hint: "elif mode == '3': print(random.choice(['HEADS', 'TAILS']))"
+          task: "Create a function or menu option that flips a coin 5 times in a row!",
+          hint: "for i in range(5): print(random.choice(['Heads', 'Tails']))"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "IndexError when passing an empty list to random.choice([]). Make sure list has items!",
-        "Forgetting 'import random' causes NameError: name 'random' is not defined."
+        "NameError: name 'random' is not defined. Remember to include `import random` at top of file!",
+        "IndexError: list index out of range. Happens if trying to pick from an empty list []."
       ],
       tinkerQuestions: [
-        "What happens if you run random.randint(1, 1)? (It always returns 1!)."
+        "How do video games like Fortnite or Pokémon use random numbers? (For loot crate drops, critical hits, and spawn locations!)."
       ]
     }
   },
   {
     day: 5,
-    title: "Secret Code Breaker (Bomb Defusal / Vault)",
-    focus: "while Loops, Game State, Attempt Counter, Break",
-    category: "Week 1: Core Logic & Turtle Graphics",
-    icon: "💣",
-    summary: "Build a bomb-defusal / vault-cracking scenario where player gets 7 attempts to guess a secret number!",
+    title: "Guess the Number & Vault Breaker",
+    focus: "while Loops, Loop Control (break) & Game State Tracking",
+    category: "Week 1: Core Logic & Terminal Games",
+    icon: "🔢",
+    summary: "Build a game where the computer picks a secret number and gives 'Too High / Too Low' hints!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Repeating Code with while Loops",
-      explanation: "A `while` loop keeps running code over and over again AS LONG AS a condition is true. It's the engine behind every video game loop!",
-      syntaxSnippet: `# Repeating until condition changes
+      headline: "Repeating Actions while a Condition is True",
+      explanation: "A `while` loop keeps running code over and over until a condition becomes False, or until you execute a `break` command!",
+      syntaxSnippet: `secret = 7
 attempts = 0
-max_attempts = 3
 
-while attempts < max_attempts:
-    guess = input("Enter password: ")
-    if guess == "secret123":
-        print("🔓 Vault Unlocked!")
-        break # Exit loop immediately!
+while True:
+    guess = int(input("Guess the secret number (1-10): "))
+    attempts += 1
+    
+    if guess == secret:
+        print("🎉 Correct in", attempts, "attempts!")
+        break # Exit the loop immediately!
+    elif guess < secret:
+        print("📈 Too Low!")
     else:
-        attempts = attempts + 1
-        print("❌ Wrong! Attempts left:", max_attempts - attempts)
-
-if attempts == max_attempts:
-    print("🚨 LOCKDOWN ACTIVATED!")`,
+        print("📉 Too High!")`,
       keyTakeaways: [
-        "while condition: loops continuously until condition turns False.",
-        "break stops the loop immediately when triggered.",
-        "Always make sure something inside the loop changes (like attempts + 1) so it doesn't loop forever!"
+        "while condition: keeps repeating code as long as condition is True.",
+        "break stops and exits the loop immediately.",
+        "attempts += 1 increments a counter by +1 each loop turn."
       ],
       quickQuiz: {
-        question: "What happens if a while loop condition NEVER becomes False?",
+        question: "What happens if a while loop condition is always True and has no break statement?",
         options: [
-          "Python automatically stops it after 10 seconds.",
-          "It creates an 'Infinite Loop' and runs forever until stopped!",
-          "It skips the loop code completely."
+          "The program completes instantly",
+          "An Infinite Loop occurs (the program runs forever until stopped!)",
+          "Python automatically fixes it"
         ],
         correctIndex: 1,
-        explanation: "Spot on! That's why we always update variables inside while loops!"
+        explanation: "Correct! Without a break or False condition, a `while True:` loop creates an Infinite Loop! Always ensure a break path exists!"
       }
     },
     liveCode: {
       title: "Guided Walkthrough: Vault Code Breaker",
-      explanation: "Create a vault-cracking game where Python picks a secret number from 1 to 100, giving Higher/Lower hints.",
+      explanation: "Build a high-stakes vault break-in game with limited guess attempts and hint feedback.",
       code: `import random
 
-print("🔐 SECRET VAULT CODE BREAKER v1.0 🔐")
-print("Guess the 2-digit vault combination (1-100) before security locks you out!")
+print("========================================")
+print(" 🔐 CYBER VAULT CODE BREAKER 🔐")
+print("========================================")
 
 secret_code = random.randint(1, 100)
 attempts_left = 7
 won = False
 
+print("The vault is locked! Guess the secret code between 1 and 100.")
+print("You have " + str(attempts_left) + " attempts before alarm triggers! 🚨\n")
+
 while attempts_left > 0:
-    print("\\n------------------------------------")
-    print("⏳ Attempts remaining:", attempts_left)
-    guess = int(input("Enter code guess: "))
+    print("Remaining Attempts:", attempts_left)
+    guess = int(input("Enter passcode guess: "))
     
     if guess == secret_code:
-        print("🎉 BINGO! Vault door unlocked! You found 1,000,000 GOLD COINS! 💰")
+        print("🔓 ACCESS GRANTED! Vault opened successfully!")
         won = True
         break
     elif guess < secret_code:
-        print("📈 TOO LOW! The secret combination is HIGHER.")
+        print("📈 HINT: Secret code is HIGHER!")
     else:
-        print("📉 TOO HIGH! The secret combination is LOWER.")
+        print("📉 HINT: Secret code is LOWER!")
         
-    attempts_left = attempts_left - 1
+    attempts_left -= 1
 
 if not won:
-    print("\\n🚨 BOMB DETONATED! Security Lockdown! The secret code was:", secret_code)`,
+    print("\n🚨 ALARM TRIGGERED! Out of attempts! Secret code was:", secret_code)`,
       steps: [
         { line: 6, title: "Secret Number Setup", desc: "Generate secret number with randint(1, 100)." },
         { line: 10, title: "The Game Loop", desc: "Loop while attempts_left > 0." },
@@ -632,422 +579,210 @@ if not won:
       ]
     },
     tinkerPlayground: {
-      goal: "Customize the game state! Add difficulty settings (Easy=10 tries, Hard=3 tries) or cheat codes!",
-      starterCode: `# DAY 5 TINKER LAB: Vault Breaker
+      goal: "Add difficulty modes (Easy: 10 attempts, Hard: 3 attempts), score multipliers, or a secret 'cheat' keyword!",
+      starterCode: `# DAY 5 TINKER LAB: Guess the Number Customizer
 
 import random
 
 secret = random.randint(1, 50)
-tries = 5
+score = 100
 
-print("🕵️ SPY AGENCY PASSCODE BREAKER 🕵️")
-print("Guess number between 1 and 50!")
+print("🎮 GUESS THE NUMBER (1-50) 🎮")
 
-while tries > 0:
-    guess = int(input("Passcode attempt: "))
-    
+while score > 0:
+    guess = int(input("Enter guess: "))
     if guess == secret:
-        print("🔓 ACCESS GRANTED, AGENT!")
+        print("🎉 YOU WIN! Final Score:", score)
         break
-    elif guess < secret:
-        print("⬆️ HIGHER!")
     else:
-        print("⬇️ LOWER!")
-        
-    tries = tries - 1
-    print("Tries left:", tries)
+        score -= 10
+        if guess < secret:
+            print("Higher! (-10 pts)")
+        else:
+            print("Lower! (-10 pts)")
 
-if tries == 0:
-    print("💥 ALARM SOUNDED! Code was:", secret)
+if score <= 0:
+    print("Game Over! Out of points! Code was:", secret)
 `,
-      solutionCode: `# DAY 5 SOLUTION WITH CHEAT CODE
+      solutionCode: `# DAY 5 SOLUTION
 import random
-
-secret = random.randint(1, 100)
-tries = 6
-
-print("💣 CYBER BOMB DEFUSAL 💣")
-
-while tries > 0:
-    guess_raw = input("Enter wire code (1-100 or 'cheat'): ")
-    
-    if guess_raw == "cheat":
-        print("🤫 [SYSTEM CHEAT]: The code is", secret)
-        continue
-        
-    guess = int(guess_raw)
-    if guess == secret:
-        print("✂️ BOMB DEFUSED! You saved the city! 🎆")
-        break
-    elif guess < secret:
-        print("🔥 HOTTER! Secret is higher!")
-    else:
-        print("🧊 COLDER! Secret is lower!")
-        
-    tries -= 1
-
-if tries == 0:
-    print("💥 BOOM! The bomb exploded!")`,
+s = random.randint(1, 10)
+while int(input("Guess: ")) != s: print("Wrong!")
+print("Correct!")`,
       breakChallenges: [
         {
           id: "b1",
           title: "🔥 Challenge 1: Custom Difficulty Selector",
-          task: "Ask player at start: Easy (10 tries), Medium (6 tries), or Hard (3 tries)!",
-          hint: "Set tries = 10 if diff == 'easy'"
+          task: "Allow player to choose (1) Easy (1-20) or (2) Hard (1-500) at start!",
+          hint: "if diff == '2': secret = random.randint(1, 500)"
         },
         {
           id: "b2",
           title: "💥 Challenge 2: Secret 'Cheat' Keyword",
-          task: "If player types 'cheat', show them the secret number without losing an attempt!",
-          hint: "Check if input string == 'cheat' before converting to int()."
+          task: "If player enters number 999, print the secret answer without losing an attempt!",
+          hint: "if guess == 999: print('Cheat:', secret_code)"
         },
         {
           id: "b3",
           title: "⚡ Challenge 3: Score Tracker",
-          task: "Calculate score based on remaining tries: score = tries_left * 100!",
-          hint: "Print score right after the player wins!"
+          task: "Start with 1000 points and subtract 100 points for each incorrect guess!",
+          hint: "score -= 100"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "Infinite loop if attempts counter isn't reduced inside loop.",
-        "ValueError when converting non-numeric text like 'abc' to int()."
+        "Infinite loops: if code freezes, check if attempts counter is decreasing or break statement is reachable.",
+        "String vs Integer comparison: `if '7' == 7` evaluates to False! Always cast input to `int(input(...))`!"
       ],
       tinkerQuestions: [
-        "What is the difference between 'break' (exit loop completely) and 'continue' (skip to next turn)?"
+        "What is the best strategy to guess a number between 1 and 100 in under 7 tries? (Binary search: always guess halfway!)."
       ]
     }
   },
   {
     day: 6,
-    title: "Neon Cyber-Spiral",
-    focus: "Visuals with Python turtle, Pen Movement, Colors & Angles",
-    category: "Week 1: Core Logic & Turtle Graphics",
-    icon: "🐢",
-    summary: "Control an on-screen pen to draw expanding optical illusions and neon geometric spirals!",
+    title: "Countdown Timer & Rocket Blast-Off",
+    focus: "for Loops, range() & ASCII Art Repeater",
+    category: "Week 1: Core Logic & Terminal Games",
+    icon: "🚀",
+    summary: "Master repeating actions with counted for loops to build a blast-off rocket timer and ASCII art patterns!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Drawing Graphics with Python Turtle",
-      explanation: "Imagine a robotic turtle holding a paintbrush on your screen canvas. You give it simple instructions like move forward, turn left, and change color!",
-      syntaxSnippet: `import turtle
+      headline: "Counted Repeating with for Loops and range()",
+      explanation: "While `while` loops repeat until something changes, `for` loops repeat code an exact number of times using `range()`!",
+      syntaxSnippet: `# Loop 5 times (0, 1, 2, 3, 4)
+for i in range(5):
+    print("Loop turn:", i)
 
-# Create screen and turtle pen
-t = turtle.Turtle()
-t.speed(0) # Fast drawing speed
-t.pencolor("cyan")
-
-# Move turtle
-t.forward(100) # Move forward 100 pixels
-t.left(90)     # Turn left 90 degrees
-t.forward(100)`,
+# Countdown from 10 down to 1
+for i in range(10, 0, -1):
+    print("Countdown:", i)
+print("🚀 BLAST OFF!")`,
       keyTakeaways: [
-        "forward(pixels) and backward(pixels) move the pen.",
-        "left(degrees) and right(degrees) rotate the pen head.",
-        "pencolor('red') and bgcolor('black') set colors!"
+        "range(count) runs a loop count times (0 to count-1).",
+        "range(start, stop, step) counts with custom start, stop, and increment.",
+        "use for loops whenever you know in advance how many times to repeat!"
       ],
       quickQuiz: {
-        question: "What angle turn draws a perfect square corner?",
+        question: "What numbers does range(1, 5) generate?",
         options: [
-          "45 degrees",
-          "90 degrees",
-          "180 degrees"
+          "1, 2, 3, 4, 5",
+          "1, 2, 3, 4",
+          "0, 1, 2, 3, 4, 5"
         ],
         correctIndex: 1,
-        explanation: "Correct! A 90-degree turn creates a perpendicular right angle!"
+        explanation: "Correct! range(start, stop) includes start but stops BEFORE stop, so range(1, 5) produces 1, 2, 3, 4!"
       }
     },
     liveCode: {
-      title: "Guided Walkthrough: Expanding Rainbow Star Spiral",
-      explanation: "Use loops and turtle commands to generate a mesmerizing rainbow spiral illusion.",
-      code: `import turtle
+      title: "Guided Walkthrough: Rocket Blast-Off Timer & Art Repeater",
+      explanation: "Build a countdown blast-off timer with time delays and repeated ASCII rocket patterns.",
+      code: `import time
 
-# Setup dark cyber canvas
-win = turtle.Screen()
-win.bgcolor("black")
+print("========================================")
+print(" 🚀 NASA ROCKET LAUNCH SIMULATOR 🚀")
+print("========================================")
 
-t = turtle.Turtle()
-t.speed(0)
-t.width(2)
+countdown_start = 10
 
-colors = ["cyan", "magenta", "yellow", "lime", "purple", "orange"]
+print("Final Systems Check Complete!")
+print("Initiating Countdown Sequence...\n")
 
-# Drawing loop
-for i in range(120):
-    t.pencolor(colors[i % 6]) # Cycle through colors
-    t.forward(i * 3)          # Step size gets bigger each loop
-    t.left(59)               # Angle slightly off 60 for spiral effect
+# Countdown loop using range(start, stop, step)
+for count in range(countdown_start, 0, -1):
+    print("⏱️ T-minus " + str(count) + " seconds...")
+    time.sleep(0.5) # Half-second pause
 
-print("✨ Neon Cyber Spiral Complete!")`,
+print("\n🔥 IGNITION! 🚀 BLAST OFF TO MARS!")
+
+# Draw Rocket Flame Trail with for loop
+for height in range(1, 6):
+    print(" " * (6 - height) + "🔥" * (height * 2))
+
+print("========================================")
+print(" Mission Control: Rocket in Orbit!")`,
       steps: [
-        { line: 5, title: "Black Background", desc: "Set dark background using win.bgcolor('black')." },
-        { line: 11, title: "Color Array", desc: "Store list of vibrant neon color names." },
-        { line: 15, title: "Modulus Math %", desc: "i % 6 cycles numbers 0,1,2,3,4,5 repeatedly through colors." },
-        { line: 17, title: "Spiral Angle", desc: "Turning 59 degrees instead of 60 causes lines to twist into a spiral!" }
+        { line: 12, title: "Countdown Loop", desc: "range(10, 0, -1) steps backwards down to 1." },
+        { line: 13, title: "Time Delay", desc: "time.sleep(0.5) pauses execution between counts." },
+        { line: 18, title: "ASCII Flame Trail", desc: "Multiply strings ('🔥' * count) inside for loop to create expanding flame pyramid!" }
       ]
     },
     tinkerPlayground: {
-      goal: "Modify pen width, angle degrees (try 89, 91, 121), and color list to create unique digital art!",
-      starterCode: `# DAY 6 TINKER LAB: Turtle Cyber-Spiral
+      goal: "Change countdown speed, design your own repeated ASCII art pattern, or build a multiplication table generator!",
+      starterCode: `# DAY 6 TINKER LAB: ASCII Pattern Generator
 
-import turtle
+print("🎨 REPEATED ASCII PATTERN GENERATOR 🎨")
 
-t = turtle.Turtle()
-t.speed(0)
-turtle.bgcolor("#0f172a") # Deep obsidian blue
+symbol = input("Enter symbol/emoji to repeat: ")
+rows = int(input("How many rows? "))
 
-colors = ["#38bdf8", "#f43f5e", "#a855f7", "#34d399"]
-
-for x in range(100):
-    t.pencolor(colors[x % 4])
-    t.forward(x * 2)
-    t.left(91) # Try changing 91 to 89, 121, or 144!
-    t.width(x / 25)
+print("\n--- GENERATING PATTERN ---")
+for r in range(1, rows + 1):
+    print(symbol * r)
 `,
       solutionCode: `# DAY 6 SOLUTION
-import turtle
-
-t = turtle.Turtle()
-t.speed(0)
-turtle.bgcolor("black")
-
-colors = ["red", "lime", "cyan", "gold"]
-
-for x in range(150):
-    t.pencolor(colors[x % 4])
-    t.forward(x * 2.5)
-    t.left(144) # Creates a 5-pointed star spiral!
-    t.width(2)`,
+for i in range(1, 6):
+    print("⭐" * i)`,
       breakChallenges: [
         {
           id: "b1",
-          title: "🔥 Challenge 1: The Star Spiral Angle",
-          task: "Change turn angle to 144 degrees to turn the spiral into glowing concentric stars!",
-          hint: "Replace left(91) with left(144)."
+          title: "🔥 Challenge 1: The Fast Blast-Off",
+          task: "Change countdown start to 20 and time.sleep to 0.2 seconds!",
+          hint: "range(20, 0, -1)"
         },
         {
           id: "b2",
-          title: "💥 Challenge 2: Thicker Pen Strokes",
-          task: "Set t.width(4) or make pen width grow bigger as x increases!",
-          hint: "t.width(x / 10)"
+          title: "💥 Challenge 2: Multiplication Table",
+          task: "Write a for loop that prints the 7 times table (7 * 1, 7 * 2 ... up to 7 * 10)!",
+          hint: "for i in range(1, 11): print('7 x', i, '=', 7 * i)"
         },
         {
           id: "b3",
-          title: "⚡ Challenge 3: Circle Illusion",
-          task: "Replace t.forward(x * 2) with t.circle(x) to draw colorful overlapping circles!",
-          hint: "t.circle(x)"
+          title: "⚡ Challenge 3: Inverted Pyramid",
+          task: "Make the pattern draw upside down starting wide and shrinking to 1 symbol!",
+          hint: "for r in range(rows, 0, -1): print(symbol * r)"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "Turtle window freezing: ensure speed(0) is used for instant rendering.",
-        "Using unrecognized color names like 'blurple'. Use standard hex codes like '#8b5cf6' or common color names."
+        "Forgetting range stop boundary is exclusive: range(1, 10) only goes up to 9, not 10!",
+        "Forgetting third parameter for step down: range(10, 0) does nothing unless you specify step -1 as range(10, 0, -1)!"
       ],
       tinkerQuestions: [
-        "What formula calculates regular polygon angles? (360 / number of sides!)."
+        "When should you use a for loop vs a while loop? (Use for loops when you know exact repeat counts; use while loops when waiting for user input!)."
       ]
     }
   },
   {
     day: 7,
-    title: "Retro Space Invader / Pixel Alien",
-    focus: "for Loops with Turtle, Nested Loops, Grid Coordinates & Stamps",
-    category: "Week 1: Core Logic & Turtle Graphics",
-    icon: "👾",
-    summary: "Automate geometric patterns and draw a 1980s arcade alien sprite on a grid using colored turtle stamps!",
+    title: "RPG Quest Backpack & Inventory",
+    focus: "Python Lists ([]), Indexing, append(), pop(), remove(), len()",
+    category: "Week 1: Core Logic & Terminal Games",
+    icon: "🎒",
+    summary: "Manage an adventurer's backpack inventory where players can collect, inspect, drop, and swap items!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Counted for Loops & Stamp Art Grid",
-      explanation: "Instead of moving line by line, turtle can 'stamp' shapes (squares, circles) directly onto coordinates. A nested `for` loop draws entire 2D grids!",
-      syntaxSnippet: `import turtle
-
-t = turtle.Turtle()
-t.shape("square")
-t.penup() # Don't draw trailing lines
-
-# Draw a row of 5 stamps
-for x in range(5):
-    t.goto(x * 30, 0)
-    t.stamp()`,
-      keyTakeaways: [
-        "range(count) runs a loop exactly count times.",
-        "t.penup() prevents drawing lines when moving between positions.",
-        "t.stamp() prints the turtle shape onto the canvas!"
-      ],
-      quickQuiz: {
-        question: "What does range(5) produce in Python?",
-        options: [
-          "Numbers 1, 2, 3, 4, 5",
-          "Numbers 0, 1, 2, 3, 4",
-          "A random set of 5 numbers"
-        ],
-        correctIndex: 1,
-        explanation: "Correct! range(5) starts at index 0 and produces 5 numbers: 0 to 4!"
-      }
-    },
-    liveCode: {
-      title: "Guided Walkthrough: 8-Bit Pixel Alien Sprite",
-      explanation: "Use 2D grid matrix data and nested loops to draw an 8-bit Space Invader alien.",
-      code: `import turtle
-
-win = turtle.Screen()
-win.bgcolor("black")
-
-t = turtle.Turtle()
-t.shape("square")
-t.shapesize(1.5) # Make square pixels bigger
-t.penup()
-t.speed(0)
-t.color("#00ff66") # Matrix neon green
-
-# 8x8 Pixel Alien Grid Map (1 = Green pixel, 0 = Empty)
-alien_grid = [
-    [0, 0, 1, 0, 0, 1, 0, 0],
-    [0, 0, 0, 1, 1, 0, 0, 0],
-    [0, 0, 1, 1, 1, 1, 0, 0],
-    [0, 1, 1, 0, 0, 1, 1, 0],
-    [1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 0, 1, 1, 1, 1, 0, 1],
-    [1, 0, 1, 0, 0, 1, 0, 1],
-    [0, 0, 0, 1, 1, 0, 0, 0]
-]
-
-# Draw Grid
-start_x = -100
-start_y = 100
-pixel_size = 30
-
-for row_idx, row in enumerate(alien_grid):
-    for col_idx, pixel in enumerate(row):
-        if pixel == 1:
-            x_pos = start_x + (col_idx * pixel_size)
-            y_pos = start_y - (row_idx * pixel_size)
-            t.goto(x_pos, y_pos)
-            t.stamp()
-
-print("👾 Pixel Alien Sprite Generated!")`,
-      steps: [
-        { line: 12, title: "Pixel Grid Matrix", desc: "Design a 2D array where 1 represents pixel blocks and 0 represents blank space." },
-        { line: 28, title: "Nested Enumerate Loops", desc: "Loop through every row and column position in the sprite map." },
-        { line: 33, title: "Grid Coordinate Math", desc: "Calculate exact (x, y) canvas coordinates for each pixel." }
-      ]
-    },
-    tinkerPlayground: {
-      goal: "Edit the 1s and 0s in alien_grid to design your own custom Creeper face, Pac-Man, or Heart sprite!",
-      starterCode: `# DAY 7 TINKER LAB: Pixel Art Stamp Builder
-
-import turtle
-
-t = turtle.Turtle()
-t.shape("square")
-t.penup()
-t.speed(0)
-t.color("cyan")
-turtle.bgcolor("#020617")
-
-# Change the 1s to alter the pixel design!
-heart_map = [
-    [0, 1, 1, 0, 1, 1, 0],
-    [1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1],
-    [0, 1, 1, 1, 1, 1, 0],
-    [0, 0, 1, 1, 1, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0]
-]
-
-size = 25
-for r_idx, row in enumerate(heart_map):
-    for c_idx, val in enumerate(row):
-        if val == 1:
-            t.goto(-80 + c_idx * size, 80 - r_idx * size)
-            t.stamp()
-`,
-      solutionCode: `# DAY 7 SOLUTION: DUAL-COLOR SPRITE
-import turtle
-
-t = turtle.Turtle()
-t.shape("square")
-t.penup()
-t.speed(0)
-turtle.bgcolor("black")
-
-# 1 = Pink, 2 = Gold
-sprite = [
-    [0, 1, 1, 0],
-    [1, 2, 2, 1],
-    [1, 2, 2, 1],
-    [0, 1, 1, 0]
-]
-
-for r, row in enumerate(sprite):
-    for c, val in enumerate(row):
-        if val == 1:
-            t.color("magenta")
-            t.goto(-50 + c * 30, 50 - r * 30)
-            t.stamp()
-        elif val == 2:
-            t.color("gold")
-            t.goto(-50 + c * 30, 50 - r * 30)
-            t.stamp()`,
-      breakChallenges: [
-        {
-          id: "b1",
-          title: "🔥 Challenge 1: Design a Creeper Face",
-          task: "Modify the 1s and 0s array to draw a Minecraft Creeper face!",
-          hint: "Put 0s for the eye sockets and mouth!"
-        },
-        {
-          id: "b2",
-          title: "💥 Challenge 2: Dual Color Pixels",
-          task: "Introduce number 2 into the grid map for a second pixel color (e.g. 1=Green, 2=Yellow)!",
-          hint: "elif val == 2: t.color('yellow')"
-        },
-        {
-          id: "b3",
-          title: "⚡ Challenge 3: Alien Army",
-          task: "Duplicate the drawing loop to spawn a 2nd alien right next to the 1st one!",
-          hint: "Offset start_x by +250 pixels!"
-        }
-      ]
-    },
-    mentorNotes: {
-      commonStumblingBlocks: [
-        "Inconsistent row lengths in grid array can cause offset pixels. Ensure every row has same length!"
-      ],
-      tinkerQuestions: [
-        "How do retro video games (like NES/GameBoy) store sprite graphics? (In small binary 2D arrays just like this!)."
-      ]
-    }
-  },
-  {
-    day: 8,
-    title: "Battle Royale Loot Drop Picker",
-    focus: "Lists ([]), Indexing, append(), remove(), len()",
-    category: "Week 2: Data Structures, Functions & Capstone",
-    icon: "🧰",
-    summary: "Generate random weapon crates, manage a 5-slot backpack inventory, and drop or swap weapons!",
-    timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
-    concept: {
-      headline: "Managing Inventory with Python Lists",
-      explanation: "A list is like a digital backpack. You can look up items by index position, add new items with .append(), and remove trash items with .remove()!",
-      syntaxSnippet: `# Creating a list
+      headline: "Managing Collections with Python Lists",
+      explanation: "A list is like a digital backpack. You can store multiple items in order, look up items by index position, add items with .append(), and remove trash with .pop()!",
+      syntaxSnippet: `# Creating an inventory list
 backpack = ["Plasma Pistol", "Health Potion", "Shield Bubble"]
 
-# Accessing items (Python starts counting at 0!)
+# Accessing items (Python starts counting at index 0!)
 print("Equipped Weapon:", backpack[0])
 
 # Adding a new drop
 backpack.append("Legendary Sniper")
 
-# Dropping an item
-backpack.remove("Health Potion")
+# Removing an item by index position
+backpack.pop(1)
 
 print("Backpack size:", len(backpack))`,
       keyTakeaways: [
         "Lists use square brackets [] with items separated by commas.",
         "List indices start at 0! Index 0 is the 1st item.",
-        ".append(item) adds to end, .remove(item) deletes from list, len(list) gets count."
+        ".append(item) adds to end, .pop(index) removes by position, len(list) gets count."
       ],
       quickQuiz: {
         question: "If items = ['Sword', 'Shield', 'Bow'], what is items[1]?",
@@ -1061,8 +796,8 @@ print("Backpack size:", len(backpack))`,
       }
     },
     liveCode: {
-      title: "Guided Walkthrough: Fortnite Crate Opener & Inventory",
-      explanation: "Open loot crates, equip weapons, and manage inventory limits.",
+      title: "Guided Walkthrough: RPG Backpack & Loot Crate Sim",
+      explanation: "Open loot crates, equip weapons, and manage inventory capacity limits.",
       code: `import random
 
 # Initial player inventory
@@ -1079,12 +814,14 @@ loot_pool = [
     "💣 Boogie Bomb"
 ]
 
-print("📦 FORTNITE LOOT CRATE SIMULATOR 📦")
+print("========================================")
+print(" 🎒 RPG ADVENTURER BACKPACK MANAGER 🎒")
+print("========================================")
 print("Starting Inventory:", inventory)
 
-# Open 3 Crate Drops
+# Open 3 Supply Drops
 for crate_num in range(1, 4):
-    print("\\n--- Opening Supply Drop #" + str(crate_num) + " ---")
+    print("\n--- Opening Supply Crate #" + str(crate_num) + " ---")
     dropped_item = random.choice(loot_pool)
     print("✨ You found:", dropped_item)
     
@@ -1100,18 +837,18 @@ for crate_num in range(1, 4):
             print("Dropped:", removed)
             print("Equipped:", dropped_item)
 
-print("\\n🎒 FINAL LOADOUT (" + str(len(inventory)) + " items):")
+print("\n🎒 FINAL LOADOUT (" + str(len(inventory)) + " items):")
 for idx, item in enumerate(inventory, 1):
     print(str(idx) + ".", item)`,
       steps: [
         { line: 4, title: "Inventory List", desc: "Store items inside backpack array." },
-        { line: 17, title: "Checking Capacity", desc: "Use len(inventory) < max_capacity to check if space remains." },
-        { line: 24, title: "Swapping Items", desc: "inventory.pop(0) removes the oldest item at index 0." }
+        { line: 22, title: "Checking Capacity", desc: "Use len(inventory) < max_capacity to check if space remains." },
+        { line: 29, title: "Swapping Items", desc: "inventory.pop(0) removes the oldest item at index 0." }
       ]
     },
     tinkerPlayground: {
-      goal: "Add rarity tiers (Common, Rare, Legendary) or increase backpack capacity!",
-      starterCode: `# DAY 8 TINKER LAB: Battle Royale Loot Drop
+      goal: "Expand backpack size, add an item sorting feature, or allow players to type item names to drop!",
+      starterCode: `# DAY 7 TINKER LAB: Battle Royale Loot Drop
 
 import random
 
@@ -1121,7 +858,7 @@ loot = ["Rare Shotgun", "Epic Sniper", "Medkit", "Chug Jug", "Grappler"]
 print("🎮 BATTLE ROYALE LOOT MANAGER 🎮")
 
 while True:
-    print("\\nCurrent Loadout:", inventory)
+    print("\nCurrent Loadout:", inventory)
     cmd = input("Action: (1) Open Crate  (2) Drop Item  (3) Quit: ")
     
     if cmd == "1":
@@ -1145,22 +882,16 @@ while True:
         print("👋 Exiting match!")
         break
 `,
-      solutionCode: `# DAY 8 SOLUTION WITH SORTING
-import random
-
-inventory = ["Pistol"]
-legendary_loot = ["⚡ Mjoinir Hammer", "🐲 Dragon Cannon", "👑 Gold Crown"]
-
-print("🎒 RPG INVENTORY SYSTEM 🎒")
-inventory.append(random.choice(legendary_loot))
-inventory.sort() # Sorts inventory alphabetically!
-
-print("Sorted Inventory:", inventory)`,
+      solutionCode: `# DAY 7 SOLUTION
+inv = ["Axe"]
+inv.append("Sword")
+inv.sort()
+print(inv)`,
       breakChallenges: [
         {
           id: "b1",
           title: "🔥 Challenge 1: Increase Backpack Limit",
-          task: "Expand backpack size from 5 items to 8 items!",
+          task: "Expand backpack capacity from 5 items to 8 items!",
           hint: "Change len(inventory) < 5 to len(inventory) < 8"
         },
         {
@@ -1172,44 +903,45 @@ print("Sorted Inventory:", inventory)`,
         {
           id: "b3",
           title: "⚡ Challenge 3: Clear All Items",
-          task: "Add a 'Nuke Inventory' command that empties the entire list using inventory.clear()!",
+          task: "Add a 'Nuke Inventory' command that empties the list using inventory.clear()!",
           hint: "inventory.clear()"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "ValueError: list.remove(x): x not in list. Always check 'if x in my_list:' before removing!"
+        "ValueError: list.remove(x): x not in list. Always check 'if x in my_list:' before calling .remove()!",
+        "IndexError: list index out of range. Happens when accessing index >= len(list)."
       ],
       tinkerQuestions: [
-        "What is the difference between pop(0) and remove('Pistol')? (pop uses index position, remove uses item value!)."
+        "What is the difference between pop(0) and remove('Pistol')? (pop uses index position; remove searches by value!)."
       ]
     }
   },
   {
-    day: 9,
-    title: "Pokémon / Boss Battle Combat Simulator",
+    day: 8,
+    title: "Custom Power-Up Calculator & Boss Battle",
     focus: "Custom Functions (def, parameters, return values)",
-    category: "Week 2: Data Structures, Functions & Capstone",
-    icon: "⚔️",
-    summary: "Write reusable functions for attack(), heal(), and take_damage() to run a 1v1 battle against a boss monster!",
+    category: "Week 2: Data Structures, Functions & Turtle Graphics",
+    icon: "⚡",
+    summary: "Write reusable custom functions for attack(), heal(), and calculate_damage() to run a turn-based boss battle!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Writing Reusable Functions with def",
-      explanation: "A function is like a spell or macro shortcut in a game. You write the recipe once with `def`, and then call it whenever you need it!",
-      syntaxSnippet: `# Defining a function with parameters and return
+      headline: "Writing Reusable Functions with def and return",
+      explanation: "A function is like a spell macro or shortcut key in a video game. You define the recipe once with `def`, and then invoke it whenever you need it!",
+      syntaxSnippet: `# Defining a function with parameters and return value
 def calculate_damage(attacker_power, target_armor):
     raw_damage = attacker_power * 2
     final_damage = raw_damage - target_armor
     return max(1, final_damage) # At least 1 damage
 
-# Calling the function
-hit1 = calculate_damage(50, 10)
-print("Damage dealt:", hit1)`,
+# Invoking the function
+hit_score = calculate_damage(50, 10)
+print("Damage dealt:", hit_score)`,
       keyTakeaways: [
         "def function_name(parameters): creates a new custom action.",
-        "Parameters pass input data into the function.",
-        "return sends calculated result data back to the rest of your program!"
+        "Parameters pass input values into the function box.",
+        "return passes calculated result data back to your main code!"
       ],
       quickQuiz: {
         question: "What keyword sends a value back from a function?",
@@ -1219,12 +951,12 @@ print("Damage dealt:", hit1)`,
           "output"
         ],
         correctIndex: 1,
-        explanation: "Correct! return passes the computed answer back to the line that called the function!"
+        explanation: "Correct! `return` passes the calculated answer back to the line that invoked the function!"
       }
     },
     liveCode: {
       title: "Guided Walkthrough: Boss Battle Encounter",
-      explanation: "Build modular combat functions and simulate a turn-based fight against Cyber Dragon.",
+      explanation: "Build modular combat functions and simulate a 1v1 battle against Cyber Dragon.",
       code: `import random
 
 # --- GAME FUNCTIONS ---
@@ -1243,10 +975,12 @@ def cast_heal(player_name, current_hp):
 player_hp = 100
 boss_hp = 120
 
-print("🐉 BOSS BATTLE: PIKACHU vs CYBER DRAGON 🐉")
+print("========================================")
+print(" 🐉 BOSS BATTLE: PIKACHU vs CYBER DRAGON 🐉")
+print("========================================")
 
 while player_hp > 0 and boss_hp > 0:
-    print("\\n------------------------------------")
+    print("\n------------------------------------")
     print("⚡ Player HP:", player_hp, " | 🐉 Boss HP:", boss_hp)
     choice = input("Turn Action: (1) Thunderbolt Attack  (2) Heal: ")
     
@@ -1263,9 +997,9 @@ while player_hp > 0 and boss_hp > 0:
 
 # Outcome
 if player_hp > 0:
-    print("\\n🏆 VICTORY! You slain the Cyber Dragon!")
+    print("\n🏆 VICTORY! You slayed the Cyber Dragon!")
 else:
-    print("\\n💀 DEFEAT! Pikachu fainted in battle...")`,
+    print("\n💀 DEFEAT! Pikachu fainted in battle...")`,
       steps: [
         { line: 4, title: "Attack Function", desc: "Accepts attacker name, min damage, and max damage parameters." },
         { line: 9, title: "Heal Function", desc: "Calculates new HP and returns updated value." },
@@ -1273,8 +1007,8 @@ else:
       ]
     },
     tinkerPlayground: {
-      goal: "Add a Special Move function (def ultimate_attack()), critical hits, or mana point restrictions!",
-      starterCode: `# DAY 9 TINKER LAB: Combat Simulator
+      goal: "Add a Special Ultimate Attack function (def ultimate_attack()), critical hit multipliers, or mana restrictions!",
+      starterCode: `# DAY 8 TINKER LAB: Combat Simulator & Critical Hits
 
 import random
 
@@ -1288,7 +1022,7 @@ def calc_crit_damage(base_dmg):
 player_hp = 80
 monster_hp = 80
 
-print("⚔️ MINI ARENA FINGER FIGHT ⚔️")
+print("⚔️ MINI ARENA FIGHT ⚔️")
 while player_hp > 0 and monster_hp > 0:
     input("Press Enter to swing sword!")
     dmg = calc_crit_damage(random.randint(10, 20))
@@ -1302,30 +1036,21 @@ while player_hp > 0 and monster_hp > 0:
 
 print("Game Over!")
 `,
-      solutionCode: `# DAY 9 SOLUTION WITH MANA
-import random
-
-def ultimate_beam(mana):
-    if mana >= 50:
-        print("🌟 ULTIMATE BEAM UNLEASHED! 100 DMG!")
-        return 100, mana - 50
-    else:
-        print("❌ Not enough Mana!")
-        return 0, mana
-
-dmg, new_mana = ultimate_beam(60)
-print("Damage:", dmg, "Remaining Mana:", new_mana)`,
+      solutionCode: `# DAY 8 SOLUTION
+def double_dmg(power):
+    return power * 2
+print(double_dmg(25))`,
       breakChallenges: [
         {
           id: "b1",
           title: "🔥 Challenge 1: Ultimate Fireball Function",
           task: "Create def fireball() that deals 50-80 damage but can only be used ONCE per fight!",
-          hint: "Use a boolean variable allow_ultimate = True"
+          hint: "Use boolean flag allow_ultimate = True"
         },
         {
           id: "b2",
           title: "💥 Challenge 2: Shield / Block Function",
-          task: "Create def block() that reduces the next incoming monster damage by 50%!",
+          task: "Create def block() that reduces next incoming monster damage by 50%!",
           hint: "return damage / 2"
         },
         {
@@ -1338,25 +1063,25 @@ print("Damage:", dmg, "Remaining Mana:", new_mana)`,
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "Variable scope confusion: variables inside a function stay inside unless returned!",
-        "Forgetting parenthesises when calling functions: my_func vs my_func()."
+        "Variable scope confusion: variables defined inside a function stay local unless returned!",
+        "Forgetting parentheses when calling a function: typing `my_func` instead of `my_func()`."
       ],
       tinkerQuestions: [
-        "Why are functions useful when building large video games with 100s of monsters?"
+        "Why are functions vital when building large software with thousands of lines of code?"
       ]
     }
   },
   {
-    day: 10,
-    title: "Secret Agent Spy Decoder & Cipher",
-    focus: "Dictionaries ({key: value}), Lookups, Cipher Scrambler",
-    category: "Week 2: Data Structures, Functions & Capstone",
-    icon: "🕵️‍♀️",
-    summary: "Scramble top secret agent messages into cipher codes using key-value dictionary maps!",
+    day: 9,
+    title: "Pokedex & Monster Stat Lookup",
+    focus: "Dictionaries ({key: value}), Lookups & Nested Data",
+    category: "Week 2: Data Structures, Functions & Turtle Graphics",
+    icon: "📖",
+    summary: "Store and query character stats, elemental weaknesses, and special moves like a real database!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
       headline: "Storing Key-Value Pairs with Dictionaries",
-      explanation: "A dictionary stores information like a real-world dictionary or game cheat sheet: you look up a KEY (like 'a') and get its VALUE (like '7').",
+      explanation: "A dictionary stores data like a real-world dictionary or game database: you look up a KEY (like 'Pikachu') and instantly get its VALUE (like stats or type)!",
       syntaxSnippet: `# Creating a dictionary
 player_stats = {
     "name": "Shadow Ninja",
@@ -1365,121 +1090,111 @@ player_stats = {
     "has_keycard": True
 }
 
-# Looking up a value
+# Looking up a value by key name
 print("Player Name:", player_stats["name"])
 
 # Updating a value
 player_stats["health"] = 300
 
-# Adding a new key
+# Adding a new key-value pair
 player_stats["weapon"] = "Katana"`,
       keyTakeaways: [
         "Dictionaries use curly braces {} with key: value pairs.",
         "Look up data instantly using dict[key_name].",
-        "Keys must be unique (like usernames or letter lookups!)."
+        "Keys must be unique strings (like character names or usernames!)."
       ],
       quickQuiz: {
-        question: "How do you access the value of 'gold' in vault = {'gold': 500, 'gems': 3}?",
+        question: "How do you access 'gold' in vault = {'gold': 500, 'gems': 3}?",
         options: [
           "vault[0]",
           "vault['gold']",
           "vault.gold"
         ],
         correctIndex: 1,
-        explanation: "Correct! You pass the key name inside square brackets: vault['gold']!"
+        explanation: "Correct! Pass the key name inside square brackets: `vault['gold']`!"
       }
     },
     liveCode: {
-      title: "Guided Walkthrough: Secret Agent Spy Decoder",
-      explanation: "Build an encryption/decryption machine that scrambles secret spy text using a custom substitution dictionary.",
-      code: `# Secret Spy Cipher Engine
-secret_cipher = {
-    'a': '4', 'b': '8', 'e': '3', 'g': '6',
-    'i': '1', 'o': '0', 's': '5', 't': '7'
+      title: "Guided Walkthrough: Pokedex Monster Database",
+      explanation: "Build a database of Pokémon monsters with stat queries and battle readiness checks.",
+      code: `print("========================================")
+print(" 📖 POKEDEX & MONSTER STAT DATABASE 📖")
+print("========================================")
+
+# Dictionary database of monsters
+pokedex = {
+    "Pikachu": {"type": "⚡ Electric", "hp": 100, "attack": 55, "move": "Thunderbolt"},
+    "Charizard": {"type": "🔥 Fire/Flying", "hp": 180, "attack": 84, "move": "Flamethrower"},
+    "Blastoise": {"type": "💧 Water", "hp": 175, "attack": 83, "move": "Hydro Pump"},
+    "Gengar": {"type": "👻 Ghost/Poison", "hp": 120, "attack": 65, "move": "Shadow Ball"}
 }
 
-print("🕵️ SECRET AGENT CIPHER ENCRYPTS v1.0 🕵️")
-original_msg = input("Enter top-secret message to encode: ").lower()
+print("Available Entry Keys:", list(pokedex.keys()))
 
-encoded_msg = ""
+query = input("\nEnter monster name to lookup: ").strip().capitalize()
 
-# Loop through every character in message
-for char in original_msg:
-    if char in secret_cipher:
-        encoded_msg += secret_cipher[char] # Replace with cipher code
-    else:
-        encoded_msg += char # Keep punctuation/spaces as-is
-
-print("\\n------------------------------------")
-print("🔒 ENCRYPTED MESSAGE OUTPUT:")
-print(encoded_msg)
-print("------------------------------------")
-print("Agent Directive: Transmit to HQ immediately!")`,
+if query in pokedex:
+    stats = pokedex[query]
+    print("\n✨ FOUND ENTRY FOR " + query.upper() + ":")
+    print("Type:", stats["type"])
+    print("HP:", stats["hp"])
+    print("Attack Power:", stats["attack"])
+    print("Signature Move:", stats["move"])
+else:
+    print("\n❌ Error: Monster '" + query + "' not found in database!")`,
       steps: [
-        { line: 2, title: "Cipher Dictionary", desc: "Map normal letters to secret numbers/symbols." },
-        { line: 12, title: "Character Iteration", desc: "Loop through each letter of the input string." },
-        { line: 13, title: "Dictionary Lookup", desc: "Check if char in secret_cipher dictionary to perform substitution." }
+        { line: 5, title: "Nested Dictionary", desc: "Each monster key points to a sub-dictionary of stats." },
+        { line: 15, title: "Checking Keys", desc: "Use 'if query in pokedex:' to check if key exists before looking up." },
+        { line: 18, title: "Accessing Sub-Keys", desc: "stats['type'] extracts the specific property value." }
       ]
     },
     tinkerPlayground: {
-      goal: "Build an RPG Inventory Dictionary tracking item quantities (e.g. {'health_potion': 3, 'gold': 150})!",
-      starterCode: `# DAY 10 TINKER LAB: RPG Inventory System Dictionary
+      goal: "Add 2 new monsters to the dictionary, allow users to register a new monster, or heal a monster's HP!",
+      starterCode: `# DAY 9 TINKER LAB: RPG Character Database
 
-inventory = {
-    "gold_coins": 250,
-    "health_potions": 3,
-    "magic_scrolls": 1,
-    "relics": 0
+character_db = {
+    "Knight": {"hp": 150, "weapon": "Iron Sword"},
+    "Wizard": {"hp": 80, "weapon": "Magic Staff"},
+    "Rogue": {"hp": 100, "weapon": "Dual Daggers"}
 }
 
-print("🎒 RPG PLAYER VAULT 🎒")
-for item, qty in inventory.items():
-    print("• " + item + ": " + str(qty))
+print("🎮 RPG CHARACTER LOOKUP 🎮")
+role = input("Choose class (Knight/Wizard/Rogue): ").capitalize()
 
-print("\\n[!] You found a chest containing 50 gold and 2 health potions!")
-inventory["gold_coins"] += 50
-inventory["health_potions"] += 2
-
-print("\\n✨ UPDATED INVENTORY:")
-print("Gold Coins:", inventory["gold_coins"])
-print("Health Potions:", inventory["health_potions"])
+if role in character_db:
+    print("Class Info:", character_db[role])
+else:
+    print("Class not found!")
 `,
-      solutionCode: `# DAY 10 SOLUTION: DECODER DIRECTION
-decode_dict = {'4': 'a', '8': 'b', '3': 'e', '0': 'o', '7': 't'}
-code = "m337 m3 47 7h3 8453"
-
-decoded = ""
-for char in code:
-    if char in decode_dict:
-        decoded += decode_dict[char]
-    else:
-        decoded += char
-
-print("Decoded Secret:", decoded)`,
+      solutionCode: `# DAY 9 SOLUTION
+db = {"Pikachu": 100}
+db["Pikachu"] += 20
+print(db)`,
       breakChallenges: [
         {
           id: "b1",
-          title: "🔥 Challenge 1: Full Alphabet Cipher",
-          task: "Add 5 more letter mappings to the secret_cipher dictionary!",
-          hint: "e.g. 'z': '9', 'l': '!' "
+          title: "🔥 Challenge 1: Add a New Monster",
+          task: "Add 'Bulbasaur' with Grass type and 120 HP to the pokedex dictionary!",
+          hint: "pokedex['Bulbasaur'] = {'type': 'Grass', 'hp': 120}"
         },
         {
           id: "b2",
-          title: "💥 Challenge 2: Reverse Decoder Tool",
-          task: "Create a reverse dictionary to DECODE scrambled text back into English!",
-          hint: "Map numbers back to letters: {'4': 'a', '3': 'e'}"
+          title: "💥 Challenge 2: Level Up Stat Boost",
+          task: "Write code that increases query monster's HP by +20 points!",
+          hint: "pokedex[query]['hp'] += 20"
         },
         {
           id: "b3",
-          title: "⚡ Challenge 3: Item Buying Mechanic",
-          task: "In the RPG inventory, create a buy_potion() action that costs 20 gold and adds +1 potion!",
-          hint: "inventory['gold_coins'] -= 20; inventory['health_potions'] += 1"
+          title: "⚡ Challenge 3: Register Custom Entry",
+          task: "Allow the user to type a new monster name and stats to save into pokedex!",
+          hint: "pokedex[new_name] = {...}"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "KeyError when looking up a key that doesn't exist in dictionary. Use dict.get(key, default) or 'if key in dict:'!"
+        "KeyError: 'Pikachu'. Trying to look up a key that doesn't exist in dictionary. Always check `if key in dict:` first!",
+        "Forgetting quotes around keys in dictionary definitions: `{name: 'Bob'}` causes NameError. Use `{'name': 'Bob'}`!"
       ],
       tinkerQuestions: [
         "Why are dictionaries faster for lookups than searching through a 10,000 item list?"
@@ -1487,680 +1202,838 @@ print("Decoded Secret:", decoded)`,
     }
   },
   {
-    day: 11,
-    title: "Capstone Blueprint: ASCII Game Engine Setup",
-    focus: "Game Architecture, Modular Design & Capstone Skeleton",
-    category: "Week 2: Data Structures, Functions & Capstone",
-    icon: "🏛️",
-    summary: "Select your Capstone Project (Text RPG, Turtle Derby, or Quiz Engine) and write the architecture skeleton!",
+    day: 10,
+    title: "Secret Cyber Code Generator",
+    focus: "String Methods (.upper(), .replace(), slicing, .split())",
+    category: "Week 2: Data Structures, Functions & Turtle Graphics",
+    icon: "🔐",
+    summary: "Encrypt secret messages with ciphers, reverse text, and transform string capitalization!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Structuring a Full Game Engine",
-      explanation: "Every major video game relies on 3 core pillars: Initialization (Setup), Main Game Loop (State & Controls), and Game Over / Victory Conditions.",
-      syntaxSnippet: `# Architecture of a Game Engine
-def show_main_menu():
-    print("=== CYBER RETRO ARCADE ===")
-    print("1. Start Game")
-    print("2. High Scores")
-    print("3. Quit")
+      headline: "Manipulating Strings with Built-in Methods",
+      explanation: "Python strings have powerful built-in tools. You can convert text capitalization, replace characters, and reverse strings using slicing `[::-1]`!",
+      syntaxSnippet: `text = "Agent 007"
 
-def game_loop():
-    running = True
-    while running:
-        # 1. Get Input -> 2. Update State -> 3. Render Screen
-        action = input("> ")
-        if action == "quit":
-            running = False`,
+# Uppercase & Lowercase
+print(text.upper()) # "AGENT 007"
+print(text.lower()) # "agent 007"
+
+# Replacing letters
+scrambled = text.replace("e", "3").replace("t", "7")
+
+# Reversing text with slicing [::-1]
+reversed_text = text[::-1]
+print("Reversed:", reversed_text)`,
       keyTakeaways: [
-        "Break large games into clean functions (show_menu(), play_turn(), check_win()).",
-        "Keep game state variables organized at the top.",
-        "A game loop orchestrates user choices, rules, and screen rendering!"
+        ".upper() / .lower() changes string capitalization.",
+        ".replace(old, new) swaps characters throughout text.",
+        "text[::-1] reverses text strings backwards instantly!"
       ],
       quickQuiz: {
-        question: "What are the 3 repeating steps inside a video game loop?",
+        question: "What does 'python'[::-1] return?",
         options: [
-          "Download, Install, Delete",
-          "Read Input, Update State, Render Screen/Text",
-          "Compile, Test, Publish"
+          "'nohtyp'",
+          "'PYTHON'",
+          "Error"
         ],
-        correctIndex: 1,
-        explanation: "Bingo! Input -> Logic Update -> Render is the rhythm of every game engine!"
+        correctIndex: 0,
+        explanation: "Correct! String slice step -1 `[::-1]` reads characters backwards from end to start, giving 'nohtyp'!"
       }
     },
     liveCode: {
-      title: "Guided Walkthrough: Capstone Skeleton Architecture",
-      explanation: "Build a clean, modular game menu with difficulty selection and state tracking.",
-      code: `import random
+      title: "Guided Walkthrough: Secret Agent Spy Scrambler",
+      explanation: "Build a top-secret cipher machine that scrambles, reverses, and decodes agent text.",
+      code: `print("========================================")
+print(" 🕵️ SECRET AGENT CIPHER MACHINE 🕵️")
+print("========================================")
 
-# Game State
-player_name = ""
-difficulty = "Medium"
-game_running = True
+message = input("Enter top secret message to encrypt: ")
 
-def print_ascii_banner():
-    print("  /\\\\_/\\\\  CYBER CAT ADVENTURE v1.0")
-    print(" ( o.o )  ===========================")
-    print("  > ^ <   [S]tart  |  [D]ifficulty  |  [Q]uit")
+# Step 1: Convert to Upper Case
+upper_msg = message.upper()
 
-def set_difficulty():
-    global difficulty
-    print("\\nSelect Difficulty: (1) Easy  (2) Medium  (3) HARDCORE")
-    choice = input("Choice: ")
-    if choice == "1":
-        difficulty = "Easy"
-    elif choice == "3":
-        difficulty = "HARDCORE"
-    else:
-        difficulty = "Medium"
-    print("Difficulty updated to:", difficulty)
+# Step 2: Substitution Cipher (l33tspeak swap)
+cipher_msg = upper_msg.replace("A", "4").replace("E", "3").replace("I", "1").replace("O", "0").replace("S", "5")
 
-# Main Engine Loop
-print_ascii_banner()
-player_name = input("Enter Hero Name: ")
+# Step 3: Reverse String
+scrambled_code = cipher_msg[::-1]
 
-while game_running:
-    print("\\n=== MAIN MENU | Player: " + player_name + " | Diff: " + difficulty + " ===")
-    cmd = input("Command (start/diff/quit): ").lower()
-    
-    if cmd == "start" or cmd == "s":
-        print("\\n🚀 LAUNCHING GAME CORE MECHANICS...")
-        # Capstone core mechanics will plug in here on Day 12!
-        break
-    elif cmd == "diff" or cmd == "d":
-        set_difficulty()
-    elif cmd == "quit" or cmd == "q":
-        print("Goodbye!")
-        game_running = False`,
+print("\n🔐 ENCRYPTION COMPLETE:")
+print("Original:", message)
+print("Formatted:", upper_msg)
+print("Scrambled Cipher:", scrambled_code)
+
+# Decryption Simulation
+print("\n🔓 DECRYPTING CODE...")
+unreversed = scrambled_code[::-1]
+decoded = unreversed.replace("4", "A").replace("3", "E").replace("1", "I").replace("0", "O").replace("5", "S")
+print("Decoded Secret Message:", decoded)`,
       steps: [
-        { line: 8, title: "ASCII Banner", desc: "Draw high-impact starting artwork." },
-        { line: 13, title: "Modular Settings", desc: "Encapsulate difficulty settings into a function." },
-        { line: 25, title: "Engine Switcher", desc: "Main loop routing user commands smoothly." }
+        { line: 7, title: "Capitalization", desc: "Standardize text using .upper()." },
+        { line: 10, title: "Character Swap", desc: "Chain .replace() calls to convert letters into numbers." },
+        { line: 13, title: "Reverse Slicing", desc: "Reverse text order using string slice [::-1]." }
       ]
     },
     tinkerPlayground: {
-      goal: "Choose your Capstone Project idea and build your custom ASCII start menu banner!",
-      starterCode: `# DAY 11 TINKER LAB: Capstone Project Planning
+      goal: "Add custom character substitution rules, build a Pig Latin converter, or create a Matrix text rain banner!",
+      starterCode: `# DAY 10 TINKER LAB: Matrix Text Scrambler
 
-print("========================================")
-print(" 🎮 SELECT YOUR CAPSTONE PROJECT IDEA 🎮")
-print("========================================")
-print("1. ⚔️ TEXT RPG DUNGEON CRAWLER")
-print("2. 🐢 TURTLE DERBY RACING CHAMPIONSHIP")
-print("3. 🧠 CYBER TRIVIA & QUIZ ENGINE")
+text = input("Enter text to Matrix-scramble: ")
 
-capstone_choice = input("Enter choice (1-3): ")
+# Replace spaces with ⚡ and letters with symbols
+matrix_text = text.replace(" ", "⚡").replace("a", "@").replace("e", "€")
 
-print("\\n[!] Initializing project template...")
-# Write your custom ASCII Art header for your project below!
+print("\n🟢 MATRIX STREAM:")
+print("Original:", text)
+print("Matrix Code:", matrix_text)
+print("Reversed Code:", matrix_text[::-1])
 `,
-      solutionCode: `# DAY 11 SOLUTION
-print(" 🏁 TURTLE DERBY CHAMPIONSHIP 🏁")
-print("  ______")
-print(" /|_||_\\\\\`.__")
-print("(   _    _ _\\\\")
-print("=\`-(_)--(_)-' ")
-print("Ready to race!")`,
+      solutionCode: `# DAY 10 SOLUTION
+msg = "hello"
+print(msg.upper()[::-1])`,
       breakChallenges: [
         {
           id: "b1",
-          title: "🔥 Challenge 1: Custom ASCII Logo",
-          task: "Design a 4-line ASCII art logo for your chosen Capstone project!",
-          hint: "Use print(' ... ') with backslashes escaped like \\\\"
+          title: "🔥 Challenge 1: Custom Character Swap",
+          task: "Add 2 new replacements: swap 'T' with '7' and 'B' with '8'!",
+          hint: ".replace('T', '7').replace('B', '8')"
         },
         {
           id: "b2",
-          title: "💥 Challenge 2: Sound Effects Option",
-          task: "Add a toggle function for sound_effects = True / False in options!",
-          hint: "def toggle_sound(): global sound_on; sound_on = not sound_on"
+          title: "💥 Challenge 2: Word Counter",
+          task: "Use .split() to split text into words and print total word count using len()!",
+          hint: "words = text.split(); print(len(words))"
         },
         {
           id: "b3",
-          title: "⚡ Challenge 3: High Score Placeholder",
-          task: "Create a list high_scores = [1000, 750, 500] and print it in a High Scores menu!",
-          hint: "for score in high_scores: print(score)"
+          title: "⚡ Challenge 3: Palindrome Checker",
+          task: "Check if user's word is spelled same backwards (e.g. 'racecar')!",
+          hint: "if word == word[::-1]: print('PALINDROME!')"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "Overcomplicating the initial plan. Encourage keeping Day 11 focused on a solid skeleton!"
+        "Strings are immutable: `text.replace(...)` returns a NEW string! You must save result: `text = text.replace(...)`.",
+        "Index error on slicing: slice syntax uses `[start:stop:step]`."
       ],
       tinkerQuestions: [
-        "Which Capstone idea excites you most: RPG Dungeon, Turtle Derby, or Cyber Quiz?"
+        "How do real encryption ciphers (like HTTPS or AES) protect internet passwords?"
+      ]
+    }
+  },
+  {
+    day: 11,
+    title: "Geometric Shape Generator & Turtle Intro",
+    focus: "Turtle Graphics Intro (forward, left, right, pencolor, circle)",
+    category: "Week 2: Data Structures, Functions & Turtle Graphics",
+    icon: "🎨",
+    summary: "Control a visual drawing robot to create squares, stars, and colorful geometric shapes on canvas!",
+    timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
+    concept: {
+      headline: "Visual Coding with Python Turtle",
+      explanation: "Python `turtle` is an on-screen robot pen. You command the turtle to move `forward()`, turn `left()` or `right()`, and change pen colors!",
+      syntaxSnippet: `import turtle
+
+t = turtle.Turtle()
+t.color("cyan")
+t.width(3)
+
+# Draw a Square
+for i in range(4):
+    t.forward(100)
+    t.left(90) # 90 degree turn for square corners`,
+      keyTakeaways: [
+        "t.forward(pixels) moves the pen forward.",
+        "t.left(degrees) / t.right(degrees) turns the pen.",
+        "t.pencolor(color) sets line stroke color.",
+        "t.circle(radius) draws circles automatically!"
+      ],
+      quickQuiz: {
+        question: "What turn angle is required to draw a regular 3-sided Triangle?",
+        options: [
+          "90 degrees",
+          "120 degrees (360 / 3 sides)",
+          "180 degrees"
+        ],
+        correctIndex: 1,
+        explanation: "Correct! The formula for exterior angles of any regular polygon is 360 / number_of_sides! For a triangle: 360 / 3 = 120 degrees!"
+      }
+    },
+    liveCode: {
+      title: "Guided Walkthrough: Geometric Shape Builder",
+      explanation: "Draw a multi-colored star, square, and circle pattern on black background.",
+      code: `import turtle
+
+win = turtle.Screen()
+win.bgcolor("black")
+
+t = turtle.Turtle()
+t.speed(0) # Fast drawing speed
+t.width(3)
+
+# Draw Neon Cyan Square
+t.pencolor("#38bdf8") # Cyan
+for i in range(4):
+    t.forward(120)
+    t.left(90)
+
+# Move to new position
+t.penup()
+t.goto(-150, 50)
+t.pendown()
+
+# Draw Neon Gold 5-Pointed Star
+t.pencolor("#facc15") # Gold
+for i in range(5):
+    t.forward(100)
+    t.left(144) # 144 degrees creates star points!
+
+# Move to new position
+t.penup()
+t.goto(150, -50)
+t.pendown()
+
+# Draw Neon Pink Circle
+t.pencolor("#f43f5e") # Pink
+t.circle(50)
+
+print("🎨 Geometric Shapes Rendered!")`,
+      steps: [
+        { line: 3, title: "Background Color", desc: "Set dark canvas background using win.bgcolor('black')." },
+        { line: 9, title: "Square Loop", desc: "Loop 4 times with 90 degree turns." },
+        { line: 20, title: "Star Formula", desc: "Turning 144 degrees creates 5-pointed star geometry!" }
+      ]
+    },
+    tinkerPlayground: {
+      goal: "Draw a Hexagon (6 sides, 60 deg turns), change line thickness, or create your own custom geometric logo!",
+      starterCode: `# DAY 11 TINKER LAB: Polygon & Star Generator
+
+import turtle
+
+win = turtle.Screen()
+win.bgcolor("#020617")
+
+t = turtle.Turtle()
+t.speed(0)
+t.width(4)
+t.color("lime")
+
+# Change sides to 6 for Hexagon, 8 for Octagon!
+sides = 6
+angle = 360 / sides
+
+for i in range(sides):
+    t.forward(80)
+    t.left(angle)
+`,
+      solutionCode: `# DAY 11 SOLUTION
+import turtle
+t = turtle.Turtle()
+for i in range(4): t.forward(100); t.left(90)`,
+      breakChallenges: [
+        {
+          id: "b1",
+          title: "🔥 Challenge 1: Draw an Octagon",
+          task: "Change sides variable to 8 to draw a stop-sign Octagon!",
+          hint: "sides = 8"
+        },
+        {
+          id: "b2",
+          title: "💥 Challenge 2: Colorful Edges",
+          task: "Cycle pen color between 'red', 'yellow', 'cyan', 'magenta' on each side!",
+          hint: "colors = ['red', 'yellow', 'cyan', 'magenta']"
+        },
+        {
+          id: "b3",
+          title: "⚡ Challenge 3: Concentric Circles",
+          task: "Write a for loop that draws 5 concentric circles with growing radius (20, 40, 60, 80, 100)!",
+          hint: "for r in range(20, 120, 20): t.circle(r)"
+        }
+      ]
+    },
+    mentorNotes: {
+      commonStumblingBlocks: [
+        "Turtle drawing outside visible canvas: use `t.penup()` before `t.goto(x, y)` to move pen without leaving trail lines!",
+        "Turtle window freezing: ensure `t.speed(0)` is used for instant rendering."
+      ],
+      tinkerQuestions: [
+        "What formula calculates regular polygon angles? (360 / number of sides!)."
       ]
     }
   },
   {
     day: 12,
-    title: "Capstone Build: Core Mechanics",
-    focus: "State Tracking, Game Loop Conditions, Controls & Physics",
-    category: "Week 2: Data Structures, Functions & Capstone",
-    icon: "⚙️",
-    summary: "Code the main game mechanics: dungeon room movement, randomized racing physics, or quiz scoring!",
+    title: "Rainbow Spirograph & Retro Pixel Stamps",
+    focus: "Turtle Loops, Dynamic Color Lists & Grid Stamps",
+    category: "Week 2: Data Structures, Functions & Turtle Graphics",
+    icon: "🌀",
+    summary: "Combine loops and color lists to draw hypnotic multi-colored mandalas and 8-bit pixel art grid sprites!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Coding Primary Game Mechanics",
-      explanation: "Today we build the beating heart of your project: room navigation, dice/race physics, or scoring logic!",
-      syntaxSnippet: `# Room Navigation Engine
-rooms = {
-    "hallway": {"north": "armory", "east": "kitchen"},
-    "armory": {"south": "hallway"},
-    "kitchen": {"west": "hallway"}
-}
+      headline: "Creating Hypnotic Visual Art with Turtle Loops",
+      explanation: "By repeatedly drawing shapes and turning slightly on each turn (like 59° instead of 60°), turtle creates expanding optical spirals and pixel grids!",
+      syntaxSnippet: `import turtle
 
-current_room = "hallway"
-move = input("Go direction (north/east/south/west): ")
+t = turtle.Turtle()
+t.speed(0)
+colors = ["red", "cyan", "lime", "gold"]
 
-if move in rooms[current_room]:
-    current_room = rooms[current_room][move]
-    print("You entered:", current_room)`,
+# Drawing a 100-step spiral
+for x in range(100):
+    t.pencolor(colors[x % 4]) # Cycle through colors
+    t.forward(x * 2)
+    t.left(59) # Slight twist creates spiral!`,
       keyTakeaways: [
-        "Connect game state variables directly to player choices.",
-        "Use dictionaries to model rooms/maps or lists to model race tracks.",
-        "Check win/loss conditions on every turn iteration!"
+        "x % len(colors) cycles numbers repeatedly through color list.",
+        "Slight angle offsets (59° or 91°) twist shapes into optical spirals.",
+        "t.stamp() prints turtle shapes directly onto coordinates!"
       ],
       quickQuiz: {
-        question: "How do you know when a game loop should end?",
+        question: "What does the modulus math operator % do in `x % 4`?",
         options: [
-          "When player HP hits 0 or target win score is reached.",
-          "After exactly 5 seconds.",
-          "When Python runs out of memory."
+          "Calculates percentage",
+          "Returns the remainder of division, cycling numbers 0, 1, 2, 3 repeatedly",
+          "Multiplies x by 4"
         ],
-        correctIndex: 0,
-        explanation: "Correct! Win or loss state checks determine when the main loop breaks!"
+        correctIndex: 1,
+        explanation: "Correct! Modulus % calculates the division remainder. As x grows, `x % 4` cycles 0, 1, 2, 3, 0, 1, 2, 3... perfect for cycling colors!"
       }
     },
     liveCode: {
-      title: "Guided Walkthrough: Dungeon Navigation & Turtle Race Engine",
-      explanation: "Build room navigation mechanics and monster encounter checks.",
-      code: `import random
+      title: "Guided Walkthrough: Expanding Rainbow Star Spiral",
+      explanation: "Build an expanding rainbow star spiral with cycling neon colors.",
+      code: `import turtle
 
-# Capstone Core Mechanic: Dungeon Crawl Engine
-player = {"hp": 100, "gold": 0, "room": "Entrance"}
+win = turtle.Screen()
+win.bgcolor("black")
 
-dungeon_map = {
-    "Entrance": {"desc": "A dark stone hallway with mossy walls.", "forward": "Guard Room"},
-    "Armory": {"desc": "Racks of rusty swords line the walls.", "forward": "Treasure Vault"},
-    "Guard Room": {"desc": "An angry Goblin guards the passage!", "forward": "Treasure Vault"},
-    "Treasure Vault": {"desc": "A glowing golden chest sits in the center!", "forward": "WIN"}
-}
+t = turtle.Turtle()
+t.speed(0)
+turtle.delay(0)
 
-print("🏰 CYBER DUNGEON CORE LOOP LAUNCHED 🏰")
+colors = ["#38bdf8", "#8b5cf6", "#f43f5e", "#4ade80", "#facc15"]
 
-while player["hp"] > 0 and player["room"] != "WIN":
-    curr = player["room"]
-    print("\\n====================================")
-    print("📍 Location:", curr)
-    print("📜 " + dungeon_map[curr]["desc"])
-    
-    if curr == "Guard Room":
-        print("⚔️ A Goblin attacks!")
-        dmg = random.randint(15, 30)
-        player["hp"] -= dmg
-        print("You took " + str(dmg) + " damage! HP left: " + str(player["hp"]))
-        if player["hp"] <= 0:
-            break
+for x in range(120):
+    t.pencolor(colors[x % 5])
+    t.forward(x * 2.5)
+    t.left(144) # 144deg creates 5-pointed star spiral!
+    t.width(x / 30)
 
-    action = input("Command (forward/search): ").lower()
-    if action == "forward":
-        player["room"] = dungeon_map[curr]["forward"]
-    elif action == "search":
-        found_gold = random.randint(10, 50)
-        player["gold"] += found_gold
-        print("💰 Found " + str(found_gold) + " gold coins! Total: " + str(player["gold"]))
-
-if player["room"] == "WIN":
-    print("\\n🎉 CONGRATULATIONS! You cleared the dungeon with " + str(player["gold"]) + " Gold!")
-else:
-    print("\\n💀 GAME OVER! You were defeated in the dungeon...")`,
+print("🌀 Rainbow Spirograph Rendered!")`,
       steps: [
-        { line: 6, title: "Dungeon Map Dictionary", desc: "Structure room connections and descriptions." },
-        { line: 15, title: "Main Mechanics Loop", desc: "Process location, events, user action, and state changes." },
-        { line: 33, title: "Victory / Defeat Evaluation", desc: "Trigger win/loss endings based on state." }
+        { line: 4, title: "Speed 0", desc: "Set speed(0) for fast rendering." },
+        { line: 11, title: "Color Modulus %", desc: "x % 5 cycles numbers 0 to 4 repeatedly through color list." },
+        { line: 13, title: "Star Twist Angle", desc: "144 degree turns create expanding star spiral geometry." }
       ]
     },
     tinkerPlayground: {
-      goal: "Implement room movement, race movement, or question loops for your specific Capstone project!",
-      starterCode: `# DAY 12 TINKER LAB: Turtle Derby Race Mechanics
+      goal: "Change turn angle to 91 (square spiral) or 121 (triangle spiral), or build an 8-bit Pixel Art Stamp Sprite!",
+      starterCode: `# DAY 12 TINKER LAB: Pixel Art Grid Stamp Builder
 
 import turtle
-import random
 
-# Create two racing turtles!
-t1 = turtle.Turtle()
-t1.color("cyan")
-t1.shape("turtle")
-t1.penup()
-t1.goto(-200, 30)
+win = turtle.Screen()
+win.bgcolor("#0f172a")
 
-t2 = turtle.Turtle()
-t2.color("magenta")
-t2.shape("turtle")
-t2.penup()
-t2.goto(-200, -30)
+t = turtle.Turtle()
+t.shape("square")
+t.penup()
+t.speed(0)
+t.color("#4ade80")
 
-# Race Loop Mechanics
-while t1.xcor() < 180 and t2.xcor() < 180:
-    t1.forward(random.randint(1, 10))
-    t2.forward(random.randint(1, 10))
+# 2D Grid Map (1 = Green pixel stamp, 0 = empty)
+heart_map = [
+    [0, 1, 1, 0, 1, 1, 0],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 1, 1, 0],
+    [0, 0, 1, 1, 1, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0]
+]
 
-if t1.xcor() >= 180:
-    print("🏆 Cyan Turtle Wins!")
-else:
-    print("🏆 Magenta Turtle Wins!")
+size = 25
+for r_idx, row in enumerate(heart_map):
+    for c_idx, val in enumerate(row):
+        if val == 1:
+            t.goto(-80 + c_idx * size, 80 - r_idx * size)
+            t.stamp()
 `,
-      solutionCode: `# DAY 12 SOLUTION WITH BETTING
-bet = input("Bet on CYAN or MAGENTA: ").lower()
-# Winner check matches bet string!`,
+      solutionCode: `# DAY 12 SOLUTION
+import turtle
+t = turtle.Turtle()
+for x in range(50): t.forward(x*3); t.left(91)`,
       breakChallenges: [
         {
           id: "b1",
-          title: "🔥 Challenge 1: Add a 3rd Turtle Racer",
-          task: "Add a 3rd yellow turtle racer named 't3' to the Derby!",
-          hint: "t3 = turtle.Turtle(); t3.color('yellow'); t3.goto(-200, -80)"
+          title: "🔥 Challenge 1: The Star Spiral Angle",
+          task: "Change turn angle in liveCode to 91 degrees for a square spiral!",
+          hint: "Replace left(144) with left(91)"
         },
         {
           id: "b2",
-          title: "💥 Challenge 2: Speed Boost Trap",
-          task: "If a turtle lands on x > 0, give it a 2X speed boost forward(20)!",
-          hint: "if t1.xcor() > 0: t1.forward(20)"
+          title: "💥 Challenge 2: Thicker Pen Strokes",
+          task: "Make pen stroke width grow thicker as x increases!",
+          hint: "t.width(x / 10)"
         },
         {
           id: "b3",
-          title: "⚡ Challenge 3: Finish Line Visual",
-          task: "Draw a vertical checkered finish line at x = 180 using turtle line commands!",
-          hint: "Use t.goto(180, 100); t.pendown(); t.goto(180, -100)"
+          title: "⚡ Challenge 3: Dual Color Pixel Sprite",
+          task: "Add number 2 to grid map for gold pixels! (`elif val == 2: t.color('gold')`)",
+          hint: "elif val == 2: t.color('gold'); t.stamp()"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "State variables not updating: double check variable names inside loops!"
+        "Turtle window freezing: ensure speed(0) is used for instant rendering.",
+        "Using unrecognized color names like 'blurple'. Use standard hex codes like '#8b5cf6' or common color names."
       ],
       tinkerQuestions: [
-        "Is your primary mechanic working smoothly without errors?"
+        "How do retro video games (like NES/GameBoy) store sprite graphics? (In small binary 2D arrays just like this!)."
       ]
     }
   },
   {
     day: 13,
-    title: "Capstone Polish: Colors, Easter Eggs & Defensive Inputs",
-    focus: "Defensive Coding (Input Validation), ANSI Colors, Cheat Codes",
-    category: "Week 2: Data Structures, Functions & Capstone",
-    icon: "🎨",
-    summary: "Add colorized terminal text (ANSI codes), hidden cheat codes ('godmode'), and handle invalid user inputs gracefully!",
+    title: "Bouncing Ball Physics Sim & Screen Saver",
+    focus: "Turtle Physics, Coordinates (xcor, ycor) & Screen Bouncing",
+    category: "Week 2: Data Structures, Functions & Turtle Graphics",
+    icon: "⚽",
+    summary: "Simulate gravity, wall bounces, and motion physics for a mini Pong or arcade bouncing ball game!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Polishing Games & Defensive Coding",
-      explanation: "A polished game never crashes when a user types nonsense. It validates inputs, uses bright colors, and hides fun easter eggs!",
-      syntaxSnippet: `# ANSI Terminal Colors
-RED = "\\u001b[91m"
-GREEN = "\\u001b[92m"
-CYAN = "\\u001b[96m"
-RESET = "\\u001b[0m"
+      headline: "Simulating Physics and Coordinates with Turtle",
+      explanation: "Every element on screen has (x, y) coordinates. By updating position each frame (`x += dx`), objects move! Bouncing happens when reversing velocity (`dx = -dx`) at wall edges!",
+      syntaxSnippet: `import turtle
 
-print(RED + "⚠️ WARNING: Low Health!" + RESET)
-print(GREEN + "💚 Health Restored!" + RESET)
+ball = turtle.Turtle()
+ball.shape("circle")
 
-# Defensive Input Loop
-while True:
-    choice = input("Pick 1 or 2: ")
-    if choice in ["1", "2"]:
-        break
-    print("❌ Invalid entry! Please type 1 or 2.")`,
+# Motion velocity variables
+dx = 3 # Movement speed along x-axis
+dy = 3 # Movement speed along y-axis
+
+# Animation step
+ball.setx(ball.xcor() + dx)
+ball.sety(ball.ycor() + dy)
+
+# Bounce off right wall (x > 200)
+if ball.xcor() > 200:
+    dx = -dx # Reverse direction!`,
       keyTakeaways: [
-        "ANSI escape codes like '\\u001b[92m' add terminal color flair.",
-        "Defensive coding checks inputs before doing math to prevent crashes.",
-        "Easter eggs reward curious players who try secret commands!"
+        "ball.xcor() / ball.ycor() gets current position.",
+        "ball.setx(new_x) / ball.sety(new_y) moves ball to new coordinates.",
+        "Velocity variables dx, dy control speed and direction.",
+        "Reversing sign (dx = -dx) creates wall bouncing physics!"
       ],
       quickQuiz: {
-        question: "Why should you use an input validation while loop?",
+        question: "If dx = 5 and a ball hits the right wall edge, what reverses its horizontal motion?",
         options: [
-          "To force the computer to run faster.",
-          "To stop the program from crashing when a user types an invalid command.",
-          "To automatically convert strings into images."
+          "dx = 0",
+          "dx = -dx (changes dx from 5 to -5)",
+          "dx = dx + 5"
         ],
         correctIndex: 1,
-        explanation: "Correct! Defensive validation keeps your game running smoothly no matter what the player types!"
+        explanation: "Correct! Negating velocity (`dx = -dx`) reverses direction, making positive rightward movement turn into negative leftward movement!"
       }
     },
     liveCode: {
-      title: "Guided Walkthrough: Adding Polish & Cheat Codes",
-      explanation: "Add ANSI color styling, custom easter egg keywords, and input guards to your Capstone.",
-      code: `# ANSI Color System
-CYAN = "\\u001b[96m"
-GREEN = "\\u001b[92m"
-YELLOW = "\\u001b[93m"
-MAGENTA = "\\u001b[95m"
-RESET = "\\u001b[0m"
+      title: "Guided Walkthrough: Retro Bouncing DVD Screen Saver",
+      explanation: "Build a classic bouncing logo simulation that changes colors whenever it hits a screen edge.",
+      code: `import turtle
+import random
 
-# Safe Input Validator Function
-def get_valid_input(prompt, valid_options):
-    while True:
-        user_val = input(prompt).strip().lower()
-        if user_val in valid_options or user_val == "godmode":
-            return user_val
-        print(MAGENTA + "❌ Invalid command! Choose from: " + str(valid_options) + RESET)
+win = turtle.Screen()
+win.bgcolor("black")
 
-# Example Gameplay Usage
-print(CYAN + "=== 🌟 CAPSTONE POLISH SYSTEM 🌟 ===" + RESET)
-player_hp = 100
+ball = turtle.Turtle()
+ball.shape("circle")
+ball.color("#38bdf8") # Neon Cyan
+ball.penup()
+ball.speed(0)
 
-cmd = get_valid_input("Select move (attack/heal): ", ["attack", "heal"])
+# Velocity vector speeds
+dx = 3
+dy = 2.5
 
-if cmd == "godmode":
-    print(YELLOW + "👑 CHEAT ACTIVATED: GODMODE UNLOCKED! Infinite Health!" + RESET)
-    player_hp = 9999
-elif cmd == "attack":
-    print(GREEN + "⚔️ You struck with razor precision!" + RESET)
-elif cmd == "heal":
-    print(GREEN + "💚 Restored to full health!" + RESET)
+colors = ["#38bdf8", "#8b5cf6", "#f43f5e", "#4ade80", "#facc15"]
 
-print("Current HP:", player_hp)`,
+print("⚽ BOUNCING BALL PHYSICS ACTIVE ⚽")
+
+# Animation loop for 150 frames
+for frame in range(150):
+    # Update position
+    new_x = ball.xcor() + dx
+    new_y = ball.ycor() + dy
+    ball.goto(new_x, new_y)
+    
+    # Right Wall Bounce
+    if ball.xcor() > 200 or ball.xcor() < -200:
+        dx = -dx
+        ball.color(random.choice(colors))
+        
+    # Top/Bottom Wall Bounce
+    if ball.ycor() > 150 or ball.ycor() < -150:
+        dy = -dy
+        ball.color(random.choice(colors))
+
+print("✅ Physics Animation Complete!")`,
       steps: [
-        { line: 2, title: "Color Tokens", desc: "Define ANSI code constants for terminal styling." },
-        { line: 9, title: "Input Guard", desc: "Function repeatedly prompts until valid choice or cheat code is entered." },
-        { line: 19, title: "Easter Egg Logic", desc: "Intercept 'godmode' cheat keyword to grant secret powers!" }
+        { line: 12, title: "Velocity Variables", desc: "dx and dy store pixels moved per frame." },
+        { line: 20, title: "Position Update", desc: "goto(new_x, new_y) updates ball position each step." },
+        { line: 24, title: "Boundary Checking", desc: "Check if xcor() exceeds border limits (200, -200) and negate velocity." }
       ]
     },
     tinkerPlayground: {
-      goal: "Pimp your project! Add ANSI colors, sound effect text, and 2 secret easter egg cheat codes!",
-      starterCode: `# DAY 13 TINKER LAB: Polish & Easter Eggs
+      goal: "Add a 2nd bouncing ball, add gravity (`dy -= 0.2`), or build a Pong paddle controlled by keyboard!",
+      starterCode: `# DAY 13 TINKER LAB: Gravity Bouncing Ball
 
-# Colors
-RED = "\\u001b[91m"
-GREEN = "\\u001b[92m"
-GOLD = "\\u001b[93m"
-RESET = "\\u001b[0m"
+import turtle
 
-print(GOLD + "✨ POLISHING YOUR CAPSTONE GAME ✨" + RESET)
+win = turtle.Screen()
+win.bgcolor("#020617")
 
-# Add your cheat codes below!
-secret_code = input("Enter standard command or cheat code: ").lower()
+ball = turtle.Turtle()
+ball.shape("circle")
+ball.color("gold")
+ball.penup()
+ball.speed(0)
+ball.goto(0, 100)
 
-if secret_code == "noclip":
-    print(GREEN + "👻 You can now walk through walls!" + RESET)
-elif secret_code == "moneybag":
-    print(GOLD + "💰 +1,000,000 GOLD ADDED TO INVENTORY!" + RESET)
-else:
-    print("Normal action executed.")
+dy = 0 # Vertical speed
+gravity = -0.3 # Gravity pulling down
+
+for frame in range(120):
+    dy += gravity # Gravity pulls down
+    ball.sety(ball.ycor() + dy)
+    
+    # Ground Bounce
+    if ball.ycor() < -120:
+        ball.sety(-120)
+        dy = -dy * 0.85 # Bounce up with slight energy loss!
 `,
       solutionCode: `# DAY 13 SOLUTION
-print("\\u001b[96m" + "🚀 RETRO GAME READY!" + "\\u001b[0m")`,
+import turtle
+b = turtle.Turtle()
+b.shape("circle")
+dx = 4
+for i in range(50):
+    b.setx(b.xcor() + dx)
+    if b.xcor() > 100: dx = -dx`,
       breakChallenges: [
         {
           id: "b1",
-          title: "🔥 Challenge 1: Add a 'matrix' Color Theme",
-          task: "Make all game text neon green on black background!",
-          hint: "Use \\u001b[92m at start of script!"
+          title: "🔥 Challenge 1: Double the Speed",
+          task: "Set dx = 6 and dy = 5 for a hyper-fast super bounce!",
+          hint: "dx = 6; dy = 5"
         },
         {
           id: "b2",
-          title: "💥 Challenge 2: Easter Egg Cheat 'speedrun'",
-          task: "If player types 'speedrun', skip straight to the final boss or finish line!",
-          hint: "Set position/location directly to final room!"
+          title: "💥 Challenge 2: Add Trail Stamp",
+          task: "Leave a trailing stamp behind the ball as it moves!",
+          hint: "ball.stamp()"
         },
         {
           id: "b3",
-          title: "⚡ Challenge 3: Sound Effect Text",
-          task: "Add cool sound effect strings like *KABOOM!* or *SWOOSH!* in yellow color!",
-          hint: "print(GOLD + '*KABOOM!*' + RESET)"
+          title: "⚡ Challenge 3: Energy Friction Loss",
+          task: "In gravity sim, multiply dy by 0.80 on ground bounce so bounces shrink realistically!",
+          hint: "dy = -dy * 0.80"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "Forgetting to append RESET code after color string, turning entire terminal green!"
+        "Ball getting stuck in wall: ensure you reset ball position slightly inside boundary when bouncing (`ball.setx(200)`).",
+        "Infinite loops during animation: use counted frame loops for web environment compatibility."
       ],
       tinkerQuestions: [
-        "What secret cheat codes did you hide in your game?"
+        "How do real physics engines (like Unity or Unreal Engine) calculate velocity and gravity?"
       ]
     }
   },
   {
     day: 14,
-    title: "Arcade Cabinet Packaging & Showcase",
-    focus: "Code Cleanup, Modular Integration & Mini-Arcade Launcher",
-    category: "Week 2: Data Structures, Functions & Capstone",
-    icon: "🎰",
-    summary: "Combine your top favorite mini-games into a single launchable 'Retro Mini-Arcade' script!",
+    title: "The Great Bug Hunt & Logic Doctor",
+    focus: "Refactoring & Debugging (SyntaxErrors, NameErrors, IndentationErrors, Logic Errors)",
+    category: "Week 2: Data Structures, Functions & Turtle Graphics",
+    icon: "🐛",
+    summary: "Become a code detective! Find and fix 5 hidden bugs in broken mini-games to restore them!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Building a Multi-Game Mini-Arcade Cabinet",
-      explanation: "Professional game developers bundle multiple games into arcade collections. You can combine your past projects into 1 master script!",
-      syntaxSnippet: `# Multi-Game Arcade Launcher
-def play_fake_virus():
-    print("Running Fake Virus Prank...")
+      headline: "Mastering the Art of Python Debugging",
+      explanation: "Errors aren't failures — they are clues! Python tracebacks tell you the exact line number and error type (`SyntaxError`, `NameError`, `TypeError`, `IndentationError`).",
+      syntaxSnippet: `# Common Error 1: SyntaxError (Missing colon or quotes)
+# Broken: if x == 5
+# Fixed:  if x == 5:
 
-def play_vault_breaker():
-    print("Running Vault Breaker Game...")
+# Common Error 2: NameError (Misspelled variable)
+# Broken: player_hp = 100; print(player_health)
+# Fixed:  player_hp = 100; print(player_hp)
 
-while True:
-    print("=== 🎰 RETRO MINI-ARCADE 🎰 ===")
-    print("1. Fake Virus Prank")
-    print("2. Vault Breaker")
-    print("3. Exit")
-    choice = input("Select Game: ")
-    if choice == "1":
-        play_fake_virus()
-    elif choice == "2":
-        play_vault_breaker()
-    elif choice == "3":
-        break`,
+# Common Error 3: TypeError (Mixing string and number)
+# Broken: print("Score: " + 100)
+# Fixed:  print("Score: " + str(100))`,
       keyTakeaways: [
-        "Wrap each project in a clean function def play_game_name().",
-        "Build a main arcade menu loop with numerical selection.",
-        "Add comments (#) to document your code so friends and family can read it easily!"
+        "SyntaxError: Missing colon, quote, or parenthesis.",
+        "NameError: Misspelled variable or function name.",
+        "TypeError: Mixing incompatible data types (e.g. string + int).",
+        "LogicError: Code runs without error, but gives wrong result!"
       ],
       quickQuiz: {
-        question: "What is the benefit of wrapping whole mini-games inside functions?",
+        question: "What error occurs if you forget a colon ':' at the end of an if line?",
         options: [
-          "It makes the file size 100 times smaller.",
-          "It allows you to run any mini-game on command without code overlapping!",
-          "It automatically publishes your game to Steam."
+          "TypeError",
+          "SyntaxError",
+          "ValueError"
         ],
         correctIndex: 1,
-        explanation: "Correct! Functions keep game logic modular and isolated!"
+        explanation: "Correct! Forgetting required Python punctuation like colons ':' or quotes causes a `SyntaxError`!"
       }
     },
     liveCode: {
-      title: "Guided Walkthrough: The Master Arcade Launcher",
-      explanation: "Combine Fake Virus, Vault Breaker, and Sarcastic 8-Ball into a master launcher.",
-      code: `import random
-import time
+      title: "Guided Walkthrough: Broken Arcade Mini-Game Debug",
+      explanation: "Inspect a broken script with 3 intentional bugs and fix them step-by-step.",
+      code: `# BROKEN SCRIPT: Fix 3 bugs below!
 
-# --- GAME 1: FAKE VIRUS ---
-def game_fake_virus():
-    print("\\n[!] LAUNCHING VIRUS PRANK...")
-    name = input("Enter target name: ")
-    print("Hacking " + name + "'s phone... 100% Complete!")
-    print("😄 Just a prank!")
+import random
 
-# --- GAME 2: VAULT BREAKER ---
-def game_vault_breaker():
-    print("\\n[!] LAUNCHING VAULT BREAKER...")
-    secret = random.randint(1, 20)
-    guess = int(input("Guess secret number (1-20): "))
-    if guess == secret:
-        print("🔓 UNLOCKED!")
-    else:
-        print("🔒 LOCKED! Code was:", secret)
+player_hp = 100
+monster_hp = 50
 
-# --- MASTER ARCADE MENU ---
-while True:
-    print("\\n====================================")
-    print(" 🕹️ 13-YEAR-OLD RETRO MINI-ARCADE 🕹️")
-    print("====================================")
-    print("1. 💻 Fake Virus Prank")
-    print("2. 🔐 Vault Breaker")
-    print("3. 🏆 Launch Capstone Project")
-    print("4. 🚪 Exit Arcade")
-    
-    choice = input("Select game (1-4): ")
-    
-    if choice == "1":
-        game_fake_virus()
-    elif choice == "2":
-        game_vault_breaker()
-    elif choice == "3":
-        print("🚀 Running Capstone Game Engine!")
-    elif choice == "4":
-        print("👋 Thanks for playing! Powering down Arcade Cabinet...")
-        break`,
+print("========================================")
+print(" 🐛 BUG HUNT: REPAIR THE GAME ENGINE 🐛")
+print("========================================")
+
+# BUG 1 FIX: Convert input to integer!
+player_choice = input("Enter attack power (10-30): ")
+attack_power = int(player_choice)
+
+# BUG 2 FIX: Correct variable spelling!
+monster_hp -= attack_power
+print("Hit monster for " + str(attack_power) + " damage!")
+
+# BUG 3 FIX: Add missing colon on if statement!
+if monster_hp <= 0:
+    print("🏆 VICTORY! Monster defeated!")
+else:
+    print("Monster HP remaining:", monster_hp)`,
       steps: [
-        { line: 5, title: "Modular Game 1", desc: "Encapsulate Virus Prank inside game_fake_virus()." },
-        { line: 12, title: "Modular Game 2", desc: "Encapsulate Vault Breaker inside game_vault_breaker()." },
-        { line: 20, title: "Arcade Cabinet Loop", desc: "Master menu connecting all completed projects." }
+        { line: 14, title: "Bug 1 (TypeError)", desc: "Cast input to int() so subtraction works." },
+        { line: 17, title: "Bug 2 (NameError)", desc: "Fix variable spelling from monster_health to monster_hp." },
+        { line: 21, title: "Bug 3 (SyntaxError)", desc: "Add missing colon ':' after if condition." }
       ]
     },
     tinkerPlayground: {
-      goal: "Bundle your 3 favorite games from the past 14 days into your own personalized Arcade Suite!",
-      starterCode: `# DAY 14 TINKER LAB: Retro Arcade Packaging
+      goal: "Find and fix 3 hidden bugs in the Tinker Challenge snippet below to make the game fully playable!",
+      starterCode: `# DAY 14 TINKER LAB: The Bug Hunter Hospital
+# THIS SCRIPT CONTAINS 3 BUGS! CAN YOU FIX THEM ALL?
 
-def my_game_1():
-    print("🎮 Game 1 Running!")
+import random
 
-def my_game_2():
-    print("🎮 Game 2 Running!")
+inventory = ["Health Potion", "Mana Crystal"]
+score = "100" # BUG 1: Should be integer number 100!
 
-print("🎰 MY PERSONAL PYTHON ARCADE CABINET 🎰")
-my_game_1()
+print("🎒 INVENTORY BUG HUNT 🎒")
+
+# BUG 2: Indentation error on print line below!
+for item in inventory:
+print("Item in backpack:", item)
+
+# BUG 3: Typo in variable name 'inventry'!
+inventory.append("Gold Coin")
+print("Total items:", len(inventory))
 `,
       solutionCode: `# DAY 14 SOLUTION
-print("Arcade Suite Ready!")`,
+inventory = ["Potion"]
+for item in inventory:
+    print("Item:", item)`,
       breakChallenges: [
         {
           id: "b1",
-          title: "🔥 Challenge 1: Add Win Counter",
-          task: "Track total wins across all arcade mini-games in a total_wins counter!",
-          hint: "total_wins += 1 inside each game win condition"
+          title: "🔥 Challenge 1: Fix Bug 1 (Data Type)",
+          task: "Change score = '100' string to integer number 100!",
+          hint: "score = 100"
         },
         {
           id: "b2",
-          title: "💥 Challenge 2: Add Credits Screen",
-          task: "Add menu option (5) Credits that prints your name as Lead Developer!",
-          hint: "print('Lead Programmer: [Your Name]')"
+          title: "💥 Challenge 2: Fix Bug 2 (Indentation)",
+          task: "Indent the print line under the for loop with 4 spaces!",
+          hint: "for item in inventory:\n    print(...)"
         },
         {
           id: "b3",
-          title: "⚡ Challenge 3: Random Game Selector",
-          task: "Add option 'R' for Random Game that picks a game for you using random.choice()!",
-          hint: "random.choice([game_1, game_2])()"
+          title: "⚡ Challenge 3: Fix Bug 3 (Spelling)",
+          task: "Fix spelling of inventory variable so .append works!",
+          hint: "inventory.append('Gold Coin')"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "Variable name collisions across different functions. Keeping code inside functions prevents bugs!"
+        "Panic when seeing red error tracebacks: read the last line of the traceback first — it tells you the exact line number and error!",
+        "Logic errors where code runs without crashing but gives wrong results: use print() debugging to inspect variable values."
       ],
       tinkerQuestions: [
-        "Ready to demo your Arcade Cabinet to family and friends?"
+        "Why is debugging considered one of the most valuable skills for professional software engineers?"
       ]
     }
   },
   {
     day: 15,
-    title: "Graduation Showcase, Custom Modding & Certificate",
-    focus: "Demo Day, Code Explanation, Modding Sandbox & Graduation Certificate",
-    category: "Week 3: Showcase & Certificate",
-    icon: "🎓",
-    summary: "Demo your project to family and friends, earn your Official Python Coder Certificate, and unlock the open modding sandbox!",
+    title: "Neon Retro Arcade Capstone Project",
+    focus: "Full Project Synthesis (Loops, Lists, Functions, Dictionaries & Visuals)",
+    category: "Week 2: Data Structures, Functions & Turtle Graphics",
+    icon: "🚀",
+    summary: "Build your dream Python mini-game from scratch using loops, lists, functions, dictionaries & graphics!",
     timeBreakdown: { conceptMinutes: 10, liveCodeMinutes: 15, tinkerMinutes: 20 },
     concept: {
-      headline: "Showcase Your Skills & Official Graduation!",
-      explanation: "Congratulations! You have mastered Python core logic, loops, turtle graphics, data structures, and functions in just 15 days!",
-      syntaxSnippet: `# YOU ARE NOW A CERTIFIED PYTHON CODER!
-coder = {
-    "status": "GRADUATED 🎓",
-    "python_level": "LEVEL 15 MASTER",
-    "skills": ["Variables", "Loops", "Turtle Art", "Lists", "Dicts", "Functions", "Game Engines"]
-}
+      headline: "Bringing It All Together: The Capstone Game Engine",
+      explanation: "You have mastered all 14 core building blocks of Python! Now combine variables, loops, lists, functions, dictionaries, and graphics into a complete Capstone Game!",
+      syntaxSnippet: `# Capstone Architecture Template
+player_data = {"name": "Hero", "score": 0, "inventory": []}
 
-print("🎉 CONGRATULATIONS " + coder["status"] + "!")`,
+def game_menu():
+    print("=== CAPSTONE ARCADE ===")
+    print("1. Start Quest")
+    print("2. View Stats")
+    print("3. Quit")
+
+# Main Engine Loop
+while True:
+    game_menu()
+    choice = input("> ")
+    if choice == "3": break`,
       keyTakeaways: [
-        "Explaining code to someone else is the ultimate test of mastery.",
-        "You now possess the foundational skills to build games, scripts, and software!",
-        "Print your official Certificate of Completion below!"
+        "Modular Design: Break big projects into small functions.",
+        "State Management: Store player health, score, and inventory in dictionaries/lists.",
+        "Polished UX: Add ASCII banners, emoji icons, and clear prompts!"
       ],
       quickQuiz: {
-        question: "What is the best way to keep improving your coding skills?",
+        question: "What is the key to building a large complex programming project?",
         options: [
-          "Never code again.",
-          "Keep building fun projects, breaking rules, and tinkering!",
-          "Memorize every dictionary word."
+          "Write 1000 lines of code at once without testing",
+          "Break the project into small modular functions and test each step!",
+          "Memorize every command"
         ],
         correctIndex: 1,
-        explanation: "Bingo! 'Tinker, don't lecture' is a superpower for life!"
+        explanation: "Correct! Professional engineers build complex systems step-by-step: design functions, test them individually, and plug them together!"
       }
     },
     liveCode: {
-      title: "Guided Walkthrough: Graduation Showcase & Modding Sandbox",
-      explanation: "Run the final graduation celebration script and unlock full creative freedom.",
-      code: `print("==========================================")
-print(" 🎓 OFFICIAL PYTHON TINKER ACADEMY 🎓")
-print("        GRADUATION CEREMONY v1.0")
-print("==========================================")
+      title: "Guided Walkthrough: Capstone Arcade Engine",
+      explanation: "Build a complete playable Capstone mini-game engine with state tracking and multiple game modes.",
+      code: `import random
 
-student_name = input("Enter Graduate Name: ")
+# Game State Data
+player = {
+    "name": "",
+    "hp": 100,
+    "score": 0,
+    "inventory": ["Health Potion"]
+}
 
-print("\\n✨ Presenting official Python Certification for: " + student_name.upper())
-print("🏆 Badges Unlocked: 15/15")
-print("🔥 Projects Mastered: Rickroll Prank, Vault Breaker, Turtle Alien, Combat Sim, Capstone Arcade")
+def print_banner():
+    print("========================================")
+    print(" 🎮 NEON RETRO CAPSTONE ARCADE v1.0 🎮")
+    print("========================================")
 
-print("\\n🌟 YOU ARE OFFICIALLY A PYTHON CODER! KEEP TINKERING! 🚀")`,
+def explore_dungeon():
+    print("\n🌲 Exploring the Cyber Forest...")
+    events = ["Found Gold Chest! 💰", "Encountered Goblin! 👾", "Discovered Secret Shrine! ✨"]
+    found = random.choice(events)
+    print("Event:", found)
+    
+    if "Gold" in found:
+        player["score"] += 50
+        player["inventory"].append("Gold Key")
+    elif "Goblin" in found:
+        player["hp"] -= 20
+        print("Took 20 damage! HP remaining:", player["hp"])
+    elif "Shrine" in found:
+        player["hp"] = min(100, player["hp"] + 30)
+        print("Restored +30 HP!")
+
+# --- MAIN CAPSTONE ENGINE ---
+print_banner()
+player["name"] = input("Enter Hero Name: ")
+
+while player["hp"] > 0:
+    print("\n--- HERO: " + player["name"] + " | HP: " + str(player["hp"]) + " | Score: " + str(player["score"]) + " ---")
+    print("Inventory:", player["inventory"])
+    cmd = input("Action: (1) Explore  (2) Heal  (3) Quit: ")
+    
+    if cmd == "1":
+        explore_dungeon()
+    elif cmd == "2":
+        if "Health Potion" in player["inventory"]:
+            player["inventory"].remove("Health Potion")
+            player["hp"] = 100
+            print("💚 Used Health Potion! HP fully restored!")
+        else:
+            print("❌ No Health Potions left!")
+    elif cmd == "3":
+        print("👋 Thanks for playing!")
+        break
+
+print("\n🏆 GAME OVER! Final Score:", player["score"])`,
       steps: [
-        { line: 6, title: "Certification Output", desc: "Display graduate name and honors." },
-        { line: 8, title: "Badge Summary", desc: "Review all 15 completed milestones." }
+        { line: 4, title: "State Management", desc: "Store hero HP, score, and inventory inside dictionary." },
+        { line: 14, title: "Modular Events", desc: "Encapsulate game encounters inside clean functions." },
+        { line: 29, title: "Game Engine Loop", desc: "Run main game loop while player HP > 0." }
       ]
     },
     tinkerPlayground: {
-      goal: "Open Creative Sandbox! Build anything you desire using all Python tools you have learned!",
-      starterCode: `# DAY 15 FREE MODDING SANDBOX 🚀
-# You have unlocked full creative freedom!
-# Build a new game, graphics art, or combine all tools!
+      goal: "Customize your Capstone project! Add new items, write a Boss Battle encounter, or build a Turtle Derby Racing championship!",
+      starterCode: `# DAY 15 TINKER LAB: Capstone Customizer
 
-import random
-import turtle
+# Choose your Capstone path:
+# 1. Expand the Dungeon Crawler above with a Boss fight!
+# 2. Build a Turtle Derby Racing Championship!
+# 3. Create a Cyber Trivia & Quiz Engine!
 
-print("🎉 WELCOME TO THE OPEN CREATIVE SANDBOX!")
-print("Type your custom Python code here and run it live!")
+print("🚀 CAPSTONE PROJECT CUSTOM LAB 🚀")
+print("Congratulations on completing 15 Days of Python Tinker Academy!")
+print("Customize your code and share your game with family & friends!")
 `,
       solutionCode: `# DAY 15 SOLUTION
-print("🎓 CERTIFICATE OF MASTERY GENERATED!")`,
+print("🏆 GRADUATED FROM PYTHON TINKER ACADEMY!")`,
       breakChallenges: [
         {
           id: "b1",
-          title: "🔥 Challenge 1: Generate Graduation Certificate",
-          task: "Click the 'Generate Certificate' button on screen to view and print your certificate!",
-          hint: "Fill in your name!"
+          title: "🔥 Challenge 1: Add Boss Battle",
+          task: "Add a Boss fight encounter when player score reaches 100 points!",
+          hint: "if player['score'] >= 100: boss_fight()"
         },
         {
           id: "b2",
-          title: "💥 Challenge 2: Demo to Family",
-          task: "Run your favorite day's project and explain how your favorite function works!",
-          hint: "Show off the sound effects and cheat codes!"
+          title: "💥 Challenge 2: High Score Saver",
+          task: "Store high score in a list and display top score on game over!",
+          hint: "high_scores.append(player['score'])"
         },
         {
           id: "b3",
-          title: "⚡ Challenge 3: Infinite Sandbox",
-          task: "Write a brand new script combining Turtle graphics and a random fortune generator!",
-          hint: "Combine turtle and random modules!"
+          title: "⚡ Challenge 3: Victory Trophy Screen",
+          task: "Print a giant ASCII trophy when player completes the quest!",
+          hint: "print('  🏆 VICTORY CHAMPION! 🏆  ')"
         }
       ]
     },
     mentorNotes: {
       commonStumblingBlocks: [
-        "Celebrate this huge milestone! 15 days of hands-on coding is an incredible achievement."
+        "Trying to do too much at once: encourage students to add 1 small feature at a time and test immediately!",
+        "Code organization: keep state variables at top, functions in middle, main loop at bottom."
       ],
       tinkerQuestions: [
-        "What was your favorite project to build across all 15 days?"
+        "What game feature or project are you most proud of building in this 15-day course?"
       ]
     }
   }
 ];
 
+if (typeof window !== 'undefined') {
+  window.CURRICULUM = CURRICULUM;
+}
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = CURRICULUM;
 }
-
-window.CURRICULUM = CURRICULUM;

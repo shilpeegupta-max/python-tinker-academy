@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 14: Arcade Cabinet Packaging &amp; Showcase - Python Tinker Academy</title>
+  <title>Day 14: The Great Bug Hunt &amp; Logic Doctor - Python Tinker Academy</title>
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -56,10 +56,10 @@
       </a>
       <div>
         <h2 id="view-day-title" style="font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary);">
-          Day 14: Arcade Cabinet Packaging &amp; Showcase
+          Day 14: The Great Bug Hunt &amp; Logic Doctor
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
-          Focus Topic: Code Cleanup, Modular Integration &amp; Mini-Arcade Launcher
+          Focus Topic: Refactoring &amp; Debugging (SyntaxErrors, NameErrors, IndentationErrors, Logic Errors)
         </p>
       </div>
     </div>
@@ -113,45 +113,35 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Building a Multi-Game Mini-Arcade Cabinet
+            Mastering the Art of Python Debugging
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>Professional game developers bundle multiple games into arcade collections. You can combine your past projects into 1 master script!
+            <strong>💡 Everyday Analogy:</strong><br>Errors aren&#x27;t failures — they are clues! Python tracebacks tell you the exact line number and error type (`SyntaxError`, `NameError`, `TypeError`, `IndentationError`).
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre"># Multi-Game Arcade Launcher
-def play_fake_virus():
-    print(&quot;Running Fake Virus Prank...&quot;)
+          <pre class="code-snippet-pre"># Common Error 1: SyntaxError (Missing colon or quotes)
+# Broken: if x == 5
+# Fixed:  if x == 5:
 
-def play_vault_breaker():
-    print(&quot;Running Vault Breaker Game...&quot;)
+# Common Error 2: NameError (Misspelled variable)
+# Broken: player_hp = 100; print(player_health)
+# Fixed:  player_hp = 100; print(player_hp)
 
-while True:
-    print(&quot;=== 🎰 RETRO MINI-ARCADE 🎰 ===&quot;)
-    print(&quot;1. Fake Virus Prank&quot;)
-    print(&quot;2. Vault Breaker&quot;)
-    print(&quot;3. Exit&quot;)
-    choice = input(&quot;Select Game: &quot;)
-    if choice == &quot;1&quot;:
-        play_fake_virus()
-    elif choice == &quot;2&quot;:
-        play_vault_breaker()
-    elif choice == &quot;3&quot;:
-        break</pre>
+# Common Error 3: TypeError (Mixing string and number)
+# Broken: print(&quot;Score: &quot; + 100)
+# Fixed:  print(&quot;Score: &quot; + str(100))</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>Wrap each project in a clean function def play_game_name().</li><li>Build a main arcade menu loop with numerical selection.</li><li>Add comments (#) to document your code so friends and family can read it easily!</li>
+            <li>SyntaxError: Missing colon, quote, or parenthesis.</li><li>NameError: Misspelled variable or function name.</li><li>TypeError: Mixing incompatible data types (e.g. string + int).</li><li>LogicError: Code runs without error, but gives wrong result!</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: What is the benefit of wrapping whole mini-games inside functions?</div>
+            <div class="quiz-question">❓ Quick Check: What error occurs if you forget a colon &#x27;:&#x27; at the end of an if line?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0">It makes the file size 100 times smaller.</button>
-              <button class="quiz-option-btn" data-idx="1">It allows you to run any mini-game on command without code overlapping!</button>
-              <button class="quiz-option-btn" data-idx="2">It automatically publishes your game to Steam.</button>
+              <button class="quiz-option-btn" data-idx="0">TypeError</button><button class="quiz-option-btn" data-idx="1">SyntaxError</button><button class="quiz-option-btn" data-idx="2">ValueError</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -179,16 +169,23 @@ while True:
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 14 TINKER LAB: Retro Arcade Packaging
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 14 TINKER LAB: The Bug Hunter Hospital
+# THIS SCRIPT CONTAINS 3 BUGS! CAN YOU FIX THEM ALL?
 
-def my_game_1():
-    print(&quot;🎮 Game 1 Running!&quot;)
+import random
 
-def my_game_2():
-    print(&quot;🎮 Game 2 Running!&quot;)
+inventory = [&quot;Health Potion&quot;, &quot;Mana Crystal&quot;]
+score = &quot;100&quot; # BUG 1: Should be integer number 100!
 
-print(&quot;🎰 MY PERSONAL PYTHON ARCADE CABINET 🎰&quot;)
-my_game_1()
+print(&quot;🎒 INVENTORY BUG HUNT 🎒&quot;)
+
+# BUG 2: Indentation error on print line below!
+for item in inventory:
+print(&quot;Item in backpack:&quot;, item)
+
+# BUG 3: Typo in variable name &#x27;inventry&#x27;!
+inventory.append(&quot;Gold Coin&quot;)
+print(&quot;Total items:&quot;, len(inventory))
 </textarea>
         </div>
 
@@ -242,18 +239,17 @@ my_game_1()
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 14 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>Variable name collisions across different functions. Keeping code inside functions prevents bugs!</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"Ready to demo your Arcade Cabinet to family and friends?"</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 14 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>Panic when seeing red error tracebacks: read the last line of the traceback first — it tells you the exact line number and error!</li><li>Logic errors where code runs without crashing but gives wrong results: use print() debugging to inspect variable values.</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"Why is debugging considered one of the most valuable skills for professional software engineers?"</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

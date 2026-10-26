@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 7: Retro Space Invader / Pixel Alien - Python Tinker Academy</title>
+  <title>Day 7: RPG Quest Backpack &amp; Inventory - Python Tinker Academy</title>
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -56,10 +56,10 @@
       </a>
       <div>
         <h2 id="view-day-title" style="font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary);">
-          Day 7: Retro Space Invader / Pixel Alien
+          Day 7: RPG Quest Backpack &amp; Inventory
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
-          Focus Topic: for Loops with Turtle, Nested Loops, Grid Coordinates &amp; Stamps
+          Focus Topic: Python Lists ([]), Indexing, append(), pop(), remove(), len()
         </p>
       </div>
     </div>
@@ -113,36 +113,37 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Counted for Loops &amp; Stamp Art Grid
+            Managing Collections with Python Lists
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>Instead of moving line by line, turtle can 
+            <strong>💡 Everyday Analogy:</strong><br>A list is like a digital backpack. You can store multiple items in order, look up items by index position, add items with .append(), and remove trash with .pop()!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre">import turtle
+          <pre class="code-snippet-pre"># Creating an inventory list
+backpack = [&quot;Plasma Pistol&quot;, &quot;Health Potion&quot;, &quot;Shield Bubble&quot;]
 
-t = turtle.Turtle()
-t.shape(&quot;square&quot;)
-t.penup() # Don&#x27;t draw trailing lines
+# Accessing items (Python starts counting at index 0!)
+print(&quot;Equipped Weapon:&quot;, backpack[0])
 
-# Draw a row of 5 stamps
-for x in range(5):
-    t.goto(x * 30, 0)
-    t.stamp()</pre>
+# Adding a new drop
+backpack.append(&quot;Legendary Sniper&quot;)
+
+# Removing an item by index position
+backpack.pop(1)
+
+print(&quot;Backpack size:&quot;, len(backpack))</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>range(count) runs a loop exactly count times.</li><li>t.penup() prevents drawing lines when moving between positions.</li><li>t.stamp() prints the turtle shape onto the canvas!</li>
+            <li>Lists use square brackets [] with items separated by commas.</li><li>List indices start at 0! Index 0 is the 1st item.</li><li>.append(item) adds to end, .pop(index) removes by position, len(list) gets count.</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: What does range(5) produce in Python?</div>
+            <div class="quiz-question">❓ Quick Check: If items = [&#x27;Sword&#x27;, &#x27;Shield&#x27;, &#x27;Bow&#x27;], what is items[1]?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0">Numbers 1, 2, 3, 4, 5</button>
-              <button class="quiz-option-btn" data-idx="1">Numbers 0, 1, 2, 3, 4</button>
-              <button class="quiz-option-btn" data-idx="2">A random set of 5 numbers</button>
+              <button class="quiz-option-btn" data-idx="0">&#x27;Sword&#x27;</button><button class="quiz-option-btn" data-idx="1">&#x27;Shield&#x27;</button><button class="quiz-option-btn" data-idx="2">&#x27;Bow&#x27;</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -170,33 +171,40 @@ for x in range(5):
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 7 TINKER LAB: Pixel Art Stamp Builder
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 7 TINKER LAB: Battle Royale Loot Drop
 
-import turtle
+import random
 
-t = turtle.Turtle()
-t.shape(&quot;square&quot;)
-t.penup()
-t.speed(0)
-t.color(&quot;cyan&quot;)
-turtle.bgcolor(&quot;#020617&quot;)
+inventory = [&quot;Common Pistol&quot;]
+loot = [&quot;Rare Shotgun&quot;, &quot;Epic Sniper&quot;, &quot;Medkit&quot;, &quot;Chug Jug&quot;, &quot;Grappler&quot;]
 
-# Change the 1s to alter the pixel design!
-heart_map = [
-    [0, 1, 1, 0, 1, 1, 0],
-    [1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1],
-    [0, 1, 1, 1, 1, 1, 0],
-    [0, 0, 1, 1, 1, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0]
-]
+print(&quot;🎮 BATTLE ROYALE LOOT MANAGER 🎮&quot;)
 
-size = 25
-for r_idx, row in enumerate(heart_map):
-    for c_idx, val in enumerate(row):
-        if val == 1:
-            t.goto(-80 + c_idx * size, 80 - r_idx * size)
-            t.stamp()
+while True:
+    print(&quot;
+Current Loadout:&quot;, inventory)
+    cmd = input(&quot;Action: (1) Open Crate  (2) Drop Item  (3) Quit: &quot;)
+    
+    if cmd == &quot;1&quot;:
+        found = random.choice(loot)
+        print(&quot;🎁 Found:&quot;, found)
+        if len(inventory) &lt; 5:
+            inventory.append(found)
+        else:
+            print(&quot;Backpack FULL!&quot;)
+            
+    elif cmd == &quot;2&quot;:
+        if len(inventory) &gt; 0:
+            drop_name = input(&quot;Enter exact name to drop: &quot;)
+            if drop_name in inventory:
+                inventory.remove(drop_name)
+                print(&quot;🗑️ Dropped&quot;, drop_name)
+            else:
+                print(&quot;Item not in inventory!&quot;)
+                
+    elif cmd == &quot;3&quot;:
+        print(&quot;👋 Exiting match!&quot;)
+        break
 </textarea>
         </div>
 
@@ -250,18 +258,17 @@ for r_idx, row in enumerate(heart_map):
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 7 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>Inconsistent row lengths in grid array can cause offset pixels. Ensure every row has same length!</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"How do retro video games (like NES/GameBoy) store sprite graphics? (In small binary 2D arrays just like this!)."</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 7 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>ValueError: list.remove(x): x not in list. Always check &#x27;if x in my_list:&#x27; before calling .remove()!</li><li>IndexError: list index out of range. Happens when accessing index &gt;= len(list).</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"What is the difference between pop(0) and remove(&#x27;Pistol&#x27;)? (pop uses index position; remove searches by value!)."</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -113,35 +113,32 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Talking to your computer with print() and input()
+            Talking to the Computer with print() and input()
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>Think of 
+            <strong>💡 Everyday Analogy:</strong><br>Think of `print()` as the computer&#x27;s voice box and `input()` as its ears. Variables are like labeled storage boxes that hold text speech!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre"># Printing text to the screen
-print(&quot;SYSTEM WARNING: Unidentified user detected!&quot;)
+          <pre class="code-snippet-pre"># Printing text to terminal
+print(&quot;Initializing Security System...&quot;)
 
-# Asking a question and storing the response
-user_name = input(&quot;Enter your secret agent code name: &quot;)
+# Gathering user input into a variable box
+target_name = input(&quot;Enter victim name: &quot;)
 
-# Joining text together (String Concatenation)
-print(&quot;Welcome aboard, Agent &quot; + user_name + &quot;!&quot;)</pre>
+# Joining text together with +
+print(&quot;Warning: &quot; + target_name + &quot;&#x27;s device has been hacked! 🚨&quot;)</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>Use print(...) with double quotes to show text on screen.</li><li>input(...) pauses the program and waits for the player to type something.</li><li>Use</li><li>to stick strings together like LEGO bricks!</li>
+            <li>print(&#x27;text&#x27;) displays words on the computer screen.</li><li>input(&#x27;prompt&#x27;) pauses execution and waits for user typing.</li><li>Save user responses inside a variable (e.g., name = input(...)).</li><li>Use + to join strings together (Concatenation)!</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: What does input(</div>
+            <div class="quiz-question">❓ Quick Check: What does the code `user_pet = input(&#x27;Pet name: &#x27;)` do?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0">It prints</button>
-              <button class="quiz-option-btn" data-idx="1">and immediately closes the program.</button>
-              <button class="quiz-option-btn" data-idx="2">It prints the question, waits for the user to type an answer, and returns it.</button>
-              <button class="quiz-option-btn" data-idx="3">It forces the user to pick from a list of names.</button>
+              <button class="quiz-option-btn" data-idx="0">Prints the pet&#x27;s name on screen 5 times</button><button class="quiz-option-btn" data-idx="1">Asks the user for input and saves their response into user_pet</button><button class="quiz-option-btn" data-idx="2">Deletes the pet&#x27;s name from memory</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -169,21 +166,18 @@ print(&quot;Welcome aboard, Agent &quot; + user_name + &quot;!&quot;)</pre>
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 1 TINKER LAB: Fake Virus / Rickroll Prank
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 1 TINKER LAB: Mad Libs &amp; Terminal Prank
+# Modify the questions and output story below!
 
-print(&quot;----------------------------------------&quot;)
-print(&quot;⚠️ CRITICAL ERROR: VIRUS DETECTED ⚠️&quot;)
-print(&quot;----------------------------------------&quot;)
+player_name = input(&quot;Enter your hero name: &quot;)
+favorite_snack = input(&quot;Enter your favorite snack: &quot;)
+superpower = input(&quot;Enter a ridiculous superpower: &quot;)
 
-victim = input(&quot;Who is using this computer? &quot;)
-favorite_food = input(&quot;What is your favorite snack? &quot;)
-
-print(&quot;\\n[1/3] Encrypting files for user: &quot; + victim)
-print(&quot;[2/3] Downloading all &quot; + favorite_food + &quot; recipes...&quot;)
-print(&quot;[3/3] Sending self-destruct signal in 3... 2... 1...&quot;)
-
-print(&quot;\\n🎉 JUST KIDDING! &quot; + victim + &quot;, you survived!&quot;)
-print(&quot;Here is your secret victory song: https://www.youtube.com/watch?dQw4w9WgXcQ&quot;)
+print(&quot;
+--- THE LEGEND OF &quot; + player_name.upper() + &quot; ---&quot;)
+print(player_name + &quot; entered the dungeon armed with a single &quot; + favorite_snack + &quot;.&quot;)
+print(&quot;Suddenly, a dragon appeared! &quot; + player_name + &quot; activated &quot; + superpower + &quot;!&quot;)
+print(&quot;The dragon ate the &quot; + favorite_snack + &quot; and ran away happily! 🐉&quot;)
 </textarea>
         </div>
 
@@ -237,18 +231,17 @@ print(&quot;Here is your secret victory song: https://www.youtube.com/watch?dQw4
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 1 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>Forgot quotes around string literals: print(Hello) causes a NameError.</li><li>Missing spaces when concatenating:</li><li>+</li><li>produces</li><li>instead of</li><li>.</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"What happens if you type a number into input()? Is it treated as text or a math number?"</li><li>"Can you print a multi-line message using triple quotes"</li><li>""</li><li>""</li><li>"?"</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 1 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>Forgetting quotes around strings: print(Hello) causes NameError. Ensure quotes like print(&#x27;Hello&#x27;).</li><li>Space missing when joining strings with +: &#x27;Hello&#x27;+name prints &#x27;Hellobob&#x27;. Use &#x27;Hello &#x27; + name!</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"What happens if you type a number into input()? Does Python know it&#x27;s a number or text? (It&#x27;s still text until converted!)."</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

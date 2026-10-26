@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -59,7 +59,7 @@
           Day 4: Sarcastic Magic 8-Ball &amp; Dice Roller
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
-          Focus Topic: import random, random.choice(), random.randint()
+          Focus Topic: The random Library (randint, choice) &amp; Module Imports
         </p>
       </div>
     </div>
@@ -113,37 +113,35 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Adding Unpredictability with Python
+            Generating Randomness with import random
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>In Python, libraries are like extra toolkits. The 
+            <strong>💡 Everyday Analogy:</strong><br>Python comes with built-in toolkits called &#x27;libraries&#x27;. The `random` module allows us to roll dice or pick random items from a list!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
           <pre class="code-snippet-pre">import random
 
-# Pick a random item from a list
-answers = [&quot;Yes, obviously!&quot;, &quot;Not in a million years.&quot;, &quot;Ask someone who cares.&quot;]
-prediction = random.choice(answers)
-
-# Roll a random number between 1 and 6 (like a 6-sided die)
+# Roll a 6-sided die (number between 1 and 6)
 dice_roll = random.randint(1, 6)
 
-print(&quot;Dice roll result:&quot;, dice_roll)
-print(&quot;Magic 8-Ball says:&quot;, prediction)</pre>
+# Pick a random response from a list
+answers = [&quot;Yes&quot;, &quot;No&quot;, &quot;Maybe&quot;, &quot;Ask again later&quot;]
+fortune = random.choice(answers)
+
+print(&quot;Dice:&quot;, dice_roll)
+print(&quot;Fortune:&quot;, fortune)</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>Always put</li><li>at the top of your script.</li><li>random.choice(my_list) picks a random element from a list.</li><li>random.randint(min, max) returns a random integer between min and max inclusive.</li>
+            <li>import random loads Python&#x27;s built-in random library.</li><li>random.randint(min, max) generates a random whole number.</li><li>random.choice(list_name) picks a random element from a list.</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: What values can random.randint(1, 3) return?</div>
+            <div class="quiz-question">❓ Quick Check: What does random.randint(1, 20) generate?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0">Only 1 or 2</button>
-              <button class="quiz-option-btn" data-idx="1">1, 2, or 3</button>
-              <button class="quiz-option-btn" data-idx="2">Any number between 1.0 and 3.0 with decimals</button>
+              <button class="quiz-option-btn" data-idx="0">A random decimal number between 1 and 20</button><button class="quiz-option-btn" data-idx="1">A random integer between 1 and 20 inclusive</button><button class="quiz-option-btn" data-idx="2">Always the number 1</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -171,33 +169,24 @@ print(&quot;Magic 8-Ball says:&quot;, prediction)</pre>
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 4 TINKER LAB: Sarcastic 8-Ball &amp; RPG Dice Roller
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 4 TINKER LAB: RPG Dice Roller &amp; Coin Flip
 
 import random
 
-print(&quot;🎲 EPIC RPG DICE &amp; FORTUNE GENERATOR 🎲&quot;)
-mode = input(&quot;Choose mode: (1) Sarcastic 8-Ball  or  (2) Roll D20 Dice: &quot;)
+print(&quot;🎲 RPG MULTI-DICE ROLLER 🎲&quot;)
+print(&quot;1. Roll D6 (Standard Die)&quot;)
+print(&quot;2. Roll D20 (D&amp;D Stat Die)&quot;)
+print(&quot;3. Flip Coin (Heads/Tails)&quot;)
 
-if mode == &quot;1&quot;:
-    q = input(&quot;Ask your burning question: &quot;)
-    fortunes = [
-        &quot;Signs point to yes!&quot;,
-        &quot;Don&#x27;t count on it, chief.&quot;,
-        &quot;Error 404: Fortune not found.&quot;,
-        &quot;Yes, but it will cost you 10 gold coins!&quot;
-    ]
-    print(&quot;🎱 Result:&quot;, random.choice(fortunes))
+choice = input(&quot;Choice (1-3): &quot;)
 
-elif mode == &quot;2&quot;:
-    d20 = random.randint(1, 20)
-    print(&quot;🎲 You rolled a D20:&quot;, d20)
-    if d20 == 20:
-        print(&quot;💥 CRITICAL HIT! You defeated the dragon!&quot;)
-    elif d20 == 1:
-        print(&quot;💀 CRITICAL FAIL! You tripped over a pebble!&quot;)
-
-else:
-    print(&quot;❌ Invalid selection!&quot;)
+if choice == &quot;1&quot;:
+    print(&quot;🎲 D6 Result:&quot;, random.randint(1, 6))
+elif choice == &quot;2&quot;:
+    print(&quot;🎲 D20 Result:&quot;, random.randint(1, 20))
+elif choice == &quot;3&quot;:
+    coin = random.choice([&quot;🪙 HEADS&quot;, &quot;🪙 TAILS&quot;])
+    print(&quot;Coin Flip:&quot;, coin)
 </textarea>
         </div>
 
@@ -251,18 +240,17 @@ else:
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 4 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"What happens if you run random.randint(1, 1)? (It always returns 1!)."</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 4 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>NameError: name &#x27;random&#x27; is not defined. Remember to include `import random` at top of file!</li><li>IndexError: list index out of range. Happens if trying to pick from an empty list [].</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"How do video games like Fortnite or Pokémon use random numbers? (For loot crate drops, critical hits, and spawn locations!)."</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

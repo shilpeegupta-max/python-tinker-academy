@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 13: Capstone Polish: Colors, Easter Eggs &amp; Defensive Inputs - Python Tinker Academy</title>
+  <title>Day 13: Bouncing Ball Physics Sim &amp; Screen Saver - Python Tinker Academy</title>
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -56,10 +56,10 @@
       </a>
       <div>
         <h2 id="view-day-title" style="font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary);">
-          Day 13: Capstone Polish: Colors, Easter Eggs &amp; Defensive Inputs
+          Day 13: Bouncing Ball Physics Sim &amp; Screen Saver
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
-          Focus Topic: Defensive Coding (Input Validation), ANSI Colors, Cheat Codes
+          Focus Topic: Turtle Physics, Coordinates (xcor, ycor) &amp; Screen Bouncing
         </p>
       </div>
     </div>
@@ -113,41 +113,40 @@
         <div class="concept-card">
           <h3>🧠 Concept Breakdown</h3>
           <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.85rem; color: var(--text-primary);">
-            Polishing Games &amp; Defensive Coding
+            Simulating Physics and Coordinates with Turtle
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>A polished game never crashes when a user types nonsense. It validates inputs, uses bright colors, and hides fun easter eggs!
+            <strong>💡 Everyday Analogy:</strong><br>Every element on screen has (x, y) coordinates. By updating position each frame (`x += dx`), objects move! Bouncing happens when reversing velocity (`dx = -dx`) at wall edges!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre"># ANSI Terminal Colors
-RED = &quot;\\033[91m&quot;
-GREEN = &quot;\\033[92m&quot;
-CYAN = &quot;\\033[96m&quot;
-RESET = &quot;\\033[0m&quot;
+          <pre class="code-snippet-pre">import turtle
 
-print(RED + &quot;⚠️ WARNING: Low Health!&quot; + RESET)
-print(GREEN + &quot;💚 Health Restored!&quot; + RESET)
+ball = turtle.Turtle()
+ball.shape(&quot;circle&quot;)
 
-# Defensive Input Loop
-while True:
-    choice = input(&quot;Pick 1 or 2: &quot;)
-    if choice in [&quot;1&quot;, &quot;2&quot;]:
-        break
-    print(&quot;❌ Invalid entry! Please type 1 or 2.&quot;)</pre>
+# Motion velocity variables
+dx = 3 # Movement speed along x-axis
+dy = 3 # Movement speed along y-axis
+
+# Animation step
+ball.setx(ball.xcor() + dx)
+ball.sety(ball.ycor() + dy)
+
+# Bounce off right wall (x &gt; 200)
+if ball.xcor() &gt; 200:
+    dx = -dx # Reverse direction!</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>ANSI escape codes like</li><li>add terminal color flair.</li><li>Defensive coding checks inputs before doing math to prevent crashes.</li><li>Easter eggs reward curious players who try secret commands!</li>
+            <li>ball.xcor() / ball.ycor() gets current position.</li><li>ball.setx(new_x) / ball.sety(new_y) moves ball to new coordinates.</li><li>Velocity variables dx, dy control speed and direction.</li><li>Reversing sign (dx = -dx) creates wall bouncing physics!</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: Why should you use an input validation while loop?</div>
+            <div class="quiz-question">❓ Quick Check: If dx = 5 and a ball hits the right wall edge, what reverses its horizontal motion?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0">To force the computer to run faster.</button>
-              <button class="quiz-option-btn" data-idx="1">To stop the program from crashing when a user types an invalid command.</button>
-              <button class="quiz-option-btn" data-idx="2">To automatically convert strings into images.</button>
+              <button class="quiz-option-btn" data-idx="0">dx = 0</button><button class="quiz-option-btn" data-idx="1">dx = -dx (changes dx from 5 to -5)</button><button class="quiz-option-btn" data-idx="2">dx = dx + 5</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -175,25 +174,31 @@ while True:
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 13 TINKER LAB: Polish &amp; Easter Eggs
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 13 TINKER LAB: Gravity Bouncing Ball
 
-# Colors
-RED = &quot;\\033[91m&quot;
-GREEN = &quot;\\033[92m&quot;
-GOLD = &quot;\\033[93m&quot;
-RESET = &quot;\\033[0m&quot;
+import turtle
 
-print(GOLD + &quot;✨ POLISHING YOUR CAPSTONE GAME ✨&quot; + RESET)
+win = turtle.Screen()
+win.bgcolor(&quot;#020617&quot;)
 
-# Add your cheat codes below!
-secret_code = input(&quot;Enter standard command or cheat code: &quot;).lower()
+ball = turtle.Turtle()
+ball.shape(&quot;circle&quot;)
+ball.color(&quot;gold&quot;)
+ball.penup()
+ball.speed(0)
+ball.goto(0, 100)
 
-if secret_code == &quot;noclip&quot;:
-    print(GREEN + &quot;👻 You can now walk through walls!&quot; + RESET)
-elif secret_code == &quot;moneybag&quot;:
-    print(GOLD + &quot;💰 +1,000,000 GOLD ADDED TO INVENTORY!&quot; + RESET)
-else:
-    print(&quot;Normal action executed.&quot;)
+dy = 0 # Vertical speed
+gravity = -0.3 # Gravity pulling down
+
+for frame in range(120):
+    dy += gravity # Gravity pulls down
+    ball.sety(ball.ycor() + dy)
+    
+    # Ground Bounce
+    if ball.ycor() &lt; -120:
+        ball.sety(-120)
+        dy = -dy * 0.85 # Bounce up with slight energy loss!
 </textarea>
         </div>
 
@@ -247,18 +252,17 @@ else:
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 13 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>Forgetting to append RESET code after color string, turning entire terminal green!</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"What secret cheat codes did you hide in your game?"</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 13 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>Ball getting stuck in wall: ensure you reset ball position slightly inside boundary when bouncing (`ball.setx(200)`).</li><li>Infinite loops during animation: use counted frame loops for web environment compatibility.</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"How do real physics engines (like Unity or Unreal Engine) calculate velocity and gravity?"</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>

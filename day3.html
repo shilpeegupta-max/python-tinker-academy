@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 3: Haunted House Escape - Python Tinker Academy</title>
+  <title>Day 3: Choose-Your-Own-Adventure Game - Python Tinker Academy</title>
   
   <!-- Modern Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
   <!-- Application Stylesheet -->
   <link rel="stylesheet" href="styles.css?v=3">
 
-  <!-- Skulpt Client-side Python Libraries (Local Bundle) -->
+  <!-- Skulpt Client-side Python Libraries -->
   <script src="js/skulpt.min.js?v=3"></script>
   <script src="js/skulpt-stdlib.js?v=3"></script>
 
@@ -56,7 +56,7 @@
       </a>
       <div>
         <h2 id="view-day-title" style="font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary);">
-          Day 3: Haunted House Escape
+          Day 3: Choose-Your-Own-Adventure Game
         </h2>
         <p id="view-day-focus" style="font-size: 0.8rem; font-family: var(--font-code); margin: 0; color: var(--accent-cyan-glow);">
           Focus Topic: Conditionals (if, elif, else), Comparison Operators (==, !=, &gt;, &lt;)
@@ -116,36 +116,29 @@
             Making Decisions with if, elif, and else
           </p>
           <div class="analogy-box">
-            <strong>💡 Everyday Analogy:</strong><br>Conditionals are like fork in the road in a video game. IF you choose left door, path A happens. ELIF you choose right door, path B happens. ELSE, something unexpected happens!
+            <strong>💡 Everyday Analogy:</strong><br>Think of `if` statements as crossroads in a game. Depending on the player&#x27;s choice, Python follows a different branch of code!
           </div>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Syntax Cheat Sheet:</h4>
-          <pre class="code-snippet-pre"># Making choices in Python
-choice = input(&quot;Do you open the RED door or BLUE door? &quot;).lower()
+          <pre class="code-snippet-pre">door = input(&quot;Choose door (left/right): &quot;)
 
-if choice == &quot;red&quot;:
-    print(&quot;🔥 A friendly dragon gives you a golden key!&quot;)
-elif choice == &quot;blue&quot;:
-    print(&quot;🌊 Water floods the room! You swim to safety.&quot;)
+if door == &quot;left&quot;:
+    print(&quot; You entered a room full of treasure! 💰&quot;)
+elif door == &quot;right&quot;:
+    print(&quot; A sleeping dragon wakes up! 🐉&quot;)
 else:
-    print(&quot;❓ You stood still for too long and a ghost scared you away!&quot;)</pre>
+    print(&quot; You walked into a wall! 🧱&quot;)</pre>
 
           <h4 style="font-size: 0.88rem; color: var(--accent-cyan-glow); margin-bottom: 0.5rem;">Key Takeaways:</h4>
           <ul class="takeaways-list">
-            <li>Use</li><li>to check if two things are EQUAL (not a single</li><li>which assigns variables!).</li><li>Indent code under if/elif/else with 4 spaces (Tab key).</li><li>.lower() turns input into lowercase so</li><li>and</li><li>both work!</li>
+            <li>== checks if two values are equal.</li><li>if condition: runs code if condition is True.</li><li>elif condition: checks a second option if first was False.</li><li>else: catches any other remaining inputs!</li>
           </ul>
 
           <!-- Quick Quiz -->
           <div class="quiz-box">
-            <div class="quiz-question">❓ Quick Check: What is the difference between </div>
+            <div class="quiz-question">❓ Quick Check: What is the difference between = and == in Python?</div>
             <div class="quiz-options">
-              <button class="quiz-option-btn" data-idx="0"></button>
-              <button class="quiz-option-btn" data-idx="1">compares two values,</button>
-              <button class="quiz-option-btn" data-idx="2">sets a variable.</button>
-              <button class="quiz-option-btn" data-idx="3"></button>
-              <button class="quiz-option-btn" data-idx="4">sets a variable value,</button>
-              <button class="quiz-option-btn" data-idx="5">compares if two values are equal.</button>
-              <button class="quiz-option-btn" data-idx="6">They are identical and can be used interchangeably.</button>
+              <button class="quiz-option-btn" data-idx="0">= is for assignment (saving into a variable); == is for comparing equality</button><button class="quiz-option-btn" data-idx="1">They are exactly identical</button><button class="quiz-option-btn" data-idx="2">== assigns a variable, = compares equality</button>
             </div>
             <div class="quiz-feedback" id="quiz-feedback"></div>
           </div>
@@ -173,25 +166,22 @@ else:
 
         <!-- Code Editor Textarea -->
         <div class="code-editor-wrapper">
-          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 3 TINKER LAB: Choose Your Own Adventure
+          <textarea class="code-textarea" id="code-textarea" spellcheck="false" placeholder="# Type Python code here..."># DAY 3 TINKER LAB: Haunted Mansion Escape
 
-print(&quot;🚀 GALACTIC ALIEN SPACESHIP ESCAPE 🚀&quot;)
-choice1 = input(&quot;Do you head to the BRIDGE or the ENGINE ROOM? (bridge/engine): &quot;).lower()
+print(&quot;🧟 HAUNTED MANSION ESCAPE 🧟&quot;)
+player_name = input(&quot;Enter adventurer name: &quot;)
 
-if choice1 == &quot;bridge&quot;:
-    print(&quot; You see the Alien Captain sitting in the command chair!&quot;)
-    choice2 = input(&quot;Do you SALUTE or STEAL the spaceship key? (salute/steal): &quot;).lower()
-    if choice2 == &quot;salute&quot;:
-        print(&quot;👽 The Captain honors your politeness and flies you home safely!&quot;)
-    else:
-        print(&quot;🚨 Alarm sounds! You got thrown in space jail!&quot;)
+print(&quot;Welcome &quot; + player_name + &quot;. You stand before 3 doors: (1) Red  (2) Blue  (3) Green&quot;)
+door = input(&quot;Which door number do you open? &quot;)
 
-elif choice1 == &quot;engine&quot;:
-    print(&quot;🔥 The engine core is overheating!&quot;)
-    print(&quot;You press the red emergency button and eject in an escape pod!&quot;)
-
+if door == &quot;1&quot; or door == &quot;red&quot;:
+    print(&quot;🔥 Lava pit! You melted!&quot;)
+elif door == &quot;2&quot; or door == &quot;blue&quot;:
+    print(&quot;💎 Ice room! You grabbed a Diamond Key!&quot;)
+elif door == &quot;3&quot; or door == &quot;green&quot;:
+    print(&quot;🧟 Zombie army! You ran away safely!&quot;)
 else:
-    print(&quot;❌ Invalid command! The spaceship warp drive engaged without you!&quot;)
+    print(&quot;You stood still for too long! A ghost caught you!&quot;)
 </textarea>
         </div>
 
@@ -245,18 +235,17 @@ else:
         </p>
       </div>
       <div id="mentor-day-tips">
-
-      <div class="concept-card" style="margin-top: 1rem;">
-        <h3>📌 Day 3 Mentor Notes</h3>
-        <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
-          <li>IndentationError: Mixing tabs and spaces, or forgetting to indent lines inside if statements.</li><li>Using</li><li>instead of</li><li>:</li><li>will throw a SyntaxError!</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
-        <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
-          <li>"How can you check two conditions at once using"</li><li>"or"</li><li>"? (e.g., if has_key == True and door =="</li><li>":)"</li>
-        </ul>
-      </div>
+        <div class="concept-card" style="margin-top: 1rem;">
+          <h3>📌 Day 3 Mentor Notes</h3>
+          <h4 style="font-size: 0.85rem; color: var(--accent-rose); margin-bottom: 0.4rem;">Common Stumbling Blocks:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem; margin-bottom: 1rem;">
+            <li>IndentationError: expected an indented block. Python relies on tab spacing (4 spaces) under if/elif/else lines!</li><li>Capitalization mismatch: &#x27;Left&#x27; != &#x27;left&#x27;. Always use .lower() on user inputs!</li>
+          </ul>
+          <h4 style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 0.4rem;">Prompting Questions:</h4>
+          <ul style="font-size: 0.82rem; color: var(--text-secondary); margin-left: 1rem;">
+            <li>"How can you check multiple conditions at once? (Using &#x27;and&#x27; / &#x27;or&#x27; operators!)."</li>
+          </ul>
+        </div>
       </div>
     </div>
   </aside>
