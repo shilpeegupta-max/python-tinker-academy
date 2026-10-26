@@ -247,9 +247,9 @@ template = """<!DOCTYPE html>
   <script>
     window.CURRENT_DAY_ID = {day_num};
   </script>
-  <script src="js/curriculum.js?v=3"></script>
-  <script src="js/skulpt-runner.js?v=3"></script>
-  <script src="js/day-app.js?v=3"></script>
+  <script src="js/curriculum.js?v=5"></script>
+  <script src="js/skulpt-runner.js?v=5"></script>
+  <script src="js/day-app.js?v=5"></script>
 </body>
 </html>
 """

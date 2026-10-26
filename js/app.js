@@ -22,6 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Clear stale saved code if curriculum version changed
+  const CURRENT_CURRICULUM_VERSION = 'v20261026_5';
+  if (safeGetStorage('pta_curriculum_version', '') !== CURRENT_CURRICULUM_VERSION) {
+    try {
+      localStorage.removeItem('pta_saved_code');
+      safeSetStorage('pta_curriculum_version', CURRENT_CURRICULUM_VERSION);
+    } catch (e) {
+      console.warn('LocalStorage clear failed:', e);
+    }
+  }
+
   // --- STATE MANAGEMENT ---
   let state = {
     completedDays: safeGetStorage('pta_completed_days', []),
